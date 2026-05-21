@@ -7,7 +7,8 @@ Live at: [https://ktalons.github.io](https://ktalons.github.io)
 ## Stack
 
 - [Hugo Extended](https://gohugo.io) (static site generator)
-- [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme (vendored as a git submodule)
+- [hugo-coder](https://github.com/luizdepra/hugo-coder) theme (vendored as a git submodule)
+- [Catppuccin Mocha](https://catppuccin.com/palette/) palette — Mauve `#cba6f7` primary, Peach `#fab387` secondary
 - Deployed to GitHub Pages via GitHub Actions on every push to `main`
 
 ## Local development
@@ -47,8 +48,22 @@ content/
 
 ## Theme customization
 
-- `hugo.toml` — site config, social icons, profile mode, nav menu
-- `assets/css/extended/custom.css` — accent color (Saguaro-cyan) and small polish
+- `hugo.toml` — site config, social icons, top nav, FontAwesome icons
+- `assets/css/custom.css` — Catppuccin Mocha overrides + status pills + hover polish
+  - Swap primary/secondary accent by flipping `--accent-primary` and `--accent-secondary` in `:root`
+
+## Catppuccin reference
+
+Site uses the [Catppuccin Mocha](https://catppuccin.com/palette/) (dark) palette:
+
+| Slot | Hex |
+|---|---|
+| Base (background) | `#1e1e2e` |
+| Text | `#cdd6f4` |
+| **Mauve (primary accent)** | `#cba6f7` |
+| **Peach (secondary accent)** | `#fab387` |
+
+Light-mode toggle uses [Catppuccin Latte](https://catppuccin.com/palette/) variants of the same accents.
 
 ## Adding a new blog post
 

@@ -1,175 +1,114 @@
 baseURL = "https://ktalons.github.io/"
-locale = "en-us"
 title = "Kyle Versluis"
-theme = "PaperMod"
-
+theme = "hugo-coder"
+languageCode = "en"
+defaultContentLanguage = "en"
+enableEmoji = true
 enableRobotsTXT = true
-buildDrafts = false
-buildFuture = false
-buildExpired = false
-
-# Pretty URLs
-[permalinks]
-  posts = "/blog/:slug/"
-  projects = "/projects/:slug/"
-
-[minify]
-  disableXML = true
-  minifyOutput = true
 
 [pagination]
-  pagerSize = 10
+pagerSize = 10
+
+[permalinks]
+posts = "/blog/:slug/"
+projects = "/projects/:slug/"
+
+[markup]
+[markup.highlight]
+  noClasses = false
+  style = "catppuccin-mocha"
+  lineNos = false
+  codeFences = true
+  guessSyntax = true
+  tabWidth = 4
+[markup.goldmark.renderer]
+  unsafe = true
 
 [params]
-  env = "production"
-  title = "Kyle Versluis"
-  description = "Cybersecurity Engineer — OT SOC + Detection Engineering. BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Based in Tucson, AZ — open to relocation to Phoenix and federal positions."
-  keywords = ["Cybersecurity", "SOC", "Detection Engineering", "OT Security", "ICS", "MITRE ATT&CK", "Threat Hunting", "Kyle Versluis"]
   author = "Kyle Versluis"
-  DateFormat = "January 2, 2006"
-  defaultTheme = "dark"
-  disableThemeToggle = false
+  description = "Cybersecurity Engineer — OT SOC + Detection Engineering. BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Based in Tucson, AZ. Open to relocation to Phoenix and federal positions."
+  keywords = "cybersecurity, SOC, detection engineering, OT security, ICS, MITRE ATT&CK, threat hunting, Tucson, Phoenix, DHS, Kyle Versluis"
+  info = [
+    "Cybersecurity Engineer",
+    "OT SOC + Detection Engineering",
+    "University of Arizona — BAS Cyber Operations '26"
+  ]
+  avatarURL = "images/avatar.svg"
+  dateFormat = "January 2, 2006"
+  since = 2026
 
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = false
-  ShowRssButtonInSectionTermList = true
-  UseHugoToc = true
-  disableSpecial1stPost = false
-  disableScrollToTop = false
-  comments = false
-  hidemeta = false
-  hideSummary = false
-  showtoc = false
-  tocopen = false
+  # Color scheme: dark default (Catppuccin Mocha is a dark palette)
+  colorScheme = "dark"
+  hideColorSchemeToggle = false
 
-  [params.assets]
-    favicon = "/favicon.ico"
-    favicon16x16 = "/favicon-16x16.png"
-    favicon32x32 = "/favicon-32x32.png"
-    apple_touch_icon = "/apple-touch-icon.png"
-    safari_pinned_tab = "/safari-pinned-tab.svg"
+  # Custom CSS injection
+  customCSS = ["css/custom.css"]
+  customSCSS = []
+  customJS = []
 
-  [params.label]
-    text = "ktalons"
-    icon = "/favicon.ico"
-    iconHeight = 32
+  # Footer
+  hideFooter = false
+  hideCredits = false
+  hideCopyright = false
 
-  # Profile mode — single-column hero on home page
-  [params.profileMode]
-    enabled = true
-    title = "Kyle Versluis"
-    subtitle = "Cybersecurity Engineer — OT SOC + Detection Engineering. Recent BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Open to SOC, detection engineering, and federal roles — Phoenix-area relocation welcomed."
-    imageUrl = "/images/avatar.svg"
-    imageWidth = 140
-    imageHeight = 140
-    imageTitle = "Kyle Versluis"
+  # Misc
+  maxSeeAlsoItems = 5
+  rtl = false
 
-    [[params.profileMode.buttons]]
-      name = "Projects"
-      url = "projects"
-    [[params.profileMode.buttons]]
-      name = "About"
-      url = "about"
-    [[params.profileMode.buttons]]
-      name = "Achievements"
-      url = "achievements"
-    [[params.profileMode.buttons]]
-      name = "Resume"
-      url = "resume"
+# Social icons (rendered below name + info on home)
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/ktalons/"
 
-  # Social icons
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/ktalons"
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://linkedin.com/in/ta1ons/"
-  [[params.socialIcons]]
-    name = "email"
-    url = "mailto:ktalonsec@gmail.com"
-  [[params.socialIcons]]
-    name = "rss"
-    url = "/blog/index.xml"
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa-brands fa-linkedin fa-2x"
+  weight = 2
+  url = "https://www.linkedin.com/in/ta1ons/"
 
-  [params.cover]
-    hidden = false
-    hiddenInList = false
-    hiddenInSingle = false
+[[params.social]]
+  name = "Email"
+  icon = "fa-solid fa-envelope fa-2x"
+  weight = 3
+  url = "mailto:ktalonsec@gmail.com"
 
-  # Edit links disabled
-  [params.editPost]
-    URL = ""
-    Text = ""
-    appendFilePath = false
-
-  # Fuse.js search
-  [params.fuseOpts]
-    isCaseSensitive = false
-    shouldSort = true
-    location = 0
-    distance = 1000
-    threshold = 0.4
-    minMatchCharLength = 0
-    keys = ["title", "permalink", "summary", "content"]
+[[params.social]]
+  name = "RSS"
+  icon = "fa-solid fa-rss fa-2x"
+  weight = 4
+  url = "/blog/index.xml"
+  rel = "alternate"
+  type = "application/rss+xml"
 
 # Top navigation
 [[menu.main]]
-  identifier = "about"
   name = "About"
+  weight = 1
   url = "/about/"
-  weight = 10
 
 [[menu.main]]
-  identifier = "projects"
   name = "Projects"
+  weight = 2
   url = "/projects/"
-  weight = 20
 
 [[menu.main]]
-  identifier = "achievements"
   name = "Achievements"
+  weight = 3
   url = "/achievements/"
-  weight = 30
 
 [[menu.main]]
-  identifier = "blog"
   name = "Blog"
+  weight = 4
   url = "/blog/"
-  weight = 40
 
 [[menu.main]]
-  identifier = "resume"
   name = "Resume"
+  weight = 5
   url = "/resume/"
-  weight = 50
 
 [[menu.main]]
-  identifier = "contact"
   name = "Contact"
+  weight = 6
   url = "/contact/"
-  weight = 60
-
-[[menu.main]]
-  identifier = "search"
-  name = "Search"
-  url = "/search/"
-  weight = 70
-
-# Search output format (required for Fuse.js)
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
-[markup]
-  [markup.highlight]
-    style = "github-dark"
-    lineNos = false
-    codeFences = true
-    guessSyntax = true
-    tabWidth = 4
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true

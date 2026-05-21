@@ -1,0 +1,397 @@
+/*
+ * ktalons.github.io — Catppuccin Mocha override
+ * https://catppuccin.com/palette/
+ *
+ * Primary accent:   Mauve  #cba6f7  (links, headings underline, focused buttons)
+ * Secondary accent: Peach  #fab387  (status pills, warm hovers, badges)
+ *
+ * Want to flip primary/secondary? Swap --accent-primary and --accent-secondary
+ * in the :root block below — that's it.
+ */
+
+:root {
+  /* Catppuccin Mocha (dark palette) — semantic mapping */
+  --ctp-base:      #1e1e2e;
+  --ctp-mantle:    #181825;
+  --ctp-crust:     #11111b;
+  --ctp-surface0:  #313244;
+  --ctp-surface1:  #45475a;
+  --ctp-surface2:  #585b70;
+  --ctp-overlay0:  #6c7086;
+  --ctp-overlay1:  #7f849c;
+  --ctp-overlay2:  #9399b2;
+  --ctp-subtext0:  #a6adc8;
+  --ctp-subtext1:  #bac2de;
+  --ctp-text:      #cdd6f4;
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo:  #f2cdcd;
+  --ctp-pink:      #f5c2e7;
+  --ctp-mauve:     #cba6f7;
+  --ctp-red:       #f38ba8;
+  --ctp-maroon:    #eba0ac;
+  --ctp-peach:     #fab387;
+  --ctp-yellow:    #f9e2af;
+  --ctp-green:     #a6e3a1;
+  --ctp-teal:      #94e2d5;
+  --ctp-sky:       #89dceb;
+  --ctp-sapphire:  #74c7ec;
+  --ctp-blue:      #89b4fa;
+  --ctp-lavender:  #b4befe;
+
+  /* Catppuccin Latte (light palette) — for theme toggle */
+  --ctp-l-base:     #eff1f5;
+  --ctp-l-mantle:   #e6e9ef;
+  --ctp-l-crust:    #dce0e8;
+  --ctp-l-text:     #4c4f69;
+  --ctp-l-subtext1: #5c5f77;
+  --ctp-l-surface0: #ccd0da;
+  --ctp-l-mauve:    #8839ef;
+  --ctp-l-peach:    #fe640b;
+  --ctp-l-overlay0: #9ca0b0;
+
+  /* Semantic accent slots — flip these two lines to swap accents */
+  --accent-primary:   var(--ctp-mauve);
+  --accent-secondary: var(--ctp-peach);
+}
+
+/* ─────────────── DARK (Catppuccin Mocha) ─────────────── */
+
+body.colorscheme-dark,
+body.colorscheme-auto {
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
+}
+
+body.colorscheme-dark .container,
+body.colorscheme-dark .content,
+body.colorscheme-dark main {
+  color: var(--ctp-text);
+}
+
+/* Header / nav */
+body.colorscheme-dark .navigation,
+body.colorscheme-dark .navigation-list {
+  background-color: var(--ctp-mantle);
+  border-bottom: 1px solid var(--ctp-surface0);
+}
+
+body.colorscheme-dark .navigation a {
+  color: var(--ctp-subtext1);
+}
+
+body.colorscheme-dark .navigation a:hover,
+body.colorscheme-dark .navigation a:active {
+  color: var(--accent-primary);
+}
+
+body.colorscheme-dark .navigation-title {
+  color: var(--ctp-text);
+}
+
+body.colorscheme-dark .navigation-title:hover {
+  color: var(--accent-primary);
+}
+
+/* Avatar ring */
+body.colorscheme-dark .avatar img {
+  border: 3px solid var(--accent-primary);
+  background-color: var(--ctp-surface0);
+}
+
+/* Main name + tagline area */
+body.colorscheme-dark .home h1 {
+  color: var(--ctp-text);
+}
+
+body.colorscheme-dark .home h2 {
+  color: var(--ctp-subtext1);
+}
+
+body.colorscheme-dark .home .id {
+  color: var(--ctp-text);
+}
+
+/* Links */
+body.colorscheme-dark a,
+body.colorscheme-dark a:visited {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.18s ease-in-out;
+}
+
+body.colorscheme-dark a:hover,
+body.colorscheme-dark a:focus {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-secondary);
+  text-underline-offset: 3px;
+}
+
+/* Social icons row on the home page */
+body.colorscheme-dark .social a {
+  color: var(--ctp-subtext0);
+}
+
+body.colorscheme-dark .social a:hover {
+  color: var(--accent-primary);
+}
+
+/* Headings */
+body.colorscheme-dark h1,
+body.colorscheme-dark h2,
+body.colorscheme-dark h3,
+body.colorscheme-dark h4,
+body.colorscheme-dark h5,
+body.colorscheme-dark h6 {
+  color: var(--ctp-text);
+}
+
+body.colorscheme-dark h1::after,
+body.colorscheme-dark h2::after {
+  content: "";
+}
+
+/* Inline code */
+body.colorscheme-dark code {
+  background-color: var(--ctp-mantle);
+  color: var(--accent-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.92em;
+}
+
+/* Code blocks */
+body.colorscheme-dark pre,
+body.colorscheme-dark pre code,
+body.colorscheme-dark .highlight pre {
+  background-color: var(--ctp-mantle);
+  color: var(--ctp-text);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 6px;
+}
+
+/* Blockquotes */
+body.colorscheme-dark blockquote {
+  border-left: 3px solid var(--accent-primary);
+  background-color: var(--ctp-mantle);
+  color: var(--ctp-subtext1);
+  padding: 0.5em 1em;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Horizontal rules */
+body.colorscheme-dark hr {
+  border: 0;
+  border-top: 1px solid var(--ctp-surface0);
+}
+
+/* Tables */
+body.colorscheme-dark table {
+  border-collapse: collapse;
+}
+
+body.colorscheme-dark th {
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-text);
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+body.colorscheme-dark td {
+  border-bottom: 1px solid var(--ctp-surface0);
+}
+
+body.colorscheme-dark tr:hover td {
+  background-color: var(--ctp-mantle);
+}
+
+/* List / post cards (used by /projects/ and /blog/) */
+body.colorscheme-dark .list .posts .post {
+  border-bottom: 1px solid var(--ctp-surface0);
+  padding: 1rem 0;
+  transition: transform 0.18s ease-in-out, border-color 0.18s ease-in-out;
+}
+
+body.colorscheme-dark .list .posts .post:hover {
+  border-bottom-color: var(--accent-primary);
+}
+
+body.colorscheme-dark .list .posts .post-title a {
+  color: var(--ctp-text);
+}
+
+body.colorscheme-dark .list .posts .post-title a:hover {
+  color: var(--accent-primary);
+}
+
+body.colorscheme-dark .list .posts .post-meta,
+body.colorscheme-dark .post-info {
+  color: var(--ctp-overlay1);
+}
+
+body.colorscheme-dark .post-tags li a {
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-subtext1);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.85em;
+}
+
+body.colorscheme-dark .post-tags li a:hover {
+  background-color: var(--accent-primary);
+  color: var(--ctp-base);
+  text-decoration: none;
+}
+
+/* Footer */
+body.colorscheme-dark .footer {
+  background-color: var(--ctp-mantle);
+  color: var(--ctp-overlay1);
+  border-top: 1px solid var(--ctp-surface0);
+}
+
+body.colorscheme-dark .footer a {
+  color: var(--ctp-subtext0);
+}
+
+body.colorscheme-dark .footer a:hover {
+  color: var(--accent-primary);
+}
+
+/* Selection */
+body.colorscheme-dark ::selection {
+  background-color: var(--accent-primary);
+  color: var(--ctp-base);
+}
+
+/* Scrollbar (WebKit) */
+body.colorscheme-dark ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body.colorscheme-dark ::-webkit-scrollbar-track {
+  background: var(--ctp-mantle);
+}
+
+body.colorscheme-dark ::-webkit-scrollbar-thumb {
+  background: var(--ctp-surface1);
+  border-radius: 5px;
+}
+
+body.colorscheme-dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* ─────────────── LIGHT (Catppuccin Latte) ─────────────── */
+
+body.colorscheme-light {
+  background-color: var(--ctp-l-base);
+  color: var(--ctp-l-text);
+}
+
+body.colorscheme-light .navigation,
+body.colorscheme-light .navigation-list {
+  background-color: var(--ctp-l-mantle);
+  border-bottom: 1px solid var(--ctp-l-surface0);
+}
+
+body.colorscheme-light .navigation a {
+  color: var(--ctp-l-subtext1);
+}
+
+body.colorscheme-light .navigation a:hover {
+  color: var(--ctp-l-mauve);
+}
+
+body.colorscheme-light a,
+body.colorscheme-light a:visited {
+  color: var(--ctp-l-mauve);
+}
+
+body.colorscheme-light a:hover {
+  color: var(--ctp-l-peach);
+  text-decoration: underline;
+  text-decoration-color: var(--ctp-l-peach);
+}
+
+body.colorscheme-light code {
+  background-color: var(--ctp-l-mantle);
+  color: var(--ctp-l-peach);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+body.colorscheme-light blockquote {
+  border-left: 3px solid var(--ctp-l-mauve);
+  background-color: var(--ctp-l-mantle);
+  color: var(--ctp-l-subtext1);
+}
+
+body.colorscheme-light .avatar img {
+  border: 3px solid var(--ctp-l-mauve);
+  background-color: var(--ctp-l-surface0);
+}
+
+/* ─────────────── STATUS PILLS (mode-agnostic) ─────────────── */
+
+.status-pill {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+  line-height: 1.6;
+  border: 1px solid transparent;
+}
+
+/* Live: Peach (secondary accent) — warm, "this is shipped & active" */
+.status-pill.live {
+  background-color: rgba(250, 179, 135, 0.14);
+  color: var(--ctp-peach);
+  border-color: rgba(250, 179, 135, 0.55);
+}
+
+/* Coming: Mauve (primary accent) — anticipatory, on-the-roadmap */
+.status-pill.coming {
+  background-color: rgba(203, 166, 247, 0.14);
+  color: var(--ctp-mauve);
+  border-color: rgba(203, 166, 247, 0.55);
+}
+
+/* Archived: muted */
+.status-pill.archived {
+  background-color: rgba(108, 112, 134, 0.18);
+  color: var(--ctp-overlay1);
+  border-color: var(--ctp-overlay0);
+}
+
+/* Light mode pill tweaks — slightly darker text for contrast */
+body.colorscheme-light .status-pill.live {
+  color: var(--ctp-l-peach);
+  border-color: rgba(254, 100, 11, 0.5);
+}
+
+body.colorscheme-light .status-pill.coming {
+  color: var(--ctp-l-mauve);
+  border-color: rgba(136, 57, 239, 0.5);
+}
+
+/* ─────────────── PROFILE / HOME polish ─────────────── */
+
+.avatar img {
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.avatar img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(203, 166, 247, 0.25);
+}
+
+/* Tighten the gap between info lines on home */
+.home .info p {
+  margin: 0.2em 0;
+}
