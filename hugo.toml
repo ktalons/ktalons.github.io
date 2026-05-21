@@ -44,7 +44,7 @@ projects = "/projects/:slug/"
   # Custom CSS injection
   customCSS = ["css/custom.css"]
   customSCSS = []
-  customJS = ["js/hackme.js"]
+  customJS = ["js/hero-fade.js", "js/hackme.js"]
 
   # Footer
   hideFooter = false
