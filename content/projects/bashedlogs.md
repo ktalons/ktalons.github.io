@@ -10,7 +10,7 @@ weight: 8
 
 **Repo:** [github.com/ktalons/bashedlogs](https://github.com/ktalons/bashedlogs)
 
-A fast, intelligent CLI tool for comprehensive cybersecurity log analysis with automatic format detection. Built from real day-to-day patterns I kept rewriting in the FM OT SOC.
+A fast, intelligent CLI tool for comprehensive cybersecurity log analysis with automatic format detection. Built from the log and network analysis patterns I encountered repeatedly in CTF competitions.
 
 Active development. Functional today, more capability and testing planned.
 

@@ -8,7 +8,7 @@ weight: 10
 
 {{< pill "live" >}}Live{{< /pill >}}
 
-A trio of tutorials I wrote for deploying [osTicket](https://osticket.com) as a SOC ticketing backbone, from bare-metal install through analyst workflows. Used in my OT SOC work at the University of Arizona Facilities Management department.
+A trio of reference tutorials I wrote for deploying [osTicket](https://osticket.com) as a SOC ticketing backbone, from bare-metal install through analyst workflows. Documented during my OT SOC engineering work at the University of Arizona Facilities Management department.
 
 ## The three repos
 
@@ -22,4 +22,4 @@ In a small SOC, ticketing is the spine. Bad ticketing → silent SLA misses, los
 
 **Stack:** osTicket · Apache · MySQL · PHP · Linux
 
-Used in production at UArizona Facilities Management, where the resulting instance backed the OT SOC's day-to-day ticket flow alongside GLPI for asset and inventory management.
+Captured as reference material during my OT SOC tenure rather than deployed to production there. The tutorials remain public for anyone standing up an osTicket instance for a small SOC or ICS-adjacent team.
