@@ -29,9 +29,9 @@ projects = "/projects/:slug/"
   description = "Cybersecurity Engineer — OT SOC + Detection Engineering. BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Based in Tucson, AZ. Open to relocation to Phoenix and federal positions."
   keywords = "cybersecurity, SOC, detection engineering, OT security, ICS, MITRE ATT&CK, threat hunting, Tucson, Phoenix, DHS, Kyle Versluis"
   info = [
-    "Cybersecurity Engineer",
-    "OT SOC + Detection Engineering",
-    "University of Arizona — BAS Cyber Operations '26"
+    "Cybersecurity Analyst and Engineer",
+    "BAS Cyber Operations '26",
+    "University of Arizona"
   ]
   avatarURL = "images/avatar.jpeg"
   dateFormat = "January 2, 2006"

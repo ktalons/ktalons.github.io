@@ -2,12 +2,15 @@
  * ktalons.github.io — Catppuccin Mocha override
  * https://catppuccin.com/palette/
  *
- * Primary accent:   Mauve  #cba6f7  (links, headings underline, focused buttons)
- * Secondary accent: Peach  #fab387  (status pills, warm hovers, badges)
+ * Primary accent:   Peach  #fab387  (links, nav focus, table header underline)
+ * Secondary accent: Mauve  #cba6f7  (hover state on links, status-pill.coming)
  *
  * Want to flip primary/secondary? Swap --accent-primary and --accent-secondary
  * in the :root block below — that's it.
  */
+
+/* JetBrains Mono — "hacker" font for home hero (name + tagline) */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 :root {
   /* Catppuccin Mocha (dark palette) — semantic mapping */
@@ -746,3 +749,37 @@ body.colorscheme-light .list .posts .post:hover::before {
     transform: none !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HOME HERO — name + tagline (under avatar)
+   "Hacker"-style monospace, lighter weights for less-bold feel.
+   Falls back gracefully to system mono if Google Fonts is blocked.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.home h1,
+.home h2 {
+  font-family: "JetBrains Mono", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-feature-settings: "ss01", "ss02", "cv02", "cv11"; /* nicer JetBrains glyphs */
+}
+
+.home h1 {
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.home h2 {
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  line-height: 1.85;
+  font-size: 1.05rem;
+  color: var(--ctp-subtext1);
+  margin-top: 0.25rem;
+}
+
+body.colorscheme-light .home h2 {
+  color: var(--ctp-l-subtext1);
+}
+
+/* Subtle Peach accent on the bottom line ("University of Arizona") could be added
+   later via a span override — for now all three info lines share the same style. */
