@@ -1,22 +1,22 @@
 ---
-title: "daPCAPpuller"
+title: "PCAPpuller"
+url: "/projects/pcappuller/"
+aliases:
+  - /projects/dapcappuller/
 date: 2025-07-01
-summary: "High-performance Python utility — tshark wrapper for large-scale packet capture analysis with batch processing."
+summary: "Python utility for high-volume packet collections: low memory, batch merges, parallel metadata scans."
 tags: ["Python", "PCAP", "Network Forensics", "tshark"]
 weight: 7
 ---
 
-{{< pill "live" >}}Live{{< /pill >}}
+{{< pill "indev" >}}In Dev{{< /pill >}}
 
 **Repo:** [github.com/ktalons/PCAPpuller](https://github.com/ktalons/PCAPpuller)
 
-A tshark wrapper for working with large PCAP corpuses. Built when I got tired of hand-running tshark filters across dozens of capture files for OT SOC investigations.
+A small Python utility for high-volume packet collections. Built for speed and scale: low memory, batch merges, parallel metadata scans, and a `--tmpdir` argument so your `/tmp` doesn't blow up.
 
-Features:
+Active development. Functional today, more capability and testing planned.
 
-- Batch processing across PCAP directories
-- Parallelized extraction
-- Common-case filter presets (DNS, TLS SNI, HTTP user-agents, beaconing patterns)
-- CSV / JSON output for downstream analysis
+## Origin
 
-Used in real OT SOC workflows — works on multi-gigabyte capture sets without blowing up memory.
+Built when I got tired of hand-running tshark filters across dozens of capture files for OT SOC investigations. Used in real OT SOC workflows.
