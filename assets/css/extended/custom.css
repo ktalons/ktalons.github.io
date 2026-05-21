@@ -1,0 +1,116 @@
+/* ktalons.github.io — custom theme tweaks */
+
+/* Accent color: Saguaro-cyan — Sonoran green-teal that codes "cybersec" without being literal */
+:root {
+    --primary: rgb(30, 30, 30);
+    --secondary: rgb(108, 108, 108);
+    --tertiary: rgb(214, 214, 214);
+    --content: rgb(45, 45, 45);
+    --code-block-bg: rgb(28, 28, 30);
+    --code-bg: rgb(245, 245, 245);
+    --border: rgb(238, 238, 238);
+    --accent: rgb(0, 168, 132);
+}
+
+.dark {
+    --primary: rgb(241, 241, 241);
+    --secondary: rgb(155, 155, 155);
+    --tertiary: rgb(45, 45, 45);
+    --content: rgb(218, 218, 219);
+    --code-block-bg: rgb(15, 15, 20);
+    --code-bg: rgb(28, 28, 35);
+    --border: rgb(38, 38, 45);
+    --theme: rgb(18, 18, 22);
+    --entry: rgb(28, 28, 35);
+    --accent: rgb(0, 212, 170);
+}
+
+/* Accent applied to links + buttons */
+.post-content a,
+.post-content a code,
+a.button,
+.profile .buttons .button {
+    color: var(--accent);
+}
+
+.post-content a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+}
+
+/* Profile mode tightening */
+.profile_inner .buttons .button {
+    border-color: var(--accent);
+    transition: all 0.18s ease-in-out;
+}
+
+.profile_inner .buttons .button:hover {
+    background-color: var(--accent);
+    color: var(--theme);
+    border-color: var(--accent);
+}
+
+/* Subtle inline-code background that doesn't clash with accent */
+code:not([class*="language-"]) {
+    color: var(--accent);
+    background-color: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.92em;
+}
+
+.dark code:not([class*="language-"]) {
+    background-color: rgba(0, 212, 170, 0.08);
+}
+
+/* Project cards on the projects index — slight border-accent on hover */
+.post-entry {
+    border: 1px solid var(--border);
+    transition: border-color 0.18s ease-in-out, transform 0.18s ease-in-out;
+}
+
+.post-entry:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Monospace stack for tech-feel headers */
+.profile_inner h1 {
+    letter-spacing: -0.5px;
+}
+
+/* Reduced top padding on hero — sits up nicely */
+.profile {
+    min-height: calc(100vh - 200px);
+}
+
+/* "Status" pill for project cards (Live / Coming / Archived) */
+.status-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.status-pill.live {
+    background-color: rgba(0, 212, 170, 0.15);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.status-pill.coming {
+    background-color: rgba(255, 165, 0, 0.12);
+    color: rgb(220, 140, 0);
+    border: 1px solid rgba(220, 140, 0, 0.5);
+}
+
+.status-pill.archived {
+    background-color: rgba(155, 155, 155, 0.12);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
