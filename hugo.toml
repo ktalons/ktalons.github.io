@@ -28,8 +28,8 @@ projects = "/projects/:slug/"
 
 [params]
   author = "Kyle Versluis"
-  description = "Cybersecurity Analyst and Engineer. BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Based in Tucson, AZ — open to SOC, detection engineering, and federal security engineering roles, with Phoenix-area relocation welcomed."
-  keywords = "cybersecurity analyst, security engineer, SOC, detection engineering, threat hunting, MITRE ATT&CK, Tucson, Phoenix, DHS, Kyle Versluis"
+  description = "Cybersecurity Analyst and Engineer. BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Based in Tucson, AZ. Open to SOC, detection engineering, and federal security engineering roles."
+  keywords = "cybersecurity analyst, security engineer, SOC, detection engineering, threat hunting, MITRE ATT&CK, Tucson, DHS, Kyle Versluis"
   info = [
     "Cybersecurity Analyst and Engineer",
     "BAS Cyber Operations '26",

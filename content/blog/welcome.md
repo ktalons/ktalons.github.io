@@ -27,4 +27,4 @@ Each phase ships with a blog post here. Subscribe via [RSS](/blog/index.xml) if 
 
 ## What I'm looking for
 
-I'm targeting **SOC, detection engineering, and security engineering roles** — federal positions especially welcome, and Phoenix-area relocation is on the table. If that lines up with what you're hiring for, please [reach out](/contact/).
+I'm targeting **SOC, detection engineering, and security engineering roles**, with federal positions especially welcome. If that lines up with what you're hiring for, please [reach out](/contact/).
