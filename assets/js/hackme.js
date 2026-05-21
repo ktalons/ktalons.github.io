@@ -11,10 +11,11 @@
   var path = window.location.pathname;
   if (path !== '/' && path !== '/index.html') return;
 
-  var LINK_TEXT = 'H@ck m3 G@me';
+  var LINK_TEXT = '🦉';
   var LINK_HREF = '/h4ck-m3/';
-  var FADE_MS = 600;
-  var VISIBLE_MS = 4000;
+  // Faster cycle: ~2.4s total (was ~5.2s)
+  var FADE_MS = 300;
+  var VISIBLE_MS = 1800;
   var MIN_DIST_VW = 25;
   var MIN_DIST_VH = 25;
   // Safe zone (vw/vh) — keeps the popup off the nav, footer, and screen edges
@@ -28,7 +29,9 @@
     a.className = 'hackme-popup';
     a.href = LINK_HREF;
     a.textContent = LINK_TEXT;
-    a.setAttribute('aria-label', 'H@ck m3 G@me — open the easter egg page');
+    a.setAttribute('aria-label', 'H@ck m3 G@me — easter egg challenge');
+    a.setAttribute('role', 'button');
+    a.setAttribute('title', 'H@ck m3 G@me');
     return a;
   }
 
