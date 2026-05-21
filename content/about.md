@@ -35,4 +35,4 @@ I'm building [**TalonSocLab**](/projects/talonsoclab/) as a public-facing home S
 
 ## Reach me
 
-[GitHub](https://github.com/ktalons) · [LinkedIn](https://linkedin.com/in/ta1ons/) · [Email](mailto:ktalonsec@gmail.com)
+[GitHub](https://github.com/ktalons) · [LinkedIn](https://www.linkedin.com/in/ta1ons/) · [Email](mailto:ktalonsec@gmail.com)

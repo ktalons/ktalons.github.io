@@ -9,7 +9,7 @@ hidemeta: true
 Best ways to reach me:
 
 - **Email** — [ktalonsec@gmail.com](mailto:ktalonsec@gmail.com)
-- **LinkedIn** — [linkedin.com/in/ta1ons](https://linkedin.com/in/ta1ons/)
+- **LinkedIn** — [www.linkedin.com/in/ta1ons](https://www.linkedin.com/in/ta1ons/)
 - **GitHub** — [github.com/ktalons](https://github.com/ktalons)
 
 I'm based in **Tucson, AZ** and **open to relocation to Phoenix** for the right role. Currently looking for **SOC, detection engineering, and security engineering positions** — federal roles especially welcome.

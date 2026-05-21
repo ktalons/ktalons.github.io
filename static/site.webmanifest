@@ -1,0 +1,18 @@
+{
+  "name": "Kyle Versluis",
+  "short_name": "ktalons",
+  "description": "Cybersecurity Analyst and Engineer — portfolio and project log.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1e1e2e",
+  "theme_color": "#fab387",
+  "icons": [
+    {
+      "src": "/images/avatar.jpeg",
+      "sizes": "400x400",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

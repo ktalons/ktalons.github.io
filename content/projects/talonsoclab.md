@@ -12,7 +12,7 @@ weight: 1
 
 {{< pill "coming" >}}Coming · Phase A — June 9{{< /pill >}}
 
-**Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) *(under construction)*
+**Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) *(scaffold live — Phase A content lands by June 9)*
 
 ## What is it
 
@@ -57,5 +57,5 @@ I have strong CTF and OT SOC experience but no public home-lab artifact a hiring
 ## Follow along
 
 - Blog posts here as each phase ships
-- LinkedIn: [linkedin.com/in/ta1ons](https://linkedin.com/in/ta1ons/)
-- GitHub: [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) (live by June 9)
+- LinkedIn: [www.linkedin.com/in/ta1ons](https://www.linkedin.com/in/ta1ons/)
+- GitHub: [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) (live; Phase A content lands by June 9)
