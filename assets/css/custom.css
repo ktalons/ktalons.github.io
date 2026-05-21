@@ -394,6 +394,18 @@ body.colorscheme-light .avatar img {
   border-color: var(--ctp-overlay0);
 }
 
+/* In Dev: Sky — shipped but actively iterating (functional today, more coming) */
+.status-pill.indev {
+  background-color: rgba(137, 220, 235, 0.14);
+  color: var(--ctp-sky);
+  border-color: rgba(137, 220, 235, 0.55);
+}
+
+.status-pill.indev:hover {
+  box-shadow: 0 0 0 1px var(--ctp-sky), 0 4px 16px rgba(137, 220, 235, 0.30);
+  transform: translateY(-1px);
+}
+
 /* Light mode pill tweaks — slightly darker text for contrast */
 body.colorscheme-light .status-pill.live {
   color: var(--ctp-l-peach);
@@ -403,6 +415,12 @@ body.colorscheme-light .status-pill.live {
 body.colorscheme-light .status-pill.coming {
   color: var(--ctp-l-mauve);
   border-color: rgba(136, 57, 239, 0.5);
+}
+
+body.colorscheme-light .status-pill.indev {
+  /* Catppuccin Latte Sky */
+  color: #04a5e5;
+  border-color: rgba(4, 165, 229, 0.5);
 }
 
 /* ─────────────── PROFILE / HOME polish ─────────────── */
