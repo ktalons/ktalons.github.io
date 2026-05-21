@@ -49,9 +49,20 @@
   --ctp-l-peach:    #fe640b;
   --ctp-l-overlay0: #9ca0b0;
 
-  /* Semantic accent slots — flip these two lines to swap accents */
-  --accent-primary:   var(--ctp-mauve);
-  --accent-secondary: var(--ctp-peach);
+  /* Semantic accent slots — flip these two lines to swap accents.
+     Current: Peach primary (warm, friendly), Mauve secondary (cool, contrast). */
+  --accent-primary:   var(--ctp-peach);
+  --accent-secondary: var(--ctp-mauve);
+
+  /* Light-mode accent equivalents */
+  --l-accent-primary:   var(--ctp-l-peach);
+  --l-accent-secondary: var(--ctp-l-mauve);
+
+  /* Motion + easing tokens (consumed by polish layers) */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 140ms;
+  --t-med:  220ms;
+  --t-slow: 320ms;
 }
 
 /* ─────────────── DARK (Catppuccin Mocha) ─────────────── */
@@ -348,14 +359,15 @@ body.colorscheme-light .avatar img {
   border: 1px solid transparent;
 }
 
-/* Live: Peach (secondary accent) — warm, "this is shipped & active" */
+/* Live: Peach — warm, "this is shipped & active" (also primary accent — pill
+   shape + uppercase letter-spacing keeps it visually distinct from inline links) */
 .status-pill.live {
   background-color: rgba(250, 179, 135, 0.14);
   color: var(--ctp-peach);
   border-color: rgba(250, 179, 135, 0.55);
 }
 
-/* Coming: Mauve (primary accent) — anticipatory, on-the-roadmap */
+/* Coming: Mauve — cool, anticipatory, on-the-roadmap (secondary accent) */
 .status-pill.coming {
   background-color: rgba(203, 166, 247, 0.14);
   color: var(--ctp-mauve);
@@ -388,10 +400,274 @@ body.colorscheme-light .status-pill.coming {
 
 .avatar img:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(203, 166, 247, 0.25);
+  /* Now references primary accent (Peach) instead of the hardcoded mauve */
+  box-shadow: 0 8px 28px rgba(250, 179, 135, 0.28);
 }
 
 /* Tighten the gap between info lines on home */
 .home .info p {
   margin: 0.2em 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   INTERACTION POLISH
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─────────────── (a) Animated underline on nav + content links ─────────────── */
+
+/* Nav links: underline grows from left */
+body.colorscheme-dark .navigation a,
+body.colorscheme-light .navigation a {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+body.colorscheme-dark .navigation a:not(.navigation-title)::after,
+body.colorscheme-light .navigation a:not(.navigation-title)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--t-med) var(--ease-out);
+}
+
+body.colorscheme-light .navigation a:not(.navigation-title)::after {
+  background: var(--l-accent-primary);
+}
+
+body.colorscheme-dark .navigation a:not(.navigation-title):hover::after,
+body.colorscheme-dark .navigation a:not(.navigation-title):focus-visible::after,
+body.colorscheme-light .navigation a:not(.navigation-title):hover::after,
+body.colorscheme-light .navigation a:not(.navigation-title):focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Hover color uses primary accent (instead of pre-existing global hover color) */
+body.colorscheme-dark .navigation a:hover,
+body.colorscheme-dark .navigation a:focus-visible {
+  color: var(--accent-primary);
+  text-decoration: none;  /* underline already drawn by ::after */
+}
+
+body.colorscheme-light .navigation a:hover,
+body.colorscheme-light .navigation a:focus-visible {
+  color: var(--l-accent-primary);
+  text-decoration: none;
+}
+
+/* Inline content links (post / project body / home body) get the same animated underline.
+   Excludes status pills, social icons, and footer credits. */
+body.colorscheme-dark .content a:not(.status-pill):not(.no-underline),
+body.colorscheme-light .content a:not(.status-pill):not(.no-underline) {
+  position: relative;
+  display: inline;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  text-decoration: none;
+  padding-bottom: 1px;
+  transition: background-size var(--t-med) var(--ease-out), color var(--t-fast) var(--ease-out);
+}
+
+body.colorscheme-dark .content a:not(.status-pill):not(.no-underline):hover,
+body.colorscheme-dark .content a:not(.status-pill):not(.no-underline):focus-visible,
+body.colorscheme-light .content a:not(.status-pill):not(.no-underline):hover,
+body.colorscheme-light .content a:not(.status-pill):not(.no-underline):focus-visible {
+  background-size: 100% 1.5px;
+}
+
+/* List/post titles: underline grows from left (anchor links to posts) */
+body.colorscheme-dark .list .posts .post-title a {
+  position: relative;
+  background-image: linear-gradient(var(--accent-primary), var(--accent-primary));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: background-size var(--t-med) var(--ease-out);
+}
+
+body.colorscheme-dark .list .posts .post-title a:hover,
+body.colorscheme-dark .list .posts .post-title a:focus-visible {
+  background-size: 100% 2px;
+  color: var(--accent-primary);
+}
+
+/* ─────────────── (b) Accent glow on focus + hover (a11y-friendly) ─────────────── */
+
+/* Universal keyboard focus ring — visible, soft, on-brand */
+*:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+body.colorscheme-light *:focus-visible {
+  outline-color: var(--l-accent-primary);
+}
+
+/* Subtle glow on hovered links (text-shadow at low alpha — avoids motion sickness) */
+body.colorscheme-dark .content a:not(.status-pill):hover {
+  text-shadow: 0 0 12px rgba(250, 179, 135, 0.35);
+}
+
+/* Status pill: glow on hover */
+.status-pill {
+  transition: box-shadow var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out);
+}
+
+.status-pill.live:hover {
+  box-shadow: 0 0 0 1px var(--ctp-peach), 0 4px 16px rgba(250, 179, 135, 0.30);
+  transform: translateY(-1px);
+}
+
+.status-pill.coming:hover {
+  box-shadow: 0 0 0 1px var(--ctp-mauve), 0 4px 16px rgba(203, 166, 247, 0.30);
+  transform: translateY(-1px);
+}
+
+/* Tag chip glow */
+body.colorscheme-dark .post-tags li a {
+  transition: background-color var(--t-fast) var(--ease-out),
+              color var(--t-fast) var(--ease-out),
+              box-shadow var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out);
+}
+
+body.colorscheme-dark .post-tags li a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(250, 179, 135, 0.22);
+}
+
+/* ─────────────── (c) Page transitions + entrance fade ─────────────── */
+
+/* Modern browsers: native cross-fade between same-origin navigations.
+   Browsers that don't support this just see the CSS fade-in below. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 240ms;
+  animation-timing-function: var(--ease-out);
+}
+
+/* CSS fallback: subtle entrance animation on initial page load */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main,
+.content,
+.list,
+.home {
+  animation: pageFadeIn 260ms var(--ease-out) both;
+}
+
+/* Honor prefers-reduced-motion — kill all entrance animations + view transitions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  @view-transition {
+    navigation: none;
+  }
+}
+
+/* Smooth scroll for in-page anchor links (#id) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─────────────── (d) Richer project card hover ─────────────── */
+
+/* Refine the existing post-card with: shift + slight scale + animated border + shadow */
+body.colorscheme-dark .list .posts .post {
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 0.75rem 0;
+  background-color: rgba(30, 30, 46, 0.4);
+  transform-origin: center;
+  transition: transform var(--t-med) var(--ease-out),
+              border-color var(--t-med) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out),
+              background-color var(--t-med) var(--ease-out);
+}
+
+body.colorscheme-dark .list .posts .post:hover {
+  transform: translateY(-3px) scale(1.005);
+  border-color: var(--accent-primary);
+  background-color: rgba(49, 50, 68, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(250, 179, 135, 0.10),
+    0 12px 30px -8px rgba(250, 179, 135, 0.22),
+    0 4px 12px -6px rgba(0, 0, 0, 0.45);
+}
+
+body.colorscheme-light .list .posts .post {
+  border: 1px solid var(--ctp-l-surface0);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 0.75rem 0;
+  background-color: rgba(255, 255, 255, 0.55);
+  transition: transform var(--t-med) var(--ease-out),
+              border-color var(--t-med) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out);
+}
+
+body.colorscheme-light .list .posts .post:hover {
+  transform: translateY(-3px) scale(1.005);
+  border-color: var(--l-accent-primary);
+  box-shadow:
+    0 0 0 1px rgba(254, 100, 11, 0.12),
+    0 12px 30px -8px rgba(254, 100, 11, 0.18),
+    0 4px 12px -6px rgba(0, 0, 0, 0.10);
+}
+
+/* Subtle accent bar on the left edge of the card on hover — directional cue */
+body.colorscheme-dark .list .posts .post,
+body.colorscheme-light .list .posts .post {
+  position: relative;
+  overflow: hidden;
+}
+
+body.colorscheme-dark .list .posts .post::before,
+body.colorscheme-light .list .posts .post::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform var(--t-med) var(--ease-out);
+}
+
+body.colorscheme-dark .list .posts .post:hover::before,
+body.colorscheme-light .list .posts .post:hover::before {
+  transform: scaleY(1);
 }

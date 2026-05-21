@@ -104,11 +104,6 @@ projects = "/projects/:slug/"
   url = "/blog/"
 
 [[menu.main]]
-  name = "Resume"
-  weight = 5
-  url = "/resume/"
-
-[[menu.main]]
   name = "Contact"
-  weight = 6
+  weight = 5
   url = "/contact/"
