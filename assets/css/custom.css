@@ -871,3 +871,269 @@ body.colorscheme-light .centered .about h2:hover {
     transform: none !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   H@ck m3 G@me — Phishing or Legit (assets/js/phishing-game.js)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.phishing-game {
+  margin: 1.5rem 0 2rem;
+  min-height: 200px;
+}
+
+.pg-loading {
+  color: var(--ctp-overlay1);
+  font-style: italic;
+}
+
+.pg-card {
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+body.colorscheme-light .pg-card {
+  background-color: var(--ctp-l-mantle);
+  border-color: var(--ctp-l-surface0);
+}
+
+.pg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--ctp-subtext1);
+  border-bottom: 1px solid var(--ctp-surface0);
+  padding-bottom: 0.75rem;
+}
+
+body.colorscheme-light .pg-header {
+  color: var(--ctp-l-subtext1);
+  border-bottom-color: var(--ctp-l-surface0);
+}
+
+.pg-email {
+  background-color: var(--ctp-base);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+body.colorscheme-light .pg-email {
+  background-color: var(--ctp-l-base);
+  border-color: var(--ctp-l-surface0);
+}
+
+.pg-row {
+  padding: 0.15rem 0;
+  border-bottom: 1px dashed var(--ctp-surface0);
+}
+
+.pg-row:nth-child(2) {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.pg-label {
+  color: var(--ctp-overlay1);
+  display: inline-block;
+  min-width: 4.5rem;
+}
+
+.pg-value {
+  color: var(--ctp-text);
+}
+
+body.colorscheme-light .pg-value {
+  color: var(--ctp-l-text);
+}
+
+.pg-body {
+  white-space: pre-wrap;
+  margin: 0.75rem 0;
+  color: var(--ctp-text);
+}
+
+body.colorscheme-light .pg-body {
+  color: var(--ctp-l-text);
+}
+
+.pg-link-row {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(137, 220, 235, 0.06);
+  border-left: 2px solid var(--ctp-sky);
+  border-radius: 4px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pg-link-text {
+  color: var(--ctp-sky);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pg-link-arrow {
+  color: var(--ctp-overlay1);
+}
+
+.pg-link-url {
+  color: var(--ctp-subtext0);
+  font-size: 0.92em;
+  word-break: break-all;
+}
+
+.pg-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.pg-btn {
+  appearance: none;
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-text);
+  border: 1.5px solid var(--ctp-surface1);
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: border-color var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out),
+              box-shadow var(--t-fast) var(--ease-out),
+              background-color var(--t-fast) var(--ease-out);
+}
+
+.pg-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pg-btn:not(:disabled):hover,
+.pg-btn:not(:disabled):focus-visible {
+  transform: translateY(-1px);
+}
+
+.pg-btn-phishing:not(:disabled):hover,
+.pg-btn-phishing:not(:disabled):focus-visible {
+  border-color: var(--ctp-mauve);
+  box-shadow: 0 4px 14px rgba(203, 166, 247, 0.25);
+}
+
+.pg-btn-legit:not(:disabled):hover,
+.pg-btn-legit:not(:disabled):focus-visible {
+  border-color: var(--ctp-sky);
+  box-shadow: 0 4px 14px rgba(137, 220, 235, 0.25);
+}
+
+.pg-btn-next,
+.pg-btn-replay {
+  align-self: flex-end;
+  border-color: var(--accent-primary);
+  background-color: rgba(250, 179, 135, 0.08);
+}
+
+.pg-btn-next:hover,
+.pg-btn-replay:hover {
+  box-shadow: 0 4px 14px rgba(250, 179, 135, 0.30);
+  border-color: var(--accent-primary);
+}
+
+.pg-feedback {
+  margin-top: 0.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border-left: 3px solid;
+}
+
+.pg-feedback.correct {
+  background-color: rgba(166, 227, 161, 0.08);
+  border-left-color: var(--ctp-green);
+}
+
+.pg-feedback.incorrect {
+  background-color: rgba(235, 160, 172, 0.08);
+  border-left-color: var(--ctp-maroon);
+}
+
+.pg-feedback-heading {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pg-feedback.correct .pg-feedback-icon { color: var(--ctp-green); }
+.pg-feedback.incorrect .pg-feedback-icon { color: var(--ctp-maroon); }
+
+.pg-tells {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.pg-tells li {
+  margin: 0.2rem 0;
+  color: var(--ctp-subtext1);
+  line-height: 1.5;
+}
+
+body.colorscheme-light .pg-tells li {
+  color: var(--ctp-l-subtext1);
+}
+
+/* Final results card */
+.pg-results {
+  text-align: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+}
+
+.pg-results-score {
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+  line-height: 1;
+}
+
+.pg-results-pct {
+  font-size: 1.1rem;
+  color: var(--ctp-overlay1);
+  margin-top: 0.25rem;
+}
+
+.pg-results-message {
+  margin: 1rem 0 1.5rem;
+  color: var(--ctp-text);
+  max-width: 32rem;
+}
+
+body.colorscheme-light .pg-results-message {
+  color: var(--ctp-l-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-btn,
+  .pg-btn:hover,
+  .pg-btn:focus-visible {
+    transition: none;
+    transform: none;
+  }
+}

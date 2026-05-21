@@ -1,7 +1,7 @@
 ---
 title: "H@ck m3 G@me"
 url: "/h4ck-m3/"
-summary: "An interactive cybersec-basics challenge — coming soon."
+summary: "Phishing or Legit, an interactive cybersec-basics mini-challenge."
 noindex: true
 sitemap:
   disable: true
@@ -14,8 +14,10 @@ hidemeta: true
 
 > You found it. 🦉
 
-A small interactive challenge is being prepped here — a fun way to introduce a few cybersecurity basics. For now this is just the entry point.
+## Phishing or Legit?
 
-If you got here from the roaming popup on the homepage — **nice catch**. Come back soon.
+Six emails. For each one, decide whether it's a phishing attempt or a legitimate message, then see the tells either way. No backend, no score uploaded anywhere, just a quick eye-training round.
+
+{{< phishing-game >}}
 
 [← Back home](/)
