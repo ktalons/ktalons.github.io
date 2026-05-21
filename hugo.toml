@@ -33,7 +33,7 @@ projects = "/projects/:slug/"
     "OT SOC + Detection Engineering",
     "University of Arizona — BAS Cyber Operations '26"
   ]
-  avatarURL = "images/avatar.svg"
+  avatarURL = "images/avatar.jpeg"
   dateFormat = "January 2, 2006"
   since = 2026
 
@@ -94,16 +94,11 @@ projects = "/projects/:slug/"
   url = "/projects/"
 
 [[menu.main]]
-  name = "Achievements"
-  weight = 3
-  url = "/achievements/"
-
-[[menu.main]]
   name = "Blog"
-  weight = 4
+  weight = 3
   url = "/blog/"
 
 [[menu.main]]
   name = "Contact"
-  weight = 5
+  weight = 4
   url = "/contact/"
