@@ -1,0 +1,10 @@
+{{/*
+  Project-level head extensions for ktalons.github.io.
+  Overrides themes/hugo-coder/layouts/_partials/head/extensions.html.
+*/}}
+
+{{/* Conditional robots noindex — set `noindex: true` in any page's frontmatter
+     to keep it out of search indexes (used for the /h4ck-m3/ easter egg). */}}
+{{ if .Params.noindex }}
+<meta name="robots" content="noindex, nofollow">
+{{ end }}
