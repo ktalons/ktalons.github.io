@@ -14,10 +14,10 @@ hidemeta: true
 
 > You found it. 🦉
 
-## Phishing or Legit?
+A small collection of cybersec-basics mini-challenges. Pick one, play it, earn the difficulty tier badge if you score 80% or higher. No backend, no leaderboard, everything stays in your browser.
 
-Six emails. For each one, decide whether it's a phishing attempt or a legitimate message, then see the tells either way. No backend, no score uploaded anywhere, just a quick eye-training round.
+**Tiers, easy to hard:** Rookie · I'm the family's IT person · Cyber Ninja.
 
-{{< phishing-game >}}
+{{< hackme-menu >}}
 
 [← Back home](/)

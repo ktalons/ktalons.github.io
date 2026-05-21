@@ -1,14 +1,15 @@
 /*
  * phishing-game.js — H@ck m3 G@me, round 1: Phishing or Legit?
- * Scoped to /h4ck-m3/ only. Six emails (3 phishing, 3 legit). Score-at-end.
- * Pure client-side, no backend, no persistence. CSP-safe (no inline scripts,
- * no javascript: URIs, all DOM via createElement + textContent or escapeHtml).
+ *
+ * Registers as window.HackMeGame.phishing with a start(host, onComplete)
+ * function the menu controller calls. No path guard, no auto-boot — the
+ * menu in hackme-menu.js is responsible for launching this game.
+ *
+ * Six emails (3 phishing, 3 legit). Score reported back via onComplete(pct).
+ * Pure client-side. CSP-safe (no inline scripts, no javascript: URIs).
  */
 (function () {
   'use strict';
-
-  var path = window.location.pathname;
-  if (path !== '/h4ck-m3/' && path !== '/h4ck-m3/index.html') return;
 
   var emails = [
     {
@@ -97,10 +98,8 @@
     }
   ];
 
-  var current = 0;
-  var score = 0;
+  var state = null;
 
-  function $(sel) { return document.querySelector(sel); }
   function escapeHtml(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;')
@@ -110,25 +109,28 @@
       .replace(/'/g, '&#039;');
   }
 
-  function clear(el) {
-    while (el.firstChild) el.removeChild(el.firstChild);
+  function clear(el) { while (el.firstChild) el.removeChild(el.firstChild); }
+
+  function start(host, onComplete) {
+    state = { host: host, onComplete: onComplete, current: 0, score: 0 };
+    renderEmail();
   }
 
+  function cleanup() { state = null; }
+
   function renderEmail() {
-    var container = $('#phishing-game');
-    if (!container) return;
-    clear(container);
+    if (!state) return;
+    clear(state.host);
 
-    var email = emails[current];
-
+    var email = emails[state.current];
     var card = document.createElement('div');
     card.className = 'pg-card';
 
     var header = document.createElement('div');
     header.className = 'pg-header';
     header.innerHTML =
-      '<div class="pg-progress">Email <strong>' + (current + 1) + '</strong> of ' + emails.length + '</div>' +
-      '<div class="pg-score">Score: <strong>' + score + '</strong></div>';
+      '<div class="pg-progress">Email <strong>' + (state.current + 1) + '</strong> of ' + emails.length + '</div>' +
+      '<div class="pg-score">Score: <strong>' + state.score + '</strong></div>';
     card.appendChild(header);
 
     var emailEl = document.createElement('div');
@@ -169,18 +171,19 @@
     buttons.appendChild(legitBtn);
     card.appendChild(buttons);
 
-    container.appendChild(card);
+    state.host.appendChild(card);
   }
 
   function answer(playerSaysPhishing) {
-    var email = emails[current];
+    if (!state) return;
+    var email = emails[state.current];
     var correct = playerSaysPhishing === email.isPhishing;
-    if (correct) score++;
+    if (correct) state.score++;
     showFeedback(correct, email);
   }
 
   function showFeedback(correct, email) {
-    var card = $('#phishing-game .pg-card');
+    var card = state.host.querySelector('.pg-card');
     if (!card) return;
 
     var btns = card.querySelectorAll('.pg-btn');
@@ -219,12 +222,12 @@
     var next = document.createElement('button');
     next.type = 'button';
     next.className = 'pg-btn pg-btn-next';
-    next.textContent = current < emails.length - 1 ? 'Next →' : 'See results';
+    next.textContent = state.current < emails.length - 1 ? 'Next →' : 'See results';
     next.addEventListener('click', function () {
-      current++;
-      if (current < emails.length) {
+      state.current++;
+      if (state.current < emails.length) {
         renderEmail();
-        $('#phishing-game').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        state.host.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
         renderResults();
       }
@@ -235,11 +238,10 @@
   }
 
   function renderResults() {
-    var container = $('#phishing-game');
-    if (!container) return;
-    clear(container);
+    if (!state) return;
+    clear(state.host);
 
-    var pct = Math.round((score / emails.length) * 100);
+    var pct = Math.round((state.score / emails.length) * 100);
     var message;
     if (pct === 100) message = 'Perfect score. You\'ve got the eye.';
     else if (pct >= 80) message = 'Strong. You\'d catch most of these in the wild.';
@@ -249,7 +251,7 @@
     var card = document.createElement('div');
     card.className = 'pg-card pg-results';
     card.innerHTML =
-      '<div class="pg-results-score"><strong>' + score + '</strong> / ' + emails.length + '</div>' +
+      '<div class="pg-results-score"><strong>' + state.score + '</strong> / ' + emails.length + '</div>' +
       '<div class="pg-results-pct">' + pct + '%</div>' +
       '<div class="pg-results-message">' + escapeHtml(message) + '</div>';
 
@@ -258,24 +260,25 @@
     replay.className = 'pg-btn pg-btn-replay';
     replay.textContent = 'Try again';
     replay.addEventListener('click', function () {
-      current = 0;
-      score = 0;
+      state.current = 0;
+      state.score = 0;
       renderEmail();
-      $('#phishing-game').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      state.host.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     card.appendChild(replay);
 
-    container.appendChild(card);
+    state.host.appendChild(card);
+
+    // Report final score to the menu controller for badge awarding
+    if (typeof state.onComplete === 'function') {
+      state.onComplete(pct);
+    }
   }
 
-  function init() {
-    if (!$('#phishing-game')) return;
-    renderEmail();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  // Register on the global so the menu controller can launch us
+  window.HackMeGame = window.HackMeGame || {};
+  window.HackMeGame.phishing = {
+    start: start,
+    cleanup: cleanup
+  };
 })();

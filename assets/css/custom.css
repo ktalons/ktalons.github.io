@@ -1137,3 +1137,284 @@ body.colorscheme-light .pg-results-message {
     transform: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   H@ck m3 G@me — menu + tier badges (assets/js/hackme-menu.js)
+   ═══════════════════════════════════════════════════════════════════ */
+
+#hackme-menu {
+  margin: 1.5rem 0 2rem;
+}
+
+/* Hall of Honor strip */
+.hm-honor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+body.colorscheme-light .hm-honor {
+  background-color: var(--ctp-l-mantle);
+  border-color: var(--ctp-l-surface0);
+}
+
+.hm-honor-label {
+  color: var(--ctp-overlay1);
+  margin-right: 0.25rem;
+}
+
+/* Tier badges (also used inside cards + in-game stripe) */
+.hm-tier {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.74em;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.hm-tier.tier-rookie {
+  color: var(--ctp-sky);
+  border-color: rgba(137, 220, 235, 0.55);
+  background-color: rgba(137, 220, 235, 0.10);
+}
+
+.hm-tier.tier-itperson {
+  color: var(--ctp-mauve);
+  border-color: rgba(203, 166, 247, 0.55);
+  background-color: rgba(203, 166, 247, 0.10);
+}
+
+.hm-tier.tier-ninja {
+  color: var(--ctp-peach);
+  border-color: rgba(250, 179, 135, 0.55);
+  background-color: rgba(250, 179, 135, 0.10);
+}
+
+.hm-tier.locked {
+  color: var(--ctp-overlay1);
+  border-color: var(--ctp-overlay0);
+  background-color: transparent;
+  opacity: 0.55;
+}
+
+.hm-tier.earned {
+  /* Earned tiers get a subtle glow */
+  box-shadow: 0 0 12px -2px currentColor;
+}
+
+/* Menu card grid */
+.hm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.hm-card {
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 10px;
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  transition: border-color var(--t-med) var(--ease-out),
+              transform var(--t-med) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out);
+}
+
+body.colorscheme-light .hm-card {
+  background-color: var(--ctp-l-mantle);
+  border-color: var(--ctp-l-surface0);
+}
+
+.hm-card:not(.hm-card-coming):hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 24px -10px rgba(250, 179, 135, 0.25);
+}
+
+.hm-card-coming {
+  opacity: 0.65;
+}
+
+.hm-card-earned::before {
+  content: "★";
+  position: absolute;
+  top: 0.6rem;
+  right: 0.85rem;
+  color: var(--accent-primary);
+  font-size: 1.1rem;
+  text-shadow: 0 0 12px rgba(250, 179, 135, 0.5);
+}
+
+.hm-card-tier {
+  align-self: flex-start;
+}
+
+.hm-card-title {
+  margin: 0;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 1.15rem;
+  color: var(--ctp-text);
+}
+
+body.colorscheme-light .hm-card-title {
+  color: var(--ctp-l-text);
+}
+
+.hm-card-blurb {
+  margin: 0;
+  color: var(--ctp-subtext1);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+body.colorscheme-light .hm-card-blurb {
+  color: var(--ctp-l-subtext1);
+}
+
+.hm-card-btn {
+  appearance: none;
+  background-color: rgba(250, 179, 135, 0.08);
+  color: var(--ctp-text);
+  border: 1.5px solid var(--accent-primary);
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  transition: transform var(--t-fast) var(--ease-out),
+              box-shadow var(--t-fast) var(--ease-out);
+}
+
+.hm-card-btn:hover,
+.hm-card-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(250, 179, 135, 0.30);
+}
+
+body.colorscheme-light .hm-card-btn {
+  color: var(--ctp-l-text);
+}
+
+.hm-card-coming-pill {
+  align-self: flex-start;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--ctp-overlay1);
+  background-color: var(--ctp-surface0);
+  border: 1px dashed var(--ctp-overlay0);
+  margin-top: 0.25rem;
+}
+
+body.colorscheme-light .hm-card-coming-pill {
+  background-color: var(--ctp-l-surface0);
+}
+
+/* In-game stripe (above the active game host) */
+.hm-game-stripe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 8px;
+}
+
+body.colorscheme-light .hm-game-stripe {
+  background-color: var(--ctp-l-mantle);
+  border-color: var(--ctp-l-surface0);
+}
+
+.hm-game-stripe-title {
+  flex-grow: 1;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-weight: 500;
+  color: var(--ctp-text);
+}
+
+body.colorscheme-light .hm-game-stripe-title {
+  color: var(--ctp-l-text);
+}
+
+.hm-back-btn {
+  appearance: none;
+  background-color: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color var(--t-fast) var(--ease-out);
+}
+
+.hm-back-btn:hover,
+.hm-back-btn:focus-visible {
+  background-color: rgba(250, 179, 135, 0.12);
+}
+
+/* Game host (where individual games render) */
+.hm-game-host {
+  /* games provide their own card chrome; this just holds them */
+}
+
+/* Award notice (appended after a game completes) */
+.hm-award {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  background-color: var(--ctp-surface0);
+  border-left: 3px solid var(--accent-primary);
+  color: var(--ctp-text);
+  font-size: 0.95rem;
+}
+
+body.colorscheme-light .hm-award {
+  background-color: var(--ctp-l-surface0);
+  color: var(--ctp-l-text);
+}
+
+.hm-award-new {
+  border-left-color: var(--ctp-peach);
+  background-color: rgba(250, 179, 135, 0.12);
+  animation: hmAwardPulse 1.6s var(--ease-out) 2;
+}
+
+@keyframes hmAwardPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(250, 179, 135, 0); }
+  50% { box-shadow: 0 0 24px -4px rgba(250, 179, 135, 0.45); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-card,
+  .hm-card:hover,
+  .hm-card-btn,
+  .hm-card-btn:hover {
+    transition: none;
+    transform: none;
+  }
+  .hm-award-new {
+    animation: none;
+  }
+}
