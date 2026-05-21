@@ -10,7 +10,7 @@ cover:
 weight: 1
 ---
 
-<span class="status-pill coming">Coming · Phase A — June 9</span>
+{{< pill "coming" >}}Coming · Phase A — June 9{{< /pill >}}
 
 **Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) *(under construction)*
 

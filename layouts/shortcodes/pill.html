@@ -1,0 +1,13 @@
+{{- /*
+  pill — render a status pill (Live / Coming / Archived).
+
+  Usage:
+    {{< pill "live" >}}Live{{< /pill >}}
+    {{< pill "coming" >}}Phase A — June 9{{< /pill >}}
+    {{< pill "archived" >}}Archived{{< /pill >}}
+
+  Positional arg 0: pill class ('live', 'coming', 'archived'). Defaults to 'live'.
+  Inner content: the label text (rendered as Hugo markdown, then trimmed).
+*/ -}}
+{{- $kind := .Get 0 | default "live" -}}
+<span class="status-pill {{ $kind }}">{{ trim .Inner " \n" | safeHTML }}</span>

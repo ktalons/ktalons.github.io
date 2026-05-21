@@ -6,7 +6,7 @@ tags: ["Python", "Discord", "CTF", "Automation"]
 weight: 6
 ---
 
-<span class="status-pill live">Live</span>
+{{< pill "live" >}}Live{{< /pill >}}
 
 **Repo:** [github.com/ktalons/cybersec-discord-bot](https://github.com/ktalons/cybersec-discord-bot)
 

@@ -6,7 +6,7 @@ tags: ["Capstone", "Docker", "AI", "Security Analysis", "CASA"]
 weight: 2
 ---
 
-<span class="status-pill live">Live</span>
+{{< pill "live" >}}Live{{< /pill >}}
 
 The senior capstone project for the **Arizona Cybersecurity Clinic Engineering Team** at the University of Arizona. A Docker-based multi-agent cybersecurity analysis system that automates security log triage and produces analyst-friendly reports aligned to multiple frameworks (MITRE ATT&CK, CAR, NIST CSF, CIS Controls).
 

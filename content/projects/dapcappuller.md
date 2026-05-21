@@ -6,7 +6,7 @@ tags: ["Python", "PCAP", "Network Forensics", "tshark"]
 weight: 7
 ---
 
-<span class="status-pill live">Live</span>
+{{< pill "live" >}}Live{{< /pill >}}
 
 **Repo:** [github.com/ktalons/daPCAPpuller](https://github.com/ktalons/daPCAPpuller)
 

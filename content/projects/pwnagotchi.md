@@ -6,7 +6,7 @@ tags: ["WiFi Security", "Raspberry Pi", "Wireless", "Hardware"]
 weight: 5
 ---
 
-<span class="status-pill live">Live</span>
+{{< pill "live" >}}Live{{< /pill >}}
 
 A purpose-built wireless security research rig:
 

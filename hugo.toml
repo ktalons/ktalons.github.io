@@ -22,12 +22,14 @@ projects = "/projects/:slug/"
   guessSyntax = true
   tabWidth = 4
 [markup.goldmark.renderer]
-  unsafe = true
+  # Disabled — raw HTML in markdown is rendered via shortcodes (see layouts/shortcodes/).
+  # If you ever need to embed raw HTML, write a shortcode instead of flipping this.
+  unsafe = false
 
 [params]
   author = "Kyle Versluis"
-  description = "Cybersecurity Engineer — OT SOC + Detection Engineering. BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Based in Tucson, AZ. Open to relocation to Phoenix and federal positions."
-  keywords = "cybersecurity, SOC, detection engineering, OT security, ICS, MITRE ATT&CK, threat hunting, Tucson, Phoenix, DHS, Kyle Versluis"
+  description = "Cybersecurity Analyst and Engineer. BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Based in Tucson, AZ — open to SOC, detection engineering, and federal security engineering roles, with Phoenix-area relocation welcomed."
+  keywords = "cybersecurity analyst, security engineer, SOC, detection engineering, threat hunting, MITRE ATT&CK, Tucson, Phoenix, DHS, Kyle Versluis"
   info = [
     "Cybersecurity Analyst and Engineer",
     "BAS Cyber Operations '26",

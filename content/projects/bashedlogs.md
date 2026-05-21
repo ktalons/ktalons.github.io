@@ -6,7 +6,7 @@ tags: ["Bash", "Log Analysis", "SOC Tooling"]
 weight: 8
 ---
 
-<span class="status-pill live">Live</span>
+{{< pill "live" >}}Live{{< /pill >}}
 
 A collection of shell utilities for SOC log triage and analysis — built from real day-to-day patterns I kept rewriting in the FM OT SOC.
 

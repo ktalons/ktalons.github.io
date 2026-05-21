@@ -10,10 +10,13 @@
  */
 
 /* D2 Coding — locally hosted via static/fonts/.
-   https://github.com/naver/d2codingfont (SIL Open Font License 1.1) */
+   https://github.com/naver/d2codingfont (SIL Open Font License 1.1)
+   License text at /fonts/D2Coding-OFL.txt
+   Subset to Basic Latin + Latin-1 Supplement + smart punctuation (12 KB
+   instead of the 4 MB full TTF) — covers all English-language UI text. */
 @font-face {
   font-family: "D2 Coding";
-  src: url("/fonts/D2Coding.ttf") format("truetype");
+  src: url("/fonts/D2Coding.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

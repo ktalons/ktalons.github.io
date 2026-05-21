@@ -1,3 +1,9 @@
 [submodule "themes/hugo-coder"]
 	path = themes/hugo-coder
 	url = https://github.com/luizdepra/hugo-coder
+	# Pin policy: the submodule SHA is committed in this repo. Do NOT run
+	# `git submodule update --remote` — that would pull the upstream HEAD and
+	# silently inherit any compromise of the theme repo. To bump the theme,
+	# manually cd themes/hugo-coder, checkout a reviewed tag, then commit the
+	# new SHA in this repo so the change is reviewable in PR.
+	update = none
