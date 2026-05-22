@@ -2091,3 +2091,551 @@ body.colorscheme-light .cd-results-message {
   .cd-btn-next, .cd-btn-replay { padding: 0.75rem 1.5rem; font-size: 1.05rem; }
   .cd-feedback { padding: 0.9rem 0.95rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   H@ck m3 G@me — MITRE ATT&CK Match (assets/js/mitre-match-game.js)
+   Cyber Student tier — mauve accent
+   ═══════════════════════════════════════════════════════════════════ */
+
+.mitre-match-game {
+  margin: 1.5rem auto 2rem;
+  min-height: 200px;
+  max-width: 64rem;
+  width: 100%;
+}
+
+.mt-card {
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 12px;
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+body.colorscheme-light .mt-card {
+  background-color: var(--ctp-l-mantle);
+  border-color: var(--ctp-l-surface0);
+}
+
+.mt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  color: var(--ctp-subtext1);
+  border-bottom: 1px solid var(--ctp-surface0);
+  padding-bottom: 0.9rem;
+}
+
+body.colorscheme-light .mt-header {
+  color: var(--ctp-l-subtext1);
+  border-bottom-color: var(--ctp-l-surface0);
+}
+
+.mt-label {
+  color: var(--ctp-subtext1);
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: -0.4rem;
+}
+
+.mt-options-label {
+  margin-top: 0.25rem;
+}
+
+body.colorscheme-light .mt-label {
+  color: var(--ctp-l-subtext1);
+}
+
+.mt-scenario {
+  background-color: var(--ctp-base);
+  border-left: 3px solid var(--ctp-mauve);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--ctp-text);
+}
+
+body.colorscheme-light .mt-scenario {
+  background-color: var(--ctp-l-base);
+  color: var(--ctp-l-text);
+}
+
+.mt-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mt-option-btn {
+  appearance: none;
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
+  border: 1.5px solid var(--ctp-surface0);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  transition: border-color var(--t-fast) var(--ease-out),
+              background-color var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out);
+}
+
+body.colorscheme-light .mt-option-btn {
+  background-color: var(--ctp-l-base);
+  color: var(--ctp-l-text);
+  border-color: var(--ctp-l-surface0);
+}
+
+.mt-option-btn:not(:disabled):hover,
+.mt-option-btn:not(:disabled):focus-visible {
+  border-color: var(--ctp-mauve);
+  background-color: rgba(203, 166, 247, 0.06);
+  transform: translateY(-1px);
+}
+
+.mt-option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.mt-option-id {
+  flex-shrink: 0;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-weight: 600;
+  color: var(--ctp-mauve);
+  font-size: 0.95rem;
+}
+
+.mt-option-name {
+  color: var(--ctp-subtext1);
+}
+
+body.colorscheme-light .mt-option-name {
+  color: var(--ctp-l-subtext1);
+}
+
+.mt-option-btn.mt-option-correct {
+  border-color: var(--ctp-green);
+  background-color: rgba(166, 227, 161, 0.10);
+  opacity: 1;
+}
+
+.mt-option-btn.mt-option-correct .mt-option-id {
+  color: var(--ctp-green);
+}
+
+.mt-option-btn.mt-option-wrong {
+  border-color: var(--ctp-maroon);
+  background-color: rgba(235, 160, 172, 0.10);
+}
+
+.mt-option-btn.mt-option-wrong .mt-option-id {
+  color: var(--ctp-maroon);
+}
+
+.mt-feedback {
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.mt-feedback.correct {
+  background-color: rgba(166, 227, 161, 0.08);
+  border-left: 3px solid var(--ctp-green);
+}
+
+.mt-feedback.incorrect {
+  background-color: rgba(235, 160, 172, 0.08);
+  border-left: 3px solid var(--ctp-maroon);
+}
+
+.mt-feedback-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.mt-feedback.correct .mt-feedback-icon { color: var(--ctp-green); }
+.mt-feedback.incorrect .mt-feedback-icon { color: var(--ctp-maroon); }
+
+.mt-tells {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mt-tells li {
+  color: var(--ctp-subtext1);
+  line-height: 1.55;
+}
+
+body.colorscheme-light .mt-tells li {
+  color: var(--ctp-l-subtext1);
+}
+
+.mt-btn {
+  appearance: none;
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-text);
+  border: 1.5px solid var(--ctp-surface1);
+  border-radius: 8px;
+  padding: 0.85rem 1.75rem;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: center;
+  transition: border-color var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out);
+}
+
+.mt-btn:hover,
+.mt-btn:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+}
+
+.mt-btn-next,
+.mt-btn-replay {
+  margin-top: 0.5rem;
+}
+
+.mt-results {
+  align-items: center;
+  text-align: center;
+}
+
+.mt-results-score {
+  font-size: 1.5rem;
+  color: var(--ctp-text);
+}
+
+.mt-results-pct {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ctp-mauve);
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+}
+
+.mt-results-message {
+  color: var(--ctp-subtext1);
+  font-size: 1.05rem;
+  max-width: 32rem;
+  line-height: 1.6;
+}
+
+body.colorscheme-light .mt-results-message {
+  color: var(--ctp-l-subtext1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mt-option-btn,
+  .mt-btn,
+  .mt-btn:hover { transition: none; transform: none; }
+}
+
+@media only screen and (max-width: 600px) {
+  .mt-card { padding: 0.9rem 0.75rem 1rem; gap: 0.9rem; }
+  .mt-header { font-size: 0.95rem; padding-bottom: 0.7rem; }
+  .mt-scenario { font-size: 1rem; padding: 0.85rem 0.95rem; }
+  .mt-option-btn { padding: 0.8rem 0.85rem; font-size: 0.95rem; gap: 0.55rem; flex-direction: column; align-items: flex-start; }
+  .mt-option-id { font-size: 0.88rem; }
+  .mt-feedback { padding: 0.9rem 0.95rem; }
+  .mt-btn { padding: 0.7rem 1.25rem; font-size: 1.05rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   H@ck m3 G@me — Hash Identifier (assets/js/hash-id-game.js)
+   Cyber Ninja tier — peach accent
+   ═══════════════════════════════════════════════════════════════════ */
+
+.hash-id-game {
+  margin: 1.5rem auto 2rem;
+  min-height: 200px;
+  max-width: 64rem;
+  width: 100%;
+}
+
+.hi-card {
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 12px;
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+body.colorscheme-light .hi-card {
+  background-color: var(--ctp-l-mantle);
+  border-color: var(--ctp-l-surface0);
+}
+
+.hi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  color: var(--ctp-subtext1);
+  border-bottom: 1px solid var(--ctp-surface0);
+  padding-bottom: 0.9rem;
+}
+
+body.colorscheme-light .hi-header {
+  color: var(--ctp-l-subtext1);
+  border-bottom-color: var(--ctp-l-surface0);
+}
+
+.hi-label {
+  color: var(--ctp-subtext1);
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: -0.4rem;
+}
+
+.hi-options-label { margin-top: 0.25rem; }
+
+body.colorscheme-light .hi-label {
+  color: var(--ctp-l-subtext1);
+}
+
+.hi-hash-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.hi-hash {
+  flex: 1;
+  background-color: var(--ctp-base);
+  border: 1px solid var(--ctp-peach);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ctp-peach);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+body.colorscheme-light .hi-hash {
+  background-color: var(--ctp-l-base);
+}
+
+.hi-copy-btn {
+  appearance: none;
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-subtext1);
+  border: 1px solid var(--ctp-surface1);
+  border-radius: 8px;
+  padding: 0 0.95rem;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--t-fast) var(--ease-out),
+              color var(--t-fast) var(--ease-out);
+}
+
+.hi-copy-btn:hover,
+.hi-copy-btn:focus-visible {
+  border-color: var(--ctp-peach);
+  color: var(--ctp-peach);
+}
+
+.hi-copy-btn.hi-copy-done {
+  color: var(--ctp-green);
+  border-color: var(--ctp-green);
+}
+
+.hi-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.hi-option-btn {
+  appearance: none;
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
+  border: 1.5px solid var(--ctp-surface0);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  text-align: center;
+  cursor: pointer;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: border-color var(--t-fast) var(--ease-out),
+              background-color var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out);
+}
+
+body.colorscheme-light .hi-option-btn {
+  background-color: var(--ctp-l-base);
+  color: var(--ctp-l-text);
+  border-color: var(--ctp-l-surface0);
+}
+
+.hi-option-btn:not(:disabled):hover,
+.hi-option-btn:not(:disabled):focus-visible {
+  border-color: var(--ctp-peach);
+  background-color: rgba(250, 179, 135, 0.06);
+  transform: translateY(-1px);
+}
+
+.hi-option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.hi-option-btn.hi-option-correct {
+  border-color: var(--ctp-green);
+  background-color: rgba(166, 227, 161, 0.12);
+  color: var(--ctp-green);
+  opacity: 1;
+}
+
+.hi-option-btn.hi-option-wrong {
+  border-color: var(--ctp-maroon);
+  background-color: rgba(235, 160, 172, 0.10);
+  color: var(--ctp-maroon);
+}
+
+.hi-feedback {
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.hi-feedback.correct {
+  background-color: rgba(166, 227, 161, 0.08);
+  border-left: 3px solid var(--ctp-green);
+}
+
+.hi-feedback.incorrect {
+  background-color: rgba(235, 160, 172, 0.08);
+  border-left: 3px solid var(--ctp-maroon);
+}
+
+.hi-feedback-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.hi-feedback.correct .hi-feedback-icon { color: var(--ctp-green); }
+.hi-feedback.incorrect .hi-feedback-icon { color: var(--ctp-maroon); }
+
+.hi-tells {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hi-tells li {
+  color: var(--ctp-subtext1);
+  line-height: 1.55;
+}
+
+body.colorscheme-light .hi-tells li {
+  color: var(--ctp-l-subtext1);
+}
+
+.hi-btn {
+  appearance: none;
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-text);
+  border: 1.5px solid var(--ctp-surface1);
+  border-radius: 8px;
+  padding: 0.85rem 1.75rem;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: center;
+  transition: border-color var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out);
+}
+
+.hi-btn:hover,
+.hi-btn:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+}
+
+.hi-btn-next,
+.hi-btn-replay {
+  margin-top: 0.5rem;
+}
+
+.hi-results {
+  align-items: center;
+  text-align: center;
+}
+
+.hi-results-score {
+  font-size: 1.5rem;
+  color: var(--ctp-text);
+}
+
+.hi-results-pct {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ctp-peach);
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+}
+
+.hi-results-message {
+  color: var(--ctp-subtext1);
+  font-size: 1.05rem;
+  max-width: 32rem;
+  line-height: 1.6;
+}
+
+body.colorscheme-light .hi-results-message {
+  color: var(--ctp-l-subtext1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hi-option-btn,
+  .hi-btn,
+  .hi-btn:hover { transition: none; transform: none; }
+}
+
+@media only screen and (max-width: 600px) {
+  .hi-card { padding: 0.9rem 0.75rem 1rem; gap: 0.9rem; }
+  .hi-header { font-size: 0.95rem; padding-bottom: 0.7rem; }
+  .hi-hash { font-size: 0.98rem; padding: 0.9rem 0.95rem; }
+  .hi-hash-row { flex-direction: column; }
+  .hi-copy-btn { padding: 0.5rem 0.95rem; align-self: flex-end; }
+  .hi-options { grid-template-columns: 1fr; }
+  .hi-option-btn { padding: 0.8rem 0.85rem; font-size: 1rem; }
+  .hi-feedback { padding: 0.9rem 0.95rem; }
+  .hi-btn { padding: 0.7rem 1.25rem; font-size: 1.05rem; }
+}

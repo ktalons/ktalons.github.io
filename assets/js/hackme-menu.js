@@ -58,7 +58,7 @@
       title: 'MITRE ATT&CK Match',
       blurb: 'Read attacker behavior in plain English. Pick the right ATT&CK technique.',
       tier: 'itPerson',
-      available: false
+      available: true
     },
     {
       id: 'ioc',
@@ -72,7 +72,7 @@
       title: 'Hash Identifier',
       blurb: 'A hash string flashes up. Pick the algorithm — MD5, SHA1, SHA256, NTLM, bcrypt. Format and length are the tells.',
       tier: 'cyberNinja',
-      available: false
+      available: true
     }
   ];
 
