@@ -5,12 +5,14 @@
  * register themselves on window.HackMeGame), and handles the back-to-menu
  * + badge-award lifecycle.
  *
- * Tiers:
- *   - rookie       : "Rookie"                       (Easy)
- *   - itPerson     : "I'm the family's IT person"   (Medium)
- *   - cyberNinja   : "Cyber Ninja"                  (Hard)
+ * Tiers (two games each — pass both for a full tier badge):
+ *   - rookie       : "Rookie"          (Easy)
+ *   - itPerson     : "Cyber Student"   (Medium) — internal key kept for back-compat
+ *   - cyberNinja   : "Cyber Ninja"     (Hard)
  *
- * A game earns its tier badge when the player scores >= 80%.
+ * A game earns half the tier pill when the player scores >= 80%.
+ * Both games in a tier filled = full pill (★). Tier progress is
+ * derived from per-game earned states, not stored separately.
  * Badges persist in localStorage under "hackme.badges.v1".
  */
 (function () {
@@ -23,9 +25,9 @@
   var PASS_THRESHOLD = 0.80;
 
   var TIERS = {
-    rookie:     { label: 'Rookie',                       short: 'Rookie',   className: 'tier-rookie' },
-    itPerson:   { label: "I'm the family's IT person",   short: 'IT person', className: 'tier-itperson' },
-    cyberNinja: { label: 'Cyber Ninja',                  short: 'Cyber Ninja', className: 'tier-ninja' }
+    rookie:     { label: 'Rookie',        short: 'Rookie',        className: 'tier-rookie' },
+    itPerson:   { label: 'Cyber Student', short: 'Cyber Student', className: 'tier-itperson' },
+    cyberNinja: { label: 'Cyber Ninja',   short: 'Cyber Ninja',   className: 'tier-ninja' }
   };
 
   // The 5 challenge cards. Order = display order on the menu.
@@ -64,6 +66,13 @@
       blurb: 'Read a log snippet. Click the indicator-of-compromise. Hover to learn why.',
       tier: 'cyberNinja',
       available: false
+    },
+    {
+      id: 'hash-id',
+      title: 'Hash Identifier',
+      blurb: 'A hash string flashes up. Pick the algorithm — MD5, SHA1, SHA256, NTLM, bcrypt. Format and length are the tells.',
+      tier: 'cyberNinja',
+      available: false
     }
   ];
 
@@ -81,13 +90,24 @@
 
   function defaultBadges() {
     return {
-      tiers: { rookie: false, itPerson: false, cyberNinja: false },
+      tiers: {},    // legacy field — tier progress is now derived from games
       games: {}     // { phishing: { bestPct: 100, earned: true }, ... }
     };
   }
 
   function saveBadges(b) {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(b)); } catch (e) {}
+  }
+
+  // Tier progress is derived: count earned games per tier (0..gamesInTier).
+  function tierProgress(badges) {
+    var counts = { rookie: 0, itPerson: 0, cyberNinja: 0 };
+    var totals = { rookie: 0, itPerson: 0, cyberNinja: 0 };
+    GAMES.forEach(function (g) {
+      totals[g.tier]++;
+      if (badges.games[g.id] && badges.games[g.id].earned) counts[g.tier]++;
+    });
+    return { counts: counts, totals: totals };
   }
 
   function awardForGame(gameId, scorePct) {
@@ -100,8 +120,6 @@
     var earnedNow = scorePct >= PASS_THRESHOLD * 100;
     var earnedEver = prev.earned || earnedNow;
     b.games[gameId] = { bestPct: bestPct, earned: earnedEver };
-
-    if (earnedNow) b.tiers[game.tier] = true;
 
     saveBadges(b);
     return b;
@@ -130,19 +148,26 @@
     clear(root);
     var badges = loadBadges();
 
-    // Hall of Honor strip
+    // Hall of Honor strip — tier pills fill in halves based on per-game progress
+    var progress = tierProgress(badges);
     var honor = document.createElement('div');
     honor.className = 'hm-honor';
-    honor.innerHTML =
-      '<span class="hm-honor-label">Tiers earned:</span>' +
-      Object.keys(TIERS).map(function (tierKey) {
-        var earned = badges.tiers[tierKey];
-        return '<span class="hm-tier ' + TIERS[tierKey].className +
-               (earned ? ' earned' : ' locked') + '">' +
-               (earned ? '★ ' : '○ ') +
-               escapeHtml(TIERS[tierKey].short) +
-               '</span>';
-      }).join('');
+    var honorLabel = document.createElement('span');
+    honorLabel.className = 'hm-honor-label';
+    honorLabel.textContent = 'Tiers earned:';
+    honor.appendChild(honorLabel);
+    Object.keys(TIERS).forEach(function (tierKey) {
+      var count = progress.counts[tierKey];
+      var total = progress.totals[tierKey] || 0;
+      var stateClass, glyph;
+      if (total > 0 && count >= total) { stateClass = 'earned';      glyph = '★ '; }
+      else if (count > 0)              { stateClass = 'half-earned'; glyph = '◐ '; }
+      else                              { stateClass = 'locked';      glyph = '○ '; }
+      var pill = document.createElement('span');
+      pill.className = 'hm-tier ' + TIERS[tierKey].className + ' ' + stateClass;
+      pill.textContent = glyph + TIERS[tierKey].short;
+      honor.appendChild(pill);
+    });
     root.appendChild(honor);
 
     // Card grid
@@ -227,23 +252,36 @@
     // Hand off to the game
     window.HackMeGame[id].start(host, function (scorePct) {
       // onComplete callback receives final score percentage
-      var prev = loadBadges().tiers[game.tier];
+      var prevProgress = tierProgress(loadBadges()).counts[game.tier];
       awardForGame(id, scorePct);
-      var after = loadBadges();
-      var newlyEarned = !prev && after.tiers[game.tier];
+      var nextProgress = tierProgress(loadBadges());
+      var nextCount = nextProgress.counts[game.tier];
+      var nextTotal = nextProgress.totals[game.tier];
+      var passed = scorePct >= PASS_THRESHOLD * 100;
+      var advanced = nextCount > prevProgress;
+      var tierComplete = nextCount >= nextTotal;
 
       // Show a small inline result + award notice in the same host
       var notice = document.createElement('div');
-      notice.className = 'hm-award' + (newlyEarned ? ' hm-award-new' : '');
-      var msg = '';
-      if (scorePct >= PASS_THRESHOLD * 100) {
-        msg = newlyEarned
-          ? 'Tier unlocked: <strong>' + escapeHtml(TIERS[game.tier].label) + '</strong> ★'
-          : '<strong>' + escapeHtml(TIERS[game.tier].label) + '</strong> tier confirmed.';
+      notice.className = 'hm-award' + (advanced && tierComplete ? ' hm-award-new' : '');
+
+      if (passed) {
+        var strong = document.createElement('strong');
+        strong.textContent = TIERS[game.tier].label;
+        if (advanced && tierComplete) {
+          notice.appendChild(document.createTextNode('Tier complete: '));
+          notice.appendChild(strong);
+          notice.appendChild(document.createTextNode(' ★ — both games passed.'));
+        } else if (advanced) {
+          notice.appendChild(strong);
+          notice.appendChild(document.createTextNode(' tier — half filled (' + nextCount + '/' + nextTotal + '). One more game to complete.'));
+        } else {
+          notice.appendChild(strong);
+          notice.appendChild(document.createTextNode(' tier progress confirmed (' + nextCount + '/' + nextTotal + ').'));
+        }
       } else {
-        msg = 'Score not high enough for the badge yet. ' + Math.ceil(PASS_THRESHOLD * 100) + '% needed.';
+        notice.textContent = 'Score not high enough for the badge yet. ' + Math.ceil(PASS_THRESHOLD * 100) + '% needed.';
       }
-      notice.innerHTML = msg;
       host.appendChild(notice);
       // (Back-to-menu button lives in the persistent stripe at the top of the game view)
     });

@@ -1489,6 +1489,30 @@ body.colorscheme-light .hm-honor {
   box-shadow: 0 0 12px -2px currentColor;
 }
 
+/* Half-earned: one of two games in the tier passed.
+   Left 50% fills in the tier color; right 50% stays outlined. */
+.hm-tier.half-earned {
+  background-image: linear-gradient(to right, currentColor 0, currentColor 50%, transparent 50%, transparent 100%);
+  background-color: transparent;
+  /* Tone the gradient down — currentColor at full alpha would drown the text.
+     We use a transparent overlay via background-blend-mode to soften it. */
+}
+
+.hm-tier.tier-rookie.half-earned {
+  background-image: linear-gradient(to right, rgba(137, 220, 235, 0.35) 0, rgba(137, 220, 235, 0.35) 50%, transparent 50%, transparent 100%);
+  background-color: transparent;
+}
+
+.hm-tier.tier-itperson.half-earned {
+  background-image: linear-gradient(to right, rgba(203, 166, 247, 0.35) 0, rgba(203, 166, 247, 0.35) 50%, transparent 50%, transparent 100%);
+  background-color: transparent;
+}
+
+.hm-tier.tier-ninja.half-earned {
+  background-image: linear-gradient(to right, rgba(250, 179, 135, 0.35) 0, rgba(250, 179, 135, 0.35) 50%, transparent 50%, transparent 100%);
+  background-color: transparent;
+}
+
 /* Menu card grid */
 .hm-grid {
   display: grid;
