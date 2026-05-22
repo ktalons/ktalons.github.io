@@ -42,7 +42,7 @@
       title: 'Spot the Malicious URL',
       blurb: 'Four URLs at a time. Click the sketchy one. IDN homographs, typosquats, suspicious TLDs.',
       tier: 'rookie',
-      available: false
+      available: true
     },
     {
       id: 'cipher',
