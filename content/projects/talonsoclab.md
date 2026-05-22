@@ -7,7 +7,6 @@ cover:
     image: ""
     alt: "TalonSocLab architecture"
     relative: false
-weight: 1
 ---
 
 {{< pill "coming" >}}Coming · Phase A by June 9{{< /pill >}}

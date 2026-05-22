@@ -1,9 +1,9 @@
 ---
 title: "IAES SOC: ELK Stack Snapshot"
 date: 2026-05-21
+dateLabel: "August 2025 – May 2026"
 summary: "Public snapshot of my OT SOC engineering work at UArizona FM: ECS-mapped Logstash ingestion pipelines plus three custom operations tools (DLQ Watcher, DLQ Manager, and UTIS Reports Ingestion Helper)."
 tags: ["ELK", "Logstash", "Elasticsearch", "ECS", "OT", "ICS", "SIEM", "Suricata", "Zeek", "SOC Tooling"]
-weight: 3
 ---
 
 {{< pill "live" >}}Live{{< /pill >}}

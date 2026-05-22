@@ -3,7 +3,6 @@ title: "bashedlogs"
 date: 2025-06-01
 summary: "Fast, intelligent CLI for cybersecurity log analysis with automatic format detection."
 tags: ["Bash", "Log Analysis", "SOC Tooling"]
-weight: 8
 ---
 
 {{< pill "indev" >}}In Dev{{< /pill >}}

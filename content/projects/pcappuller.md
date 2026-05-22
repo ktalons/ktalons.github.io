@@ -6,7 +6,6 @@ aliases:
 date: 2025-07-01
 summary: "Python utility for high-volume packet collections: low memory, batch merges, parallel metadata scans."
 tags: ["Python", "PCAP", "Network Forensics", "tshark"]
-weight: 7
 ---
 
 {{< pill "indev" >}}In Dev{{< /pill >}}
