@@ -47,9 +47,9 @@
     {
       id: 'cipher',
       title: 'Cipher Decoder',
-      blurb: 'Caesar, ROT13, Base64. Decode short messages under a timer.',
+      blurb: 'Caesar, ROT13, Base64, Hex, URL encoding, Binary. Decode the message — first try blind, then with a hint.',
       tier: 'itPerson',
-      available: false
+      available: true
     },
     {
       id: 'mitre',

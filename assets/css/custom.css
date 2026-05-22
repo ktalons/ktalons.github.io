@@ -1694,3 +1694,376 @@ body.colorscheme-light .hm-award {
     animation: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   H@ck m3 G@me — Cipher Decoder (assets/js/cipher-decoder-game.js)
+   IT-person tier — mauve accent
+   ═══════════════════════════════════════════════════════════════════ */
+
+.cipher-decoder-game {
+  margin: 1.5rem auto 2rem;
+  min-height: 200px;
+  max-width: 64rem;
+  width: 100%;
+}
+
+.cd-card {
+  background-color: var(--ctp-mantle);
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 12px;
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+body.colorscheme-light .cd-card {
+  background-color: var(--ctp-l-mantle);
+  border-color: var(--ctp-l-surface0);
+}
+
+.cd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  color: var(--ctp-subtext1);
+  border-bottom: 1px solid var(--ctp-surface0);
+  padding-bottom: 0.9rem;
+}
+
+body.colorscheme-light .cd-header {
+  color: var(--ctp-l-subtext1);
+  border-bottom-color: var(--ctp-l-surface0);
+}
+
+.cd-label {
+  color: var(--ctp-subtext1);
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: -0.25rem;
+}
+
+body.colorscheme-light .cd-label {
+  color: var(--ctp-l-subtext1);
+}
+
+.cd-encoded-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.cd-encoded {
+  flex: 1;
+  background-color: var(--ctp-base);
+  border: 1px solid var(--ctp-mauve);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--ctp-mauve);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+body.colorscheme-light .cd-encoded {
+  background-color: var(--ctp-l-base);
+}
+
+.cd-copy-btn {
+  appearance: none;
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-subtext1);
+  border: 1px solid var(--ctp-surface1);
+  border-radius: 8px;
+  padding: 0 0.95rem;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--t-fast) var(--ease-out),
+              color var(--t-fast) var(--ease-out);
+}
+
+.cd-copy-btn:hover,
+.cd-copy-btn:focus-visible {
+  border-color: var(--ctp-mauve);
+  color: var(--ctp-mauve);
+}
+
+.cd-copy-btn.cd-copy-done {
+  color: var(--ctp-green);
+  border-color: var(--ctp-green);
+}
+
+.cd-cipher-hint {
+  background-color: rgba(203, 166, 247, 0.07);
+  border-left: 3px solid var(--ctp-mauve);
+  border-radius: 4px;
+  padding: 0.9rem 1.1rem;
+  color: var(--ctp-text);
+  font-size: 1rem;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+body.colorscheme-light .cd-cipher-hint {
+  color: var(--ctp-l-text);
+}
+
+.cd-cipher-hint.cd-hidden { display: none; }
+
+.cd-cipher-name {
+  margin: 0;
+  color: var(--ctp-mauve);
+  font-size: 1rem;
+}
+
+.cd-cipher-body {
+  margin: 0;
+  color: var(--ctp-subtext1);
+  font-size: 0.95rem;
+}
+
+body.colorscheme-light .cd-cipher-body {
+  color: var(--ctp-l-subtext1);
+}
+
+.cd-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.cd-input {
+  flex: 1 1 18rem;
+  min-width: 0;
+  background-color: var(--ctp-base);
+  border: 1.5px solid var(--ctp-surface1);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 1.05rem;
+  color: var(--ctp-text);
+  transition: border-color var(--t-fast) var(--ease-out),
+              box-shadow var(--t-fast) var(--ease-out);
+}
+
+body.colorscheme-light .cd-input {
+  background-color: var(--ctp-l-base);
+  color: var(--ctp-l-text);
+  border-color: var(--ctp-l-surface1);
+}
+
+.cd-input:focus {
+  outline: none;
+  border-color: var(--ctp-mauve);
+  box-shadow: 0 0 0 3px rgba(203, 166, 247, 0.15);
+}
+
+.cd-input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cd-btn {
+  appearance: none;
+  background-color: var(--ctp-surface0);
+  color: var(--ctp-text);
+  border: 1.5px solid var(--ctp-surface1);
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out),
+              background-color var(--t-fast) var(--ease-out);
+}
+
+body.colorscheme-light .cd-btn {
+  color: var(--ctp-l-text);
+}
+
+.cd-btn:not(:disabled):hover,
+.cd-btn:not(:disabled):focus-visible {
+  transform: translateY(-1px);
+}
+
+.cd-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cd-btn-primary {
+  background-color: rgba(203, 166, 247, 0.12);
+  border-color: var(--ctp-mauve);
+  color: var(--ctp-mauve);
+}
+
+.cd-btn-primary:not(:disabled):hover,
+.cd-btn-primary:not(:disabled):focus-visible {
+  background-color: rgba(203, 166, 247, 0.20);
+}
+
+.cd-btn-secondary {
+  color: var(--ctp-overlay1);
+}
+
+.cd-btn-secondary:not(:disabled):hover,
+.cd-btn-secondary:not(:disabled):focus-visible {
+  border-color: var(--ctp-overlay1);
+}
+
+.cd-btn-next,
+.cd-btn-replay {
+  align-self: center;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-size: 1.1rem;
+  border-color: var(--accent-primary);
+  background-color: rgba(250, 179, 135, 0.08);
+}
+
+.cd-inline-feedback:empty { display: none; }
+
+.cd-inline-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.98rem;
+  padding: 0.3rem 0;
+}
+
+.cd-inline-wrong {
+  color: var(--ctp-maroon);
+}
+
+.cd-feedback {
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.25rem;
+}
+
+.cd-feedback.correct {
+  background-color: rgba(166, 227, 161, 0.08);
+  border-left: 3px solid var(--ctp-green);
+}
+
+.cd-feedback.incorrect {
+  background-color: rgba(235, 160, 172, 0.08);
+  border-left: 3px solid var(--ctp-maroon);
+}
+
+.cd-feedback-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.cd-feedback.correct .cd-feedback-icon { color: var(--ctp-green); }
+.cd-feedback.incorrect .cd-feedback-icon { color: var(--ctp-maroon); }
+
+.cd-answer-row {
+  font-size: 1rem;
+  color: var(--ctp-subtext1);
+}
+
+body.colorscheme-light .cd-answer-row {
+  color: var(--ctp-l-subtext1);
+}
+
+.cd-answer-text {
+  font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  background-color: var(--ctp-base);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  color: var(--ctp-green);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+body.colorscheme-light .cd-answer-text {
+  background-color: var(--ctp-l-base);
+}
+
+.cd-tells {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cd-tells li {
+  color: var(--ctp-subtext1);
+  line-height: 1.55;
+}
+
+body.colorscheme-light .cd-tells li {
+  color: var(--ctp-l-subtext1);
+}
+
+.cd-results {
+  align-items: center;
+  text-align: center;
+}
+
+.cd-results-score {
+  font-size: 1.5rem;
+  color: var(--ctp-text);
+}
+
+.cd-results-pct {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ctp-mauve);
+  font-family: "D2 Coding", "SF Mono", Consolas, monospace;
+}
+
+.cd-results-message {
+  color: var(--ctp-subtext1);
+  font-size: 1.05rem;
+  max-width: 32rem;
+  line-height: 1.6;
+}
+
+body.colorscheme-light .cd-results-message {
+  color: var(--ctp-l-subtext1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-btn,
+  .cd-btn:hover,
+  .cd-btn:focus-visible,
+  .cd-copy-btn,
+  .cd-input {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cd-card { padding: 0.9rem 0.75rem 1rem; gap: 0.9rem; }
+  .cd-header { font-size: 0.95rem; padding-bottom: 0.7rem; }
+  .cd-encoded { font-size: 1.05rem; padding: 0.9rem 0.95rem; }
+  .cd-encoded-row { flex-direction: column; }
+  .cd-copy-btn { padding: 0.5rem 0.95rem; align-self: flex-end; }
+  .cd-input-row { flex-direction: column; }
+  .cd-input { flex: 1 1 auto; font-size: 1rem; }
+  .cd-btn { padding: 0.7rem 1.1rem; font-size: 1rem; }
+  .cd-btn-next, .cd-btn-replay { padding: 0.75rem 1.5rem; font-size: 1.05rem; }
+  .cd-feedback { padding: 0.9rem 0.95rem; }
+}
