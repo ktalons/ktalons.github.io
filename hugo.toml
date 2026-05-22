@@ -46,7 +46,7 @@ projects = "/projects/:slug/"
   # Custom CSS injection
   customCSS = ["css/custom.css"]
   customSCSS = []
-  customJS = ["js/hero-fade.js", "js/hackme.js", "js/hackme-menu.js", "js/phishing-game.js", "js/malicious-url-game.js", "js/cipher-decoder-game.js", "js/mitre-match-game.js", "js/hash-id-game.js"]
+  customJS = ["js/hero-fade.js", "js/hackme.js", "js/hackme-menu.js", "js/phishing-game.js", "js/malicious-url-game.js", "js/cipher-decoder-game.js", "js/mitre-match-game.js", "js/hash-id-game.js", "js/find-ioc-game.js"]
 
   # Footer
   hideFooter = false

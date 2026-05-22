@@ -63,9 +63,9 @@
     {
       id: 'ioc',
       title: 'Find the IOC',
-      blurb: 'Read a log snippet. Click the indicator-of-compromise. Hover to learn why.',
+      blurb: 'Six SOC log snippets. Click the indicators of compromise. False positives cost you.',
       tier: 'cyberNinja',
-      available: false
+      available: true
     },
     {
       id: 'hash-id',
