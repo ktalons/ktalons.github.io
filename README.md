@@ -27,30 +27,49 @@ hugo server -D
 
 ```
 content/
-├── _index.md              # Home (profile mode pulls from hugo.toml)
+├── _index.md                       # Home (profile + "Currently building" hero)
 ├── about.md
-├── achievements.md
 ├── contact.md
-├── resume.md
-├── search.md              # Fuse.js client-side search
+├── blog/
+│   ├── _index.md
+│   └── welcome.md
 ├── projects/
 │   ├── _index.md
-│   ├── talonsoclab.md     # Flagship lab (Phase A coming June 9)
-│   ├── casa-capstone.md
-│   ├── pwnagotchi.md
-│   ├── cybersec-discord-bot.md
-│   ├── dapcappuller.md
-│   └── bashedlogs.md
-└── blog/
-    ├── _index.md
-    └── welcome.md
+│   ├── talonsoclab.md              # Flagship — scaffold complete, builds May 27, ships Jun 9
+│   ├── casa-capstone.md            # CASA / Project Twilight Synapse capstone
+│   ├── iaessoc-elk-snapshot.md     # OT SOC snapshot (U of A Facilities Management)
+│   ├── osticket-soc.md             # osTicket-based SOC ticketing
+│   ├── pcappuller.md               # PCAP retrieval tool
+│   ├── bashedlogs.md               # Bash log analysis tooling
+│   ├── cybersec-discord-bot.md     # Discord bot for cyber comms
+│   └── violent-python.md           # Python offensive-security work
+└── h4ck-m3/
+    └── _index.md                   # Easter-egg mini-game menu (hidden from nav)
 ```
+
+Top nav (set in `hugo.toml`): **About · Projects · Blog · Contact**. The H@ck m3 page is intentionally hidden (`build.list = never`) and only reachable by typing `/h4ck-m3/` in the URL bar.
+
+## Site features
+
+- **Status pills** — `{{< pill "indev" >}}…{{< /pill >}}` shortcode (variants: `indev`, `live`, others in `layouts/shortcodes/pill.html`) used on the homepage hero + project cards to communicate state
+- **Light / dark toggle** — theme default; Catppuccin Mocha (dark) and Catppuccin Latte (light) variants of the same accents
+- **H@ck m3 easter egg** at `/h4ck-m3/` — 3-tier badge menu (Rookie · Cyber Student · Cyber Ninja), 6 browser-side mini-games, no backend or telemetry:
+  - **Phishing or Legit** (Rookie)
+  - **Spot the Malicious URL** (Rookie)
+  - **Cipher Decoder** (Cyber Student)
+  - **Hash Identifier** (Cyber Student)
+  - **MITRE ATT&CK Match** (Cyber Ninja)
+  - **Find the IOC** (Cyber Ninja)
+- **Hero fade-in** animation via `assets/js/hero-fade.js`
 
 ## Theme customization
 
-- `hugo.toml` — site config, social icons, top nav, FontAwesome icons
+- `hugo.toml` — site config, top nav, social icons, FontAwesome, custom JS bundle
 - `assets/css/custom.css` — Catppuccin Mocha overrides + status pills + hover polish
   - Swap primary/secondary accent by flipping `--accent-primary` and `--accent-secondary` in `:root`
+- `assets/js/` — `hero-fade.js` + 7 H@ck m3 game scripts (`hackme.js`, `hackme-menu.js`, `phishing-game.js`, `malicious-url-game.js`, `cipher-decoder-game.js`, `mitre-match-game.js`, `hash-id-game.js`, `find-ioc-game.js`)
+- `layouts/shortcodes/` — `pill.html` (status badges), `hackme-menu.html`, `phishing-game.html`
+- `layouts/_partials/` — `head/extensions.html` (extra `<head>` content), `list.html` (list page override)
 
 ## Catppuccin reference
 
@@ -73,4 +92,4 @@ hugo new content blog/your-post-slug.md
 
 ## License
 
-Site content © Kyle Versluis. Site code (config + custom CSS) MIT.
+Site content © Kyle Versluis. Site code (config + custom CSS + custom JS + custom shortcodes) MIT.
