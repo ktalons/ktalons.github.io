@@ -9,7 +9,7 @@ cover:
     relative: false
 ---
 
-{{< pill "indev" >}}In Dev · Scaffold + Architecture Live · Phase A by June 9{{< /pill >}}
+{{< pill "indev" >}}In Dev · Scaffold Complete · Build starts May 27 · Phase A ships Jun 9{{< /pill >}}
 
 **Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) — scaffold, [architecture diagram](https://github.com/ktalons/talonsoclab/blob/main/phase-a-foundation/architecture.mmd), and [six deployment runbooks](https://github.com/ktalons/talonsoclab/tree/main/phase-a-foundation/deployment) live. Working SOC stack ships June 9.
 

@@ -4,7 +4,7 @@ title: "Kyle Versluis"
 
 ## Currently building
 
-I'm in the middle of [**TalonSocLab**](/projects/talonsoclab/), a 10-week public buildout of a personal SOC across four phases: Wazuh stack, detection engineering against Atomic Red Team, AD attack/defense, and a honeynet with an automated IOC pipeline. {{< pill "indev" >}}Phase A · Scaffold Live · Stack ships June 9{{< /pill >}}
+I'm in the middle of [**TalonSocLab**](/projects/talonsoclab/), a 10-week public buildout of a personal SOC across four phases: Wazuh stack, detection engineering against Atomic Red Team, AD attack/defense, and a honeynet with an automated IOC pipeline. {{< pill "indev" >}}Phase A · Scaffold Complete · Build starts May 27 · Ships Jun 9{{< /pill >}}
 
 In parallel I'm preparing for **CompTIA Security+ SY0-701** (target: July 2026) and actively interviewing for SOC, detection engineering, and federal security engineering roles.
 
