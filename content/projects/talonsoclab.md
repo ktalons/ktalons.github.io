@@ -9,7 +9,7 @@ cover:
     relative: false
 ---
 
-{{< pill "indev" >}}In Dev · Scaffold Complete · Build starts May 27 · Phase A ships Jun 9{{< /pill >}}
+{{< pill "indev" >}}In Dev · Phase A schedule update — [see blog](/blog/talonsoclab-phase-a-schedule-update/){{< /pill >}}
 
 **Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) — scaffold, [architecture diagram](https://github.com/ktalons/talonsoclab/blob/main/phase-a-foundation/architecture.mmd), and [six deployment runbooks](https://github.com/ktalons/talonsoclab/tree/main/phase-a-foundation/deployment) live. Working SOC stack ships June 9.
 
@@ -57,4 +57,4 @@ The OT SOC work and CTF leadership happened inside Arizona's networks. TalonSocL
 
 - Blog posts here as each phase ships
 - LinkedIn: [www.linkedin.com/in/ta1ons](https://www.linkedin.com/in/ta1ons/)
-- GitHub: [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) — Phase A scaffold + architecture + runbooks live; working stack ships June 9
+- GitHub: [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) — Phase A scaffold + architecture + runbooks live; pivoting Phase A substrate after host hardware fault — [details](/blog/talonsoclab-phase-a-schedule-update/)
