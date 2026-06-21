@@ -30,4 +30,4 @@ I also applied for the **DoD Cybersecurity Scholarship Award** for an AI master'
 
 ## How I work
 
-I'm building [**TalonSocLab**](/projects/talonsoclab/) as a public-facing home SOC over the next 10 weeks: a Wazuh-anchored stack, a detection-engineering rule pack proven against Atomic Red Team, a vulnerable AD attack/defense lab, and a honeynet with an automated IOC pipeline. It's the practical demonstration that I can run a small SOC end to end, and it's all on GitHub.
+I'm building [**TalonSocLab**](/projects/talonsoclab/) in public: a home SOC on hardware I own, running Wazuh, Suricata, and Sysmon in docker-compose, with a detection-engineering rule pack proven against Atomic Red Team, a vulnerable AD attack/defense lab, and a honeynet feeding an IOC pipeline. I keep it deliberately deterministic so it can feed [**CASA**](https://github.com/ktalons/casa-ai-agent), my agentic SOC-analysis layer and senior capstone, which does the reasoning on top. I learn by building the thing, and it is all on GitHub.

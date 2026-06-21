@@ -1,60 +1,69 @@
 ---
 title: "TalonSocLab"
 date: 2026-05-20
-summary: "Flagship personal SOC home lab: Wazuh, Sysmon, Suricata, AD attack and defense, and a honeynet pipeline, documented publicly across four phases."
-tags: ["SIEM", "Wazuh", "Detection Engineering", "MITRE ATT&CK", "Active Directory", "Honeynet", "OpenCTI", "Sigma"]
+summary: "Flagship personal SOC home lab on hardware I own: a deterministic Wazuh, Suricata, and Sysmon data plane that feeds CASA, my agentic reasoning layer. Built and documented publicly across four phases."
+tags: ["SIEM", "Wazuh", "Detection Engineering", "MITRE ATT&CK", "Active Directory", "Honeynet", "OpenCTI", "Sigma", "Docker", "CASA"]
 cover:
     image: ""
     alt: "TalonSocLab architecture"
     relative: false
 ---
 
-{{< pill "indev" >}}In Dev · Phase A schedule update — [see blog](/blog/talonsoclab-phase-a-schedule-update/){{< /pill >}}
+{{< pill "indev" >}}In Dev · Pivoted to docker-compose on owned hardware, [read the latest](/blog/the-buy-path-data-plane-and-casa-reasoning-plane/){{< /pill >}}
 
-**Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) — scaffold, [architecture diagram](https://github.com/ktalons/talonsoclab/blob/main/phase-a-foundation/architecture.mmd), and [six deployment runbooks](https://github.com/ktalons/talonsoclab/tree/main/phase-a-foundation/deployment) live. Working SOC stack ships June 9.
+**Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab). The [architecture diagram](https://github.com/ktalons/talonsoclab/blob/main/phase-a-foundation/architecture.mmd), the docker-compose deploy bundle ([`deploy/soc-recon`](https://github.com/ktalons/talonsoclab/tree/main/deploy/soc-recon)), and the recovery runbook are live. The original Proxmox build is archived in the repo as provenance for the pivot.
 
 ## What is it
 
-A single coherent home SOC, built in four chapters over 10 weeks. Each chapter ships independently with its own GitHub folder, README, architecture diagram, and lessons-learned write-up. By the end, it'll be a working example of running a small SOC end to end: from log ingest, through detection engineering, to threat intel.
+A single coherent home SOC, built in four chapters. Each chapter ships independently with its own GitHub folder, README, architecture diagram, and lessons-learned write-up. By the end it runs a small SOC end to end, from log ingest, through detection engineering, to threat intel.
+
+It runs on a dedicated HP EliteDesk 800 G4 Mini (i5-8500T, 16 GB RAM, 256 GB NVMe) that I own outright. Started on a shared university Proxmox cluster, the lab moved to docker-compose on my own box after that host died. The portability is the point.
+
+## Two planes
+
+TalonSocLab is the **data plane**. It collects, filters, and cites telemetry, then emits a structured intake artifact. It does not reason and it does not decide.
+
+[**CASA**](https://github.com/ktalons/casa-ai-agent), my Cybersecurity Analysis Support Agent, is the separate **reasoning plane**. It consumes that intake and produces the analysis, with specialist agents that are NIST-aligned and human-in-the-loop. Deterministic infrastructure below, agentic reasoning on top. CASA is also my senior capstone.
 
 ## The four phases
 
-### Phase A: Foundation SOC Stack *(Weeks 1 to 3, May 20 to Jun 9)*
+### Phase A: Foundation SOC Stack
 
-- Proxmox VMs: Wazuh manager (Ubuntu), 2× Windows endpoints, 1× Linux endpoint, pfSense edge
-- Sysmon (Olaf Hartong modular config) on Windows endpoints with Windows Event Forwarding
-- Suricata IDS on pfSense WAN
+- Ubuntu Server and Docker on the owned EliteDesk
+- Wazuh single-node (manager, indexer, dashboard) in containers
+- Real-device Wazuh agents: my Windows machine with Sysmon (Olaf Hartong modular config), my Mac, and the Ubuntu host itself
+- Suricata IDS as a container, eve.json shipped to Wazuh
 - Custom Wazuh dashboards: top alerts, MITRE coverage, endpoint health
 
-### Phase B: Detection Engineering & Threat Hunting *(Weeks 3 to 6, Jun 3 to Jun 23)*
+### Phase B: Detection Engineering & Threat Hunting
 
-- 15 to 20 Atomic Red Team tests across Initial Access, Execution, Persistence, Priv Esc, Defense Evasion
-- For each: run atomic → confirm Wazuh detection → if missing, author Sigma rule → confirm fire → document
-- MITRE ATT&CK coverage heatmap (DeTT&CT or hand-built)
-- Jupyter hunt notebooks: rare parent-child process pairs, anomalous service installs, lateral movement
-- GitHub Action lints Sigma rules on PR
+- 15 to 20 Atomic Red Team tests across Initial Access, Execution, Persistence, Priv Esc, and Defense Evasion
+- For each: run the atomic, confirm the Wazuh detection, author a Sigma rule if it is missing, confirm it fires, then document it
+- A MITRE ATT&CK coverage map
+- Hunt notebooks: rare parent-child process pairs, anomalous service installs, lateral movement
+- A GitHub Action that lints Sigma rules on every PR
 
-### Phase C: AD Attack & Defense *(Weeks 5 to 8, Jun 17 to Jul 21)*
+### Phase C: AD Attack & Defense
 
-- GOAD-style vulnerable Active Directory environment
-- Top 5 AD attack chain documented: Kerberoasting, AS-REP, BloodHound, Pass-the-Hash, DCSync
-- For each: attacker steps, Wazuh detection rule, screenshot of detection firing
-- Purple-team report PDF in the format federal detection engineers actually deliver
+- A vulnerable Active Directory lab, GOAD-style
+- The top 5 AD attack chain: Kerberoasting, AS-REP roasting, BloodHound, Pass-the-Hash, DCSync
+- For each: the attacker steps, the Wazuh detection rule, and a screenshot of it firing
+- A purple-team report in the format federal detection engineers actually deliver
+- This is the phase 16 GB cannot hold on its own, so it runs as a trimmed mini-AD or a short cloud burst
 
-### Phase D: Honeynet + Threat Intel Pipeline *(Weeks 7 to 10, Jul 1 to Aug 4)*
+### Phase D: Honeynet + Threat Intel Pipeline
 
-- T-Pot deployment on cheap cloud VM
-- IOCs flow to MISP / OpenCTI
-- Enrichment via AbuseIPDB and VirusTotal APIs
-- Auto-feed enriched IOCs back to Wazuh as threat intel
-- Weekly published "honeynet observation" markdown reports
+- T-Pot on a cheap cloud VM, since a honeypot belongs off the home network by design
+- IOCs flow to OpenCTI, enriched through the AbuseIPDB and VirusTotal APIs
+- Enriched intel feeds back into Wazuh, and into CASA's analysis
+- Published honeynet observation reports
 
-## Why I'm building it
+## Why
 
-The OT SOC work and CTF leadership happened inside Arizona's networks. TalonSocLab is the public continuation. It matters most for senior SOC and federal detection engineering roles, where end to end SOC capability has to be visibly demonstrated, not just described.
+I learn by building the thing, not reading about it. TalonSocLab is me standing up a small SOC end to end so I actually understand how the pieces fit. It is public so it is useful to someone coming up behind me.
 
 ## Follow along
 
 - Blog posts here as each phase ships
 - LinkedIn: [www.linkedin.com/in/ta1ons](https://www.linkedin.com/in/ta1ons/)
-- GitHub: [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab) — Phase A scaffold + architecture + runbooks live; pivoting Phase A substrate after host hardware fault — [details](/blog/talonsoclab-phase-a-schedule-update/)
+- GitHub: [talonsoclab](https://github.com/ktalons/talonsoclab) (the SOC) and [casa-ai-agent](https://github.com/ktalons/casa-ai-agent) (the reasoning layer)
