@@ -1,11 +1,11 @@
 ---
-title: "The BUY Path, and Why I Split the SOC Into a Data Plane and a Reasoning Plane"
+title: "The BUY Path, and Why I Split the SOC Into a Two Planes"
 date: 2026-06-20
 summary: "I bought the box, committed to docker-compose, and in the process drew a hard line between the SOC that collects data and the agent that reasons over it."
 tags: ["TalonSocLab", "homelab", "Docker", "Wazuh", "Detection Engineering", "CASA", "AI"]
 ---
 
-Last time I left [Phase A](/blog/talonsoclab-phase-a-schedule-update/) on a cliffhanger. The shared Proxmox host that ran my SOC lab had died — PSU plus a Processor VRD fault — and I said I wasn't going to commit a new ship date until I'd made the substrate decision once instead of twice. This is that decision.
+Last time I left [Phase A](/blog/talonsoclab-phase-a-schedule-update/) on a cliffhanger.
 
 ## I bought the box
 
