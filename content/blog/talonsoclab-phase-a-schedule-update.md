@@ -2,8 +2,14 @@
 title: "TalonSocLab Phase A — schedule update"
 date: 2026-06-09
 summary: "Phase A was supposed to ship today. The Proxmox host my Wazuh stack lives on has been dark for ten days with a hardware fault I can't fix remotely. Here's where things stand and what I'm doing about it."
-tags: ["TalonSocLab", "incident", "homelab", "Proxmox"]
+tags: ["TalonSocLab", "incident", "homelab", "Proxmox", "Docker"]
 ---
+
+> **Update — June 20, 2026:** Decision made. I took the BUY path — a dedicated HP
+> EliteDesk 800 G4 Mini I own outright — and committed to docker-compose. The full
+> reasoning, the 16 GB constraints, and the new architecture (why I split the SOC into a
+> data plane and a CASA reasoning plane) are in the follow-up:
+> [The BUY Path, and Why I Split the SOC Into a Data Plane and a Reasoning Plane](/blog/the-buy-path-data-plane-and-casa-reasoning-plane/).
 
 Phase A of [TalonSocLab](/projects/talonsoclab/) was scheduled to ship today. It isn't shipping today.
 
