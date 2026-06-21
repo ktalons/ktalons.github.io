@@ -9,7 +9,9 @@ cover:
     relative: false
 ---
 
-{{< pill "indev" >}}In Dev · Pivoted to docker-compose on owned hardware, [read the latest](/blog/the-buy-path-data-plane-and-casa-reasoning-plane/){{< /pill >}}
+{{< pill "indev" >}}In Dev · Phase A rebuilding on owned hardware{{< /pill >}}
+
+Latest: I [pivoted to docker-compose and split the SOC into a data plane and a reasoning plane](/blog/the-buy-path-data-plane-and-casa-reasoning-plane/).
 
 **Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab). The [architecture diagram](https://github.com/ktalons/talonsoclab/blob/main/phase-a-foundation/architecture.mmd), the docker-compose deploy bundle ([`deploy/soc-recon`](https://github.com/ktalons/talonsoclab/tree/main/deploy/soc-recon)), and the recovery runbook are live. The original Proxmox build is archived in the repo as provenance for the pivot.
 
