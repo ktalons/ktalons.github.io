@@ -13,7 +13,7 @@ Now I'm building the next thing in public.
 
 ## Coming up: TalonSocLab
 
-Over the next 10 weeks I'm shipping a personal home SOC called **[TalonSocLab](/projects/talonsoclab/)**: four phases that compound into a single visible artifact of "I can run a small SOC end to end."
+Over the next 10 weeks I'm shipping a personal home SOC called **[TalonSocLab](/projects/talonsoclab/)**: four phases that add up to one visible artifact, proof I can run a small SOC end to end.
 
 **Phase A: Foundation** (by June 9). Wazuh, Sysmon, Suricata, and pfSense with custom dashboards. Every endpoint instrumented, every alert tuned.
 

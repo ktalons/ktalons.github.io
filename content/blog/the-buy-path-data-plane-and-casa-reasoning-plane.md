@@ -1,5 +1,5 @@
 ---
-title: "The BUY Path, and Why I Split the SOC Into a Two Planes"
+title: "The BUY Path, and Why I Split the SOC Into Two Planes"
 date: 2026-06-20
 summary: "I bought the box, committed to docker-compose, and in the process drew a hard line between the SOC that collects data and the agent that reasons over it."
 tags: ["TalonSocLab", "homelab", "Docker", "Wazuh", "Detection Engineering", "CASA", "AI"]
@@ -29,7 +29,7 @@ The decision I'm proudest of isn't the hardware. It's a line I drew through the 
 
 **CASA is the reasoning plane.** [CASA](https://github.com/ktalons/casa-ai-agent) — Cybersecurity Analysis Support Agent — is a separate project: a PAI-based multi-agent system on Claude, with specialist agents for log analysis, network analysis, and purple-team mapping, all NIST-aligned and human-in-the-loop. It consumes the data plane's intake and does the actual analysis.
 
-Keeping these two apart is the whole point. Deterministic infrastructure underneath, agentic reasoning on top, with a clean, well-cited artifact as the contract between them. When the reasoning layer hallucinates or drifts and it will, I can see exactly what data it was handed because the data plane stamped and cited all of it. You can't audit an agent's judgment if you can't reproduce its inputs.
+Keeping these two apart is the whole point. Deterministic infrastructure underneath, agentic reasoning on top, with a clean, well-cited artifact as the contract between them. When the reasoning layer hallucinates or drifts and it will. I can see exactly what data it was handed because the data plane stamped and cited all of it. You can't audit an agent's judgment if you can't reproduce its inputs.
 
 It also means I'm not locked to one model or one vendor. Today CASA runs on Claude. The interface between the planes is a JSON schema, not an API key.
 
