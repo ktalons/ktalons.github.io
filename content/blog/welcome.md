@@ -5,26 +5,23 @@ summary: "A short hello, and a preview of the TalonSocLab buildout."
 tags: ["meta", "TalonSocLab"]
 ---
 
-Hi, I'm Kyle Versluis.
+Hi, I'm Kyle.
 
-I just graduated from the University of Arizona with a BAS in Cyber Operations (Engineering Emphasis) in May 2026. For a year and a half I ran an OT SOC for the U of A Facilities Management department, monitoring building automation across three ICS sites that keep the campus running through peak Tucson Electric Power demand. Alongside that I served as CTF Captain of [The Cyber Saguaros Club](https://cybersaguaros.com/), where we placed **100th of 4,214 teams** at NCL Fall 2025 and qualified for WWRCDC '26.
+I just graduated from the University of Arizona with a degree in Cyber Operations. For about a year and a half I ran an OT SOC for the university's Facilities Management team, watching the building automation that keeps campus running. I also captained our CTF club, [The Cyber Saguaros](https://cybersaguaros.com/), which is where I learned how much I like this work under pressure.
 
-Now I'm building the next thing in public.
+Now I want to build something in the open.
 
 ## Coming up: TalonSocLab
 
-Over the next 10 weeks I'm shipping a personal home SOC called **[TalonSocLab](/projects/talonsoclab/)**: four phases that add up to one visible artifact, proof I can run a small SOC end to end.
+Over the next few months I'm standing up a personal home SOC, [TalonSocLab](/projects/talonsoclab/), in four phases. The goal is simple: one working thing that shows I can run a small SOC end to end.
 
-**Phase A: Foundation** (by June 9). Wazuh, Sysmon, Suricata, and pfSense with custom dashboards. Every endpoint instrumented, every alert tuned.
+- **Phase A, Foundation.** Wazuh, Sysmon, and Suricata with tuned dashboards on real endpoints.
+- **Phase B, Detection Engineering.** A Sigma rule pack tested against Atomic Red Team and mapped to MITRE ATT&CK.
+- **Phase C, AD Attack and Defense.** A vulnerable Active Directory lab, the common attacks, and a detection for each.
+- **Phase D, Honeynet and Threat Intel.** An internet-facing honeypot feeding an IOC pipeline.
 
-**Phase B: Detection Engineering** (by June 23). A Sigma rule pack validated against Atomic Red Team executions, a MITRE ATT&CK coverage map, and Jupyter hunt notebooks.
+Each phase gets a short post here. Follow along by [RSS](/blog/index.xml).
 
-**Phase C: AD Attack & Defense** (by July 21). GOAD-style lab, the top 5 AD attacks with detections firing for each, and a purple-team report in the format federal detection engineers actually produce.
+## What I'm after
 
-**Phase D: Honeynet + Threat Intel** (by August 4). Internet-facing T-Pot, IOCs flowing to OpenCTI with AbuseIPDB and VirusTotal enrichment, and automated blocklisting back at the perimeter.
-
-Each phase ships with a blog post here. Subscribe via [RSS](/blog/index.xml) to follow along.
-
-## What I'm looking for
-
-I'm targeting **SOC, detection engineering, and security engineering roles**, with federal positions especially welcome. If that lines up with what you're hiring for, please [reach out](/contact/).
+My first full-time role in a SOC, detection engineering, or security engineering, with federal work especially welcome. If that's you, [reach out](/contact/).
