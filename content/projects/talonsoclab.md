@@ -15,7 +15,7 @@ Latest: [Phase 0 is wired through the switch and the Wazuh stack is green](/blog
 
 **Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab)
 
-A single coherent home SOC, built in four phases on an HP EliteDesk 800 G4 Mini I own outright. Each phase ships independently with its own folder, README, architecture diagram, and lessons-learned write-up. By the end it runs a small SOC end to end, from log ingest through detection engineering to threat intel.
+A single coherent home SOC, built in four phases across a few machines on my home network. Each phase ships independently with its own folder, README, architecture diagram, and lessons-learned write-up. By the end it runs a small SOC end to end, from log ingest through detection engineering to threat intel.
 
 ## Two planes
 
@@ -23,7 +23,7 @@ TalonSocLab is the **data plane**: it collects, filters, and cites telemetry, th
 
 ## Milestones
 
-- **Phase 0 — Hardware and network** {{< pill "live" >}}Complete{{< /pill >}} Owned box on Ubuntu and Docker, wired through the managed switch with a reserved address, Wazuh stack green.
+- **Phase 0 — Hardware and network** {{< pill "live" >}}Complete{{< /pill >}} SOC host on Ubuntu and Docker, wired through the managed switch with a reserved address, Wazuh stack green.
 - **Phase A — Foundation SOC stack** {{< pill "indev" >}}In Dev{{< /pill >}} Wazuh, Sysmon, and Suricata in containers, agents on real endpoints, custom dashboards.
 - **Phase B — Detection engineering** {{< pill "coming" >}}Planned{{< /pill >}} Atomic Red Team tests, a Sigma rule pack, and a MITRE ATT&CK coverage map.
 - **Phase C — AD attack and defense** {{< pill "coming" >}}Planned{{< /pill >}} A mini Active Directory lab, the top five attack chain, and a purple-team report.
