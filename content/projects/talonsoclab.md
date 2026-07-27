@@ -1,7 +1,7 @@
 ---
 title: "TalonSocLab"
 date: 2026-05-20
-summary: "My first home lab: a personal SOC on hardware I own, built and documented publicly across four phases. The deterministic data plane that feeds CASA, my agentic reasoning layer."
+summary: "My first home lab: a self-hosted SOC built and documented publicly across four phases. The deterministic data plane that feeds CASA, my agentic reasoning layer."
 tags: ["SIEM", "Wazuh", "Detection Engineering", "MITRE ATT&CK", "Active Directory", "Honeynet", "OpenCTI", "Sigma", "Docker", "CASA"]
 cover:
     image: ""
