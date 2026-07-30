@@ -11,20 +11,22 @@ tags: ["Python", "Scripting", "Security Automation", "Forensics", "Network"]
 
 A curated, runnable collection of my Python scripting assignments from cyber operations coursework. Informally named for the canonical *Violent Python* book by TJ O'Connor.
 
-Active development. Functional today, more assignments and capability planned, with the showcase and test coverage expanded alongside the script collection.
+Active development. Ten of the twenty-one assignments are written and running; the rest are placeholders on the roadmap.
 
-## What's in the catalog
+## In the catalog today
 
-A growing set of scripts spanning the practical Python toolkit a SOC analyst or detection engineer ends up writing in production:
+Scripts spanning the practical Python toolkit a SOC analyst or detection engineer ends up writing:
 
-- **Parsing and extraction:** firewall log parser, memory regex extraction, memory unique-string mining, EXIF geotag extraction, MP3 ID3 carving.
-- **Network:** TCP client and server, packet sniffer, PCAP asset mapping.
-- **Forensics:** hashing forensics, LSB steganography, image search.
-- **Threat intel and OSINT:** VirusTotal client, social-graph harvester, hashtag collector.
-- **Data processing:** string search, file processor (OOP), web crawler / scraper, NLTK transcript analysis.
+- **Parsing and extraction:** firewall log parser, memory regex extraction, memory unique-string mining, EXIF geotag extraction.
+- **Forensics:** hashing forensics with duplicate detection, PIL image search.
+- **Data processing:** string search, file processor (OOP), web crawler / scraper.
+
+## Planned
+
+TCP client and server, packet sniffer, PCAP asset mapping, LSB steganography, MP3 ID3 carving, NLTK transcript analysis, VirusTotal client, hashtag collector, social-graph harvester. The directories exist with a README stating what each will do.
 
 ## How it ships
 
-- **Cross-platform bootstrap:** `start.sh` for macOS and Linux, `start.ps1` for Windows.
-- **Interactive showcase:** `main.py` lets you browse the catalog and run scripts in place, with persisted user preferences via `.vp_showcase_prefs.json`.
-- **Per-OS requirements:** separate `requirements-linux.txt`, `requirements-macos.txt`, and `requirements-windows.txt` keep dependencies clean on every host.
+- **Cross-platform bootstrap:** `start.sh` for macOS and Linux, `start.ps1` for Windows. Python 3.10 or newer, with Tk.
+- **Interactive showcase:** `main.py` lets you browse the catalog and run scripts in place, in your own preferred terminal, with preferences persisted outside version control.
+- **Checked on every push:** ruff, byte-compilation, and a pytest suite on 3.10 and 3.13. The tests cover the seams worth covering, including a property that a chunked memory scan returns the same result at any chunk size.
