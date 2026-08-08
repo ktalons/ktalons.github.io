@@ -1,0 +1,71 @@
+/* ============================================================
+   Background video for hugo-coder
+   Place at: assets/css/background.css
+   Register in hugo.toml:  [params] customCSS = ["css/background.css"]
+   ============================================================ */
+
+:root {
+  /* Tune this. 0.30 = subtle, 0.50 = assertive. */
+  --bg-video-opacity: 0.40;
+}
+
+#bg-video-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: var(--bg-video-opacity);
+}
+
+/* Keep theme content above the video.
+   hugo-coder's body background paints to the canvas, which sits below
+   z-index:0, so the video lands between the background and the content. */
+.wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Color scheme toggle / float widget stays clickable on top */
+.float {
+  z-index: 2;
+}
+
+/* ---- Light mode: dial it way back or body text loses contrast ---- */
+.colorscheme-light #bg-video {
+  opacity: 0.15;
+}
+
+@media (prefers-color-scheme: light) {
+  .colorscheme-auto #bg-video {
+    opacity: 0.15;
+  }
+}
+
+/* ---- Accessibility: honor reduced-motion, fall back to the poster ---- */
+@media (prefers-reduced-motion: reduce) {
+  #bg-video {
+    display: none;
+  }
+  #bg-video-wrap {
+    background: url("/img/bg-poster.jpg") center / cover no-repeat;
+    opacity: var(--bg-video-opacity);
+  }
+}
+
+/* ---- Mobile: skip the ~850KB download, use the poster instead ---- */
+@media (max-width: 768px) {
+  #bg-video {
+    display: none;
+  }
+  #bg-video-wrap {
+    background: url("/img/bg-poster.jpg") center / cover no-repeat;
+    opacity: var(--bg-video-opacity);
+  }
+}

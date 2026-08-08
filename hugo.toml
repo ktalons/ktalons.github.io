@@ -28,7 +28,7 @@ projects = "/projects/:slug/"
 
 [params]
   author = "Kyle Versluis"
-  description = "Cybersecurity Analyst and Engineer. BAS Cyber Operations graduate (Engineering Emphasis), University of Arizona. Based in Tucson, AZ. Open to SOC, detection engineering, and federal security engineering roles."
+  description = "Cybersecurity Analyst and Engineer. BAS Cyber Operations Engineering graduate, University of Arizona. Based in Tucson, AZ. Open to SOC, detection engineering, and federal security engineering roles."
   keywords = "cybersecurity analyst, security engineer, SOC, detection engineering, threat hunting, MITRE ATT&CK, Tucson, DHS, Kyle Versluis"
   info = [
     "Cybersecurity Analyst and Engineer",
@@ -44,7 +44,7 @@ projects = "/projects/:slug/"
   hideColorSchemeToggle = false
 
   # Custom CSS injection
-  customCSS = ["css/custom.css"]
+  customCSS = ["css/custom.css", "css/background.css"]
   customSCSS = []
   customJS = ["js/hero-fade.js", "js/hackme.js", "js/hackme-menu.js", "js/phishing-game.js", "js/malicious-url-game.js", "js/cipher-decoder-game.js", "js/mitre-match-game.js", "js/hash-id-game.js", "js/find-ioc-game.js"]
 

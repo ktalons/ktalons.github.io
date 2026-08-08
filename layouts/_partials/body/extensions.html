@@ -1,0 +1,21 @@
+{{/*
+  Background video.
+  Place at: layouts/_partials/body/extensions.html   (Hugo >= 0.146)
+         or layouts/partials/body/extensions.html    (older Hugo / older coder)
+
+  Assets:
+    static/video/bg.webm
+    static/video/bg.mp4
+    static/img/bg-poster.jpg
+
+  This partial is the theme's own extension point, rendered just before
+  </body>. Overriding it in your site's layouts/ does not touch the theme.
+*/}}
+
+<div id="bg-video-wrap" aria-hidden="true">
+  <video id="bg-video" autoplay muted loop playsinline preload="auto"
+         poster="{{ "img/bg-poster.jpg" | relURL }}">
+    <source src="{{ "video/bg.webm" | relURL }}" type="video/webm">
+    <source src="{{ "video/bg.mp4" | relURL }}" type="video/mp4">
+  </video>
+</div>
