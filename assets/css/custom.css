@@ -423,6 +423,15 @@ body.colorscheme-light .status-pill.indev {
   border-color: rgba(4, 165, 229, 0.5);
 }
 
+/* ─────────────── Inline GIF embeds (layouts/shortcodes/gif.html) ─────────────── */
+.content-gif {
+  display: block;
+  margin: 1.75rem auto 0;
+  max-width: min(420px, 100%);
+  height: auto;
+  border-radius: 6px;
+}
+
 /* ─────────────── PROFILE / HOME polish ─────────────── */
 
 .avatar img {
@@ -704,7 +713,7 @@ body.colorscheme-light .list .posts .post:hover::before {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   H@ck m3 G@me — easter-egg popup link (homepage only)
+   E@st3r Egg Cyb3r Ski11 G@m3 — easter-egg popup link (homepage only)
    Spawned by assets/js/hackme.js
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -873,7 +882,7 @@ body.colorscheme-light .centered .about h2:hover {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   H@ck m3 G@me — Phishing or Legit (assets/js/phishing-game.js)
+   E@st3r Egg Cyb3r Ski11 G@m3 — Phishing or Legit (assets/js/phishing-game.js)
    ═══════════════════════════════════════════════════════════════════ */
 
 .phishing-game {
@@ -1153,7 +1162,7 @@ body.colorscheme-light .pg-results-message {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   H@ck m3 G@me — Spot the Malicious URL (assets/js/malicious-url-game.js)
+   E@st3r Egg Cyb3r Ski11 G@m3 — Spot the Malicious URL (assets/js/malicious-url-game.js)
    ═══════════════════════════════════════════════════════════════════ */
 
 .malicious-url-game {
@@ -1415,7 +1424,7 @@ body.colorscheme-light .mu-results-message {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   H@ck m3 G@me — menu + tier badges (assets/js/hackme-menu.js)
+   E@st3r Egg Cyb3r Ski11 G@m3 — menu + tier badges (assets/js/hackme-menu.js)
    ═══════════════════════════════════════════════════════════════════ */
 
 #hackme-menu {
@@ -1720,7 +1729,7 @@ body.colorscheme-light .hm-award {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   H@ck m3 G@me — Cipher Decoder (assets/js/cipher-decoder-game.js)
+   E@st3r Egg Cyb3r Ski11 G@m3 — Cipher Decoder (assets/js/cipher-decoder-game.js)
    IT-person tier — mauve accent
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -2093,7 +2102,7 @@ body.colorscheme-light .cd-results-message {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   H@ck m3 G@me — MITRE ATT&CK Match (assets/js/mitre-match-game.js)
+   E@st3r Egg Cyb3r Ski11 G@m3 — MITRE ATT&CK Match (assets/js/mitre-match-game.js)
    Cyber Student tier — mauve accent
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -2362,7 +2371,7 @@ body.colorscheme-light .mt-results-message {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   H@ck m3 G@me — Hash Identifier (assets/js/hash-id-game.js)
+   E@st3r Egg Cyb3r Ski11 G@m3 — Hash Identifier (assets/js/hash-id-game.js)
    Cyber Ninja tier — peach accent
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -2641,7 +2650,7 @@ body.colorscheme-light .hi-results-message {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   H@ck m3 G@me — Find the IOC (assets/js/find-ioc-game.js)
+   E@st3r Egg Cyb3r Ski11 G@m3 — Find the IOC (assets/js/find-ioc-game.js)
    Cyber Ninja tier — peach accent
    ═══════════════════════════════════════════════════════════════════ */
 

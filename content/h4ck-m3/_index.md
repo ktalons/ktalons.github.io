@@ -1,7 +1,7 @@
 ---
-title: "H@ck m3 G@me"
+title: "E@st3r Egg Cyb3r Ski11 G@m3"
 url: "/h4ck-m3/"
-summary: "Phishing or Legit, an interactive cybersec-basics mini-challenge."
+summary: "A hidden set of cybersec mini-challenges across three tiers."
 noindex: true
 sitemap:
   disable: true
@@ -12,11 +12,11 @@ ShowReadingTime: false
 hidemeta: true
 ---
 
-> You found it. 🦉
+> Flex your cybersec skills below... 🦉
 
-A small collection of cybersec-basics mini-challenges. Pick a challenge, play it, score 80% or higher to fill half of its tier pill. Pass both challenges in a tier for the full badge. No backend, no leaderboard, everything stays in your browser.
+Pick a challenge, play it, score 80% or higher to fill half of its tier pill. Pass both challenges in a tier for the full badge. No backend, no leaderboard, everything stays in your browser.
 
-**Tiers, easy to hard:** Rookie · Cyber Student · Cyber Ninja. *(Two challenges per tier.)*
+**Tiers, easy to hard:** Rookie · Cyber Student · Cyber Ninja.
 
 {{< hackme-menu >}}
 

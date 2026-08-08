@@ -1,5 +1,5 @@
 /*
- * cipher-decoder-game.js — H@ck m3 G@me, round 3: Cipher Decoder
+ * cipher-decoder-game.js — E@st3r Egg Cyb3r Ski11 G@m3, round 3: Cipher Decoder
  *
  * IT-person tier. Six rounds, each presents an encoded message and asks the
  * player to type the decoded plaintext. First attempt is blind (no cipher

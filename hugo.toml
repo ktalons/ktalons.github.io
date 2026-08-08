@@ -10,7 +10,6 @@ enableRobotsTXT = true
 pagerSize = 10
 
 [permalinks]
-posts = "/blog/:slug/"
 projects = "/projects/:slug/"
 
 [markup]
@@ -28,12 +27,12 @@ projects = "/projects/:slug/"
 
 [params]
   author = "Kyle Versluis"
-  description = "Cybersecurity Analyst and Engineer. BAS Cyber Operations Engineering graduate, University of Arizona. Based in Tucson, AZ. Open to SOC, detection engineering, and federal security engineering roles."
-  keywords = "cybersecurity analyst, security engineer, SOC, detection engineering, threat hunting, MITRE ATT&CK, Tucson, DHS, Kyle Versluis"
+  description = "Kyle Versluis is a cybersecurity analyst and engineer in Tucson, AZ, defending critical infrastructure and building TalonSocLab, a personal SOC, in public."
+  keywords = "cybersecurity analyst, security engineer, SOC, detection engineering, threat hunting, OT security, ICS, critical infrastructure, MITRE ATT&CK, STIG, Tucson, Kyle Versluis"
   info = [
     "Cybersecurity Analyst and Engineer",
-    "BAS Cyber Operations '26",
-    "University of Arizona"
+    "Critical Infrastructure & OT Defense",
+    "Tucson, AZ"
   ]
   avatarURL = "images/avatar.jpeg"
   dateFormat = "January 2, 2006"

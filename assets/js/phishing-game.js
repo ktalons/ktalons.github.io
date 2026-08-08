@@ -1,5 +1,5 @@
 /*
- * phishing-game.js — H@ck m3 G@me, round 1: Phishing or Legit?
+ * phishing-game.js — E@st3r Egg Cyb3r Ski11 G@m3, round 1: Phishing or Legit?
  *
  * Registers as window.HackMeGame.phishing with a start(host, onComplete)
  * function the menu controller calls. No path guard, no auto-boot — the

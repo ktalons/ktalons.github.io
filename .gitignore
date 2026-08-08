@@ -13,3 +13,6 @@ resources/_gen/
 # Local-only
 node_modules/
 *.log
+
+# Working notes / plan docs (not site content)
+Plans/

@@ -1,5 +1,5 @@
 /*
- * mitre-match-game.js — H@ck m3 G@me: MITRE ATT&CK Match (Cyber Student tier)
+ * mitre-match-game.js — E@st3r Egg Cyb3r Ski11 G@m3: MITRE ATT&CK Match (Cyber Student tier)
  *
  * 10 rounds, each presents an attacker-behavior scenario in plain English
  * with 4 ATT&CK technique options. Player picks the right one. Tells explain

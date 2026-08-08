@@ -1,5 +1,5 @@
 /*
- * malicious-url-game.js — H@ck m3 G@me, round 2: Spot the Malicious URL
+ * malicious-url-game.js — E@st3r Egg Cyb3r Ski11 G@m3, round 2: Spot the Malicious URL
  *
  * Registers as window.HackMeGame['malicious-url'] with a start(host, onComplete)
  * function the menu controller calls. Six rounds; each round shows four URLs

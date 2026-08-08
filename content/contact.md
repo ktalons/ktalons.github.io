@@ -12,6 +12,4 @@ Best ways to reach me:
 - **LinkedIn:** [www.linkedin.com/in/ta1ons](https://www.linkedin.com/in/ta1ons/)
 - **GitHub:** [github.com/ktalons](https://github.com/ktalons)
 
-Based in **Tucson, AZ**. Currently looking for **SOC, detection engineering, and security engineering positions**, with federal roles especially welcome.
-
-If you're a recruiter or hiring manager, skip the LinkedIn dance and email me directly. I respond within 24 hours.
+{{< gif src="/images/hacker-typing.gif" alt="Hacker in a balaclava typing away at a desktop battlestation" >}}

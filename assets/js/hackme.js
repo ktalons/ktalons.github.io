@@ -1,5 +1,5 @@
 /*
- * hackme.js — easter-egg "H@ck m3 G@me" popup link
+ * hackme.js — easter-egg "E@st3r Egg Cyb3r Ski11 G@m3" popup link
  * Scoped to the homepage only. Cycles a small floating link that fades in/out
  * at random positions every ~6 seconds. Pauses on hover/focus or when the tab
  * is hidden. Respects prefers-reduced-motion.
@@ -29,9 +29,9 @@
     a.className = 'hackme-popup';
     a.href = LINK_HREF;
     a.textContent = LINK_TEXT;
-    a.setAttribute('aria-label', 'H@ck m3 G@me — easter egg challenge');
+    a.setAttribute('aria-label', 'E@st3r Egg Cyb3r Ski11 G@m3 — hidden cybersec challenges');
     a.setAttribute('role', 'button');
-    a.setAttribute('title', 'H@ck m3 G@me');
+    a.setAttribute('title', 'E@st3r Egg Cyb3r Ski11 G@m3');
     return a;
   }
 

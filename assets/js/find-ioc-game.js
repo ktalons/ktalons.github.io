@@ -1,5 +1,5 @@
 /*
- * find-ioc-game.js — H@ck m3 G@me: Find the IOC (Cyber Ninja tier)
+ * find-ioc-game.js — E@st3r Egg Cyb3r Ski11 G@m3: Find the IOC (Cyber Ninja tier)
  *
  * Six log-snippet rounds covering Suricata, Windows Security, sshd, email
  * headers, Zeek DNS, and Sysmon. Player clicks tokens they believe are

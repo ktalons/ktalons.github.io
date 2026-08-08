@@ -3,15 +3,11 @@ title: "TalonSocLab"
 date: 2026-05-20
 summary: "My first home lab: a self-hosted SOC built and documented publicly across four phases. The deterministic data plane that feeds CASA, my agentic reasoning layer."
 tags: ["SIEM", "Wazuh", "Detection Engineering", "MITRE ATT&CK", "Active Directory", "Honeynet", "OpenCTI", "Sigma", "Docker", "CASA"]
-cover:
-    image: ""
-    alt: "TalonSocLab architecture"
-    relative: false
 ---
 
 {{< pill "indev" >}}In Dev · Phase A{{< /pill >}}
 
-Latest: [Phase 0 is wired through the switch and the Wazuh stack is green](/blog/phase-0-off-the-dongle/).
+Latest: [Phase 0 complete, agents rolling onto real endpoints](/blog/phase-0-off-the-dongle/).
 
 **Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab)
 
@@ -24,7 +20,7 @@ TalonSocLab is the **data plane**: it collects, filters, and cites telemetry, th
 ## Milestones
 
 - **Phase 0 — Hardware and network** {{< pill "live" >}}Complete{{< /pill >}} SOC host on Ubuntu and Docker, wired through the managed switch with a reserved address, Wazuh stack green.
-- **Phase A — Foundation SOC stack** {{< pill "indev" >}}In Dev{{< /pill >}} Wazuh, Sysmon, and Suricata in containers, agents on real endpoints, custom dashboards.
+- **Phase A — Foundation SOC stack** {{< pill "indev" >}}In Dev{{< /pill >}} Wazuh in containers with agents enrolled and verified on three real endpoints: Windows with Sysmon, macOS, and the Ubuntu host. Suricata and custom dashboards next.
 - **Phase B — Detection engineering** {{< pill "coming" >}}Planned{{< /pill >}} Atomic Red Team tests, a Sigma rule pack, and a MITRE ATT&CK coverage map.
 - **Phase C — AD attack and defense** {{< pill "coming" >}}Planned{{< /pill >}} A mini Active Directory lab, the top five attack chain, and a purple-team report.
 - **Phase D — Honeynet and threat intel** {{< pill "coming" >}}Planned{{< /pill >}} T-Pot feeding OpenCTI, enriched through the AbuseIPDB and VirusTotal APIs.

@@ -1,16 +1,13 @@
 ---
 title: "About"
 url: "/about/"
-summary: "Kyle Versluis, a new cybersecurity grad in Tucson learning the field by building a home SOC."
-ShowReadingTime: false
-ShowBreadCrumbs: false
-hidemeta: true
+summary: "Kyle Versluis, a cybersecurity analyst and engineer in Tucson building a personal SOC in public."
 ---
 
-I'm Kyle, a cybersecurity analyst in Tucson, Arizona. I graduated from the University of Arizona in May 2026 with a degree in Cyber Operations, so I'm early in my career and mostly focused on getting better at the craft.
+I'm Kyle, a cybersecurity analyst and engineer based in Tucson, Arizona. My real world experience so far is defensive security operations, with a particular interest in the places where IT security meets industrial and building systems.
 
-I learn by building. During school I spent about a year and a half helping run an OT SOC for the university's Facilities Management team, keeping an eye on the building automation systems that keep campus running. That's where security stopped being abstract for me. You can't spot what's wrong until you know what normal looks like, and the only way to learn that is to sit with the data.
+I ran an OT security operations center for the University of Arizona's Facilities Management team, where I built and operated an ELK-based SIEM across three industrial sites. I captained [the Cyber Saguaros](https://cybersaguaros.com/) CTF team through national competitions and now hang out as an alum in the club's discord. Before security I spent sixteen years in claims and operations roles, learning how organizations actually run and how to talk to everyone from field techs to executives. It also taught me how businesses actually work and how to frame security problems in business terms fairly easily.
 
-These days most of that learning happens in a home lab. I'm building [TalonSocLab](/projects/talonsoclab/), a small SOC on hardware I own, running Wazuh, Suricata, and Sysmon in Docker. I grow it a phase at a time and write up each step on the blog, including the parts I get wrong. It feeds into [CASA](https://github.com/ktalons/casa-ai-agent), an AI-assisted analysis project where I want to keep growing.
+Outside of work hours I run [TalonSocLab](/projects/talonsoclab/), a personal SOC that feeds [CASA](https://github.com/ktalons/casa-ai-agent), an AI-assisted analysis project. My home lab also allows me to build and explore tools like [stigroll](https://github.com/ktalons/stigroll) and [PCAPpuller](/projects/pcappuller/) that ship along the way. The lab is where I pressure-test what I know and document what I learn.
 
-I'm looking for my first full-time role in a SOC, detection engineering, or security engineering, and I'm especially drawn to OT/ICS and federal work. If that sounds like your team, I'd be glad to [talk](/contact/).
+If you want to talk security, critical infrastructure, or home labs, [let's connect](/contact/).

@@ -1,0 +1,5 @@
+{{- /*
+  gif — centered, rounded animated image (CSP-safe, local files only).
+  Usage: {{< gif src="/images/name.gif" alt="short description" >}}
+*/ -}}
+<img class="content-gif" src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" loading="lazy" decoding="async">

@@ -1,5 +1,5 @@
 /*
- * hackme-menu.js — H@ck m3 G@me menu controller
+ * hackme-menu.js — E@st3r Egg Cyb3r Ski11 G@m3 menu controller
  * Scope: /h4ck-m3/ only. Renders the challenge picker, tracks earned
  * difficulty badges in localStorage, launches individual games (which
  * register themselves on window.HackMeGame), and handles the back-to-menu

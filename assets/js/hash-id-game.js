@@ -1,5 +1,5 @@
 /*
- * hash-id-game.js — H@ck m3 G@me: Hash Identifier (Cyber Ninja tier)
+ * hash-id-game.js — E@st3r Egg Cyb3r Ski11 G@m3: Hash Identifier (Cyber Ninja tier)
  *
  * 10 rounds. Each round shows one hash string. Player picks the algorithm
  * from 4 options. Tells explain format/length/prefix giveaways.
