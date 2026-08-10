@@ -9,7 +9,7 @@ summary: "My senior capstone work on Project Twilight Synapse: a Docker-based mu
 tags: ["Capstone", "Docker", "AI", "Security Analysis", "PTS", "Agent Kyle", "MITRE ATT&CK"]
 ---
 
-{{< pill "live" >}}Live{{< /pill >}}
+{{< pill "archived" >}}Archived{{< /pill >}}
 
 - **Org:** [github.com/Capstone-AI-Research-Project](https://github.com/Capstone-AI-Research-Project)
 - **My agent:** [github.com/Capstone-AI-Research-Project/pts-agent-kyle](https://github.com/Capstone-AI-Research-Project/pts-agent-kyle)

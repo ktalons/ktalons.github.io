@@ -5,9 +5,9 @@ summary: "My first home lab: a self-hosted SOC built and documented publicly acr
 tags: ["SIEM", "Wazuh", "Detection Engineering", "MITRE ATT&CK", "Active Directory", "Honeynet", "OpenCTI", "Sigma", "Docker", "CASA"]
 ---
 
-{{< pill "indev" >}}In Dev · Phase A{{< /pill >}}
+{{< pill "indev" >}}In Dev · Phase B{{< /pill >}}
 
-Latest: [Phase 0 complete, agents rolling onto real endpoints](/blog/phase-0-off-the-dongle/).
+Latest: [Phase A complete, detection engineering next](/blog/phase-a-active-is-not-proof/).
 
 **Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab)
 
@@ -20,8 +20,8 @@ TalonSocLab is the **data plane**: it collects, filters, and cites telemetry, th
 ## Milestones
 
 - **Phase 0 — Hardware and network** {{< pill "live" >}}Complete{{< /pill >}} SOC host on Ubuntu and Docker, wired through the managed switch with a reserved address, Wazuh stack green.
-- **Phase A — Foundation SOC stack** {{< pill "indev" >}}In Dev{{< /pill >}} Wazuh in containers with agents enrolled and verified on three real endpoints: Windows with Sysmon, macOS, and the Ubuntu host. Suricata and custom dashboards next.
-- **Phase B — Detection engineering** {{< pill "coming" >}}Planned{{< /pill >}} Atomic Red Team tests, a Sigma rule pack, and a MITRE ATT&CK coverage map.
+- **Phase A — Foundation SOC stack** {{< pill "live" >}}Complete{{< /pill >}} Wazuh in containers with agents enrolled and verified on three real endpoints: Windows with Sysmon, macOS, and the Ubuntu host. Suricata on the host NIC and a SOC Overview dashboard in git.
+- **Phase B — Detection engineering** {{< pill "indev" >}}In Dev{{< /pill >}} Atomic Red Team tests, a Sigma rule pack, and a MITRE ATT&CK coverage map.
 - **Phase C — AD attack and defense** {{< pill "coming" >}}Planned{{< /pill >}} A mini Active Directory lab, the top five attack chain, and a purple-team report.
 - **Phase D — Honeynet and threat intel** {{< pill "coming" >}}Planned{{< /pill >}} T-Pot feeding OpenCTI, enriched through the AbuseIPDB and VirusTotal APIs.
 
