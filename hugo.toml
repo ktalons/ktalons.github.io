@@ -34,7 +34,7 @@ projects = "/projects/:slug/"
     "Critical Infrastructure & OT Defense",
     "Tucson, AZ"
   ]
-  avatarURL = "images/avatar.jpeg"
+  avatarURL = "images/avatar.gif"
   dateFormat = "January 2, 2006"
   since = 2026
 
