@@ -14,3 +14,7 @@ A STIG finding is technology-specific, but a control assessor reports in NIST SP
 ## Why it matters
 
 Python standard library only, one file, no install step. That matters on a hardened assessor workstation where installing a package is a change request. And nothing about the shape is STIG-specific: scan output plus a published mapping equals framework-level rollup, so the same three stages work against a different control framework by swapping the mapping file.
+
+## Successor
+
+A control-family rollup is an assessment artifact. FedRAMP's 2026 rules ask providers for a persistent, machine-readable vulnerability record instead, required on December 7, 2026, with default grace to March 7, 2027. **[ComplyRoll](/projects/complyroll/)** reuses stigroll's hardened ingestion to compile that record, and carries the original rollup forward byte for byte as a bundled command. Verify any date or clock against [fedramp.gov/2026](https://www.fedramp.gov/2026/) before relying on it. stigroll itself stays as it is.
