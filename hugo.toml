@@ -35,6 +35,16 @@ projects = "/projects/:slug/"
     "Tucson, AZ"
   ]
   avatarURL = "images/avatar.gif"
+
+  # Site icons — all generated from Documents/talonsoclab_art/talon-glyph.svg.
+  # The theme's head partial already referenced these paths; the files did not
+  # exist until 2026-08-23, so every icon link on the site was a 404.
+  faviconSVG = "/images/talon-glyph.svg"
+  favicon_32 = "/images/favicon-32x32.png"
+  favicon_16 = "/images/favicon-16x16.png"
+  touchicon = "/images/apple-touch-icon.png"
+  mask_icon = "/images/safari-pinned-tab.svg"
+  mask_icon_color = "#fab387"
   dateFormat = "January 2, 2006"
   since = 2026
 

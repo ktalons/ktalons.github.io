@@ -12,6 +12,10 @@
 */}}
 {{- $feedTitle := "Talons Dev Blog Feed" }}
 {{- $feedDescription := "Recent posts on Talons Dev Blog" }}
+{{- $feedIcon := "images/feed-icon.png" | absURL }}
+{{- $feedImage := "images/feed-image.png" | absURL }}
+{{- $feedLogo := "images/talon-glyph.svg" | absURL }}
+{{- $feedAccent := "fab387" }}
 
 {{- $authorEmail := "" }}
 {{- with site.Params.author }}
@@ -46,13 +50,23 @@
 	{{- $pages = $pages | first $limit }}
 {{- end }}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0">
 	<channel>
 		<title>{{ $feedTitle }}</title>
 		<link>{{ .Permalink }}</link>
 		<description>{{ $feedDescription }}</description>
 		<generator>Hugo</generator>
 		<language>{{ site.Language.Locale }}</language>
+		<webfeeds:icon>{{ $feedIcon }}</webfeeds:icon>
+		<webfeeds:logo>{{ $feedLogo }}</webfeeds:logo>
+		<webfeeds:accentColor>{{ $feedAccent }}</webfeeds:accentColor>
+		<image>
+			<url>{{ $feedImage }}</url>
+			<title>{{ $feedTitle }}</title>
+			<link>{{ .Permalink }}</link>
+			<width>144</width>
+			<height>144</height>
+		</image>
 		{{ with $authorEmail }}
 			<managingEditor>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>
 		{{ end }}
