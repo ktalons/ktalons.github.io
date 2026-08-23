@@ -7,7 +7,7 @@ tags: ["STIG", "SCAP", "NIST 800-53", "Compliance", "Python"]
 
 {{< pill "live" >}}Live{{< /pill >}}
 
-**Repo:** [github.com/ktalons/stigroll](https://github.com/ktalons/stigroll) · **[3-minute walkthrough](https://youtu.be/V9yN8JgrrxU)**
+**Repo:** [github.com/ktalons/stigroll](https://github.com/ktalons/stigroll) · **[2-minute walkthrough](https://youtu.be/V9yN8JgrrxU)**
 
 A STIG finding is technology-specific, but a control assessor reports in NIST SP 800-53 controls. STIG Viewer resolves that mapping on screen, then drops it on export. stigroll applies DISA's CCI mapping to `.cklb`, `.ckl`, and XCCDF scan results and reports by control family in Markdown, CSV, or JSON, so the output answers "show me the evidence for AU-12" instead of handing someone a list of rule IDs.
 
