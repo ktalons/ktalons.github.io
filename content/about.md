@@ -10,4 +10,6 @@ I ran an OT security operations center for the University of Arizona's Facilitie
 
 Outside of work hours I run [TalonSocLab](/projects/talonsoclab/), a personal SOC that feeds [CASA](https://github.com/ktalons/casa-ai-agent), an AI-assisted analysis project. My home lab also allows me to build and explore tools like [stigroll](https://github.com/ktalons/stigroll) and [PCAPpuller](/projects/pcappuller/) that ship along the way. The lab is where I pressure-test what I know and document what I learn.
 
-If you want to talk security, critical infrastructure, or home labs, [let's connect](/contact/).
+Most of my attention lately has gone to FedRAMP. The 2026 Consolidated Rules hand providers a machine-readable rules dataset and official report schemas, and I wanted to see how well that holds up once you actually build against it. That turned into [ComplyRoll](/projects/complyroll/), which picks up where stigroll left off: it compiles STIG and SCAP output into schema-valid vulnerability reports and reads every response deadline out of FedRAMP's published rules instead of hardcoding it. Building against the dataset also turned up five rules that state a cadence in prose but never encode it, which I [raised with FedRAMP directly](https://github.com/FedRAMP/community/discussions/164).
+
+If you want to talk security, critical infrastructure, compliance automation, or home labs, [let's connect](/contact/).
