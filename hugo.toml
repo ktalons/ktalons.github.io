@@ -83,7 +83,7 @@ projects = "/projects/:slug/"
   name = "Email"
   icon = "fa-solid fa-envelope fa-2x"
   weight = 3
-  url = "mailto:ktalonsec@gmail.com"
+  url = "mailto:ktalons@proton.me"
 
 [[params.social]]
   name = "RSS"

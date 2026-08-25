@@ -8,7 +8,7 @@ hidemeta: true
 
 Best ways to reach me:
 
-- **Email:** [ktalonsec@gmail.com](mailto:ktalonsec@gmail.com)
+- **Email:** [ktalons@proton.me](mailto:ktalons@proton.me)
 - **LinkedIn:** [www.linkedin.com/in/ta1ons](https://www.linkedin.com/in/ta1ons/)
 - **GitHub:** [github.com/ktalons](https://github.com/ktalons)
 
