@@ -1,0 +1,13 @@
+{{- /*
+  *****************************************************************************
+  *Title: Home Latest Post*
+  *Author: Kyle Versluis*
+  *Description: Links the newest blog post under the home hero.*
+  *****************************************************************************
+
+  Fills the theme's empty home/extensions hook. Template only, no inline
+  script, so it stays inside the site's script-src 'self' CSP.
+*/ -}}
+{{- range first 1 (where site.RegularPages "Section" "blog").ByDate.Reverse }}
+<p class="home-latest">Latest: <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+{{- end }}

@@ -2957,3 +2957,22 @@ body.colorscheme-light .fi-results-message { color: var(--ctp-l-subtext1); }
   .fi-btn-next, .fi-btn-replay { padding: 0.75rem 1.5rem; font-size: 1.05rem; }
   .fi-feedback { padding: 0.9rem 0.95rem; }
 }
+
+/* *--- Home Latest Post ---* */
+
+/* Sits under the hero social icons (layouts/_partials/home/extensions.html).
+   The theme's .centered is a flex row, so without this the line lands beside
+   .about instead of below it. Scoped with :has so the 404 page keeps its row. */
+.centered:has(> .home-latest) { flex-direction: column; }
+
+.home-latest {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-family: "D2 Coding", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--ctp-subtext1);
+}
+body.colorscheme-light .home-latest { color: var(--ctp-l-subtext1); }
+/* Light mode needs no override: body.colorscheme-light a (mauve, peach on
+   hover) already outranks this selector. */
+.home-latest a { color: var(--accent-primary); }

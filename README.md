@@ -31,22 +31,28 @@ content/
 ├── about.md
 ├── contact.md
 ├── blog/
-│   ├── _index.md
+│   ├── _index.md                   # cascade: posts get type "posts" (date, reading time, tags)
 │   ├── welcome.md                  # "What's brewing?"
 │   ├── talonsoclab-booting.md      # TalonSocLab kickoff (aliases cover two retired URLs)
-│   └── phase-0-off-the-dongle.md
-├── projects/
+│   ├── phase-0-off-the-dongle.md
+│   ├── phase-a-active-is-not-proof.md
+│   ├── complyroll-a-rollup-is-not-a-report.md
+│   ├── still-searching-still-building.md
+│   ├── complyroll-sarif-joins-in.md
+│   └── bashedlogs-dont-trust-the-tag.md
+├── projects/                       # listed by `weight` (1 = first), one page (pagerSize 20)
 │   ├── _index.md
-│   ├── talonsoclab.md              # Flagship — personal SOC built in public
-│   ├── stigroll.md                 # STIG/SCAP → NIST 800-53 rollup tool
-│   ├── home-vpn-lab.md             # Sanitized WireGuard reference build
-│   ├── casa-capstone.md            # CASA / Project Twilight Synapse capstone
-│   ├── iaessoc-elk-snapshot.md     # OT SOC snapshot (U of A Facilities Management)
-│   ├── osticket-soc.md             # osTicket-based SOC ticketing
-│   ├── pcappuller.md               # PCAP retrieval tool
-│   ├── bashedlogs.md               # Bash log analysis tooling
-│   ├── cybersec-discord-bot.md     # Discord bot for cyber comms
-│   └── violent-python.md           # Python offensive-security work
+│   ├── talonsoclab.md              # 1  Flagship: personal SOC built in public
+│   ├── complyroll.md               # 2  FedRAMP 20x vulnerability reports
+│   ├── iaessoc-elk-snapshot.md     # 3  OT SOC snapshot (U of A Facilities Management)
+│   ├── bashedlogs.md               # 4  Bash log triage CLI
+│   ├── stigroll.md                 # 5  STIG/SCAP to NIST 800-53 rollup tool
+│   ├── pcappuller.md               # 6  PCAP retrieval tool
+│   ├── home-vpn-lab.md             # 7  Sanitized WireGuard reference build
+│   ├── violent-python.md           # 8  Python offensive-security work
+│   ├── osticket-soc.md             # 9  osTicket-based SOC ticketing
+│   ├── casa-capstone.md            # 10 CASA / Project Twilight Synapse capstone
+│   └── cybersec-discord-bot.md     # 11 Discord bot for cyber comms
 └── h4ck-m3/
     └── _index.md                   # Easter-egg mini-game menu (hidden from nav)
 ```
@@ -73,7 +79,7 @@ Top nav (set in `hugo.toml`): **About · Projects · Blog · Contact**. The E@st
   - Swap primary/secondary accent by flipping `--accent-primary` and `--accent-secondary` in `:root`
 - `assets/js/` — `hero-fade.js` + 8 easter-egg game scripts (`hackme.js`, `hackme-menu.js`, `phishing-game.js`, `malicious-url-game.js`, `cipher-decoder-game.js`, `mitre-match-game.js`, `hash-id-game.js`, `find-ioc-game.js`)
 - `layouts/shortcodes/` — `pill.html` (status badges), `hackme-menu.html`, `gif.html` (CSP-safe inline GIFs)
-- `layouts/_partials/` — `head/extensions.html` (extra `<head>` content), `list.html` (list page override)
+- `layouts/_partials/` — `head/extensions.html` (extra `<head>` content), `list.html` (list page override), `home/extensions.html` (the "Latest:" line under the hero, newest blog post)
 
 ## Catppuccin reference
 

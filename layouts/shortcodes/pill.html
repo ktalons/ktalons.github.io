@@ -6,7 +6,7 @@
     {{< pill "coming" >}}Phase A — June 9{{< /pill >}}
     {{< pill "archived" >}}Archived{{< /pill >}}
 
-  Positional arg 0: pill class ('live', 'coming', 'archived'). Defaults to 'live'.
+  Positional arg 0: pill class ('live', 'coming', 'archived', 'indev'). Defaults to 'live'.
   Inner content: the label text (rendered as Hugo markdown, then trimmed).
 */ -}}
 {{- $kind := .Get 0 | default "live" -}}

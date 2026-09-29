@@ -7,7 +7,7 @@ enableEmoji = true
 enableRobotsTXT = true
 
 [pagination]
-pagerSize = 10
+pagerSize = 20
 
 [permalinks]
 projects = "/projects/:slug/"
@@ -32,7 +32,7 @@ projects = "/projects/:slug/"
   info = [
     "Cybersecurity Analyst and Engineer",
     "Critical Infrastructure & OT Defense",
-    "Tucson, AZ"
+    "Open to SOC & Security Engineering Roles"
   ]
   avatarURL = "images/avatar.gif"
 
