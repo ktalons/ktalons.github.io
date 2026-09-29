@@ -6,6 +6,8 @@ ShowReadingTime: false
 hidemeta: true
 ---
 
+I'm looking for a full-time role in SOC analysis, detection engineering, security engineering, or FedRAMP compliance engineering, in Tucson or remote. I'm a U.S. citizen and clearance-eligible.
+
 Best ways to reach me:
 
 - **Email:** [ktalons@proton.me](mailto:ktalons@proton.me)

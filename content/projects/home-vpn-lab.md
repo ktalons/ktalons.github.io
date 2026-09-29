@@ -1,6 +1,7 @@
 ---
 title: "Home VPN Lab"
 date: 2026-07-31
+weight: 7
 summary: "A WireGuard server on consumer router hardware, documented as a sanitized public reference build."
 tags: ["WireGuard", "VPN", "Networking", "Homelab"]
 ---

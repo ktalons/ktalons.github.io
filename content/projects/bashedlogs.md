@@ -1,13 +1,16 @@
 ---
 title: "bashedlogs"
 date: 2025-10-21
+weight: 4
 summary: "Zero-dependency Bash CLI for SOC log triage with automatic format detection."
 tags: ["Bash", "Log Analysis", "SOC Tooling"]
 ---
 
 {{< pill "live" >}}v2 shipped{{< /pill >}}
 
-**Repo:** [github.com/ktalons/bashedlogs](https://github.com/ktalons/bashedlogs) · **Release:** [v2.0.0](https://github.com/ktalons/bashedlogs/releases/tag/v2.0.0)
+**Repo:** [github.com/ktalons/bashedlogs](https://github.com/ktalons/bashedlogs) · **Release:** [v2.0.1](https://github.com/ktalons/bashedlogs/releases/tag/v2.0.1)
+
+Latest: [bashedlogs: Don't Trust the Tag](/blog/bashedlogs-dont-trust-the-tag/)
 
 Security log triage in one Bash file. Point it at a log, it works out the format, and it tells you what is worth looking at. Built from the log analysis patterns I kept hitting in CTF competitions and SOC work.
 
@@ -32,6 +35,8 @@ v1 was one 3,682-line script with 572 shellcheck findings and no tests. v2 is a 
 A cross-vendor audit before tagging found five real defects that the tests had missed. Two were worth the whole exercise. On Debian and Ubuntu, sshd writes two lines for one failed login, and counting both doubled every number and halved the effective brute-force threshold. And IPv6 sources were invisible to every per-source detector, so an IPv6 attack got counted in the totals but produced no finding at all, which reads to an analyst as nothing happening. Both are fixed with regression tests that record what the tool used to report.
 
 The lesson I kept: two of those bugs were hidden because my test fixtures were unrealistically clean. Real Wazuh alerts carry three different `name` fields, and mine only had one, so nothing exercised the code path that was picking the wrong one.
+
+v2.0.1 is a security release. A Claude Code security review found five ways a crafted log could mislead the analyst reading the report. All five are fixed. Chasing them turned up six more bugs, most of them cases where the tool found nothing and looked like it was working. Escape sequences in log text now print as visible escapes, and a source address is read by position in sshd's own message rather than by trusting the program tag. The tests went from 106 to 150. What a log can and cannot prove about attribution is listed in the [changelog](https://github.com/ktalons/bashedlogs/blob/master/CHANGELOG.md) under Known issues.
 
 The CTF-oriented v1 analyzers (payments, IoT telemetry, Android logcat, SQLite, Squid, VSFTPD) were dropped to keep this focused on SOC triage. They are still available at tag v1.0.0.
 

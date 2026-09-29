@@ -1,6 +1,7 @@
 ---
 title: "osTicket SOC Tooling"
 date: 2024-12-21
+weight: 9
 summary: "Installation, configuration, and incident-workflow tutorials for deploying osTicket as a SOC ticketing system."
 tags: ["osTicket", "SOC Tooling", "Incident Response", "Documentation", "OT"]
 ---

@@ -1,6 +1,7 @@
 ---
 title: "stigroll"
 date: 2026-08-06
+weight: 5
 summary: "Rolls DISA STIG checklists and SCAP scan results up to NIST SP 800-53 control families via DISA's CCI mapping."
 tags: ["STIG", "SCAP", "NIST 800-53", "Compliance", "Python"]
 ---

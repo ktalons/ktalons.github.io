@@ -4,6 +4,7 @@ url: "/projects/pcappuller/"
 aliases:
   - /projects/dapcappuller/
 date: 2025-07-01
+weight: 6
 summary: "Python utility for high-volume packet collections: exact time windows, batch merges, resumable three-step workflow."
 tags: ["Python", "PCAP", "Network Forensics", "tshark"]
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Violent Python"
 date: 2025-05-01
+weight: 8
 summary: "A curated, runnable collection of cyber operations Python scripting assignments, with a cross-platform launcher and interactive showcase."
 tags: ["Python", "Scripting", "Security Automation", "Forensics", "Network"]
 ---

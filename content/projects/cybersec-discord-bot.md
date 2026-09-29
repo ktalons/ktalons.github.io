@@ -1,6 +1,7 @@
 ---
 title: "Cybersec Discord Bot"
 date: 2025-08-01
+weight: 11
 summary: "Discord bot for cybersecurity clubs and communities, built for The Cyber Saguaros Club at the University of Arizona."
 tags: ["Python", "Discord", "CTF", "Automation"]
 ---
