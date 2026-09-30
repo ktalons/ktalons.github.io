@@ -2,7 +2,7 @@
 title: "TalonSocLab"
 date: 2026-05-20
 weight: 1
-summary: "My first home lab: a self-hosted SOC built and documented publicly across four phases. The deterministic data plane that feeds CASA, my agentic reasoning layer."
+summary: "My first home lab: a self-hosted SOC built and documented publicly across four phases. The deterministic data plane built to feed CASA, my agentic reasoning layer."
 tags: ["SIEM", "Wazuh", "Detection Engineering", "MITRE ATT&CK", "Active Directory", "Honeynet", "OpenCTI", "Sigma", "Docker", "CASA"]
 ---
 
@@ -16,7 +16,7 @@ A single coherent home SOC, built in four phases across a few machines on my hom
 
 ## Two planes
 
-TalonSocLab is the **data plane**: it collects, filters, and cites telemetry, then emits a structured intake artifact. It does not reason and it does not decide. [**CASA**](https://github.com/ktalons/casa-ai-agent), my senior capstone, is the separate **reasoning plane** that consumes it. Deterministic infrastructure sits below and agentic reasoning sits on top.
+TalonSocLab is the **data plane**: it collects, filters, and cites telemetry. It does not reason and it does not decide. [**CASA**](https://github.com/ktalons/casa-ai-agent), my separate agentic AI project, is the **reasoning plane** on top. The seam between them is a structured intake artifact on a fixed JSON contract. The producer for it is written but not deployed yet, so the two planes are not wired together today. Deterministic infrastructure sits below and agentic reasoning sits on top.
 
 ## Milestones
 

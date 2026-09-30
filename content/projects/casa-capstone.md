@@ -16,7 +16,7 @@ tags: ["Capstone", "Docker", "AI", "Security Analysis", "PTS", "Agent Kyle", "MI
 - **My agent:** [github.com/Capstone-AI-Research-Project/pts-agent-kyle](https://github.com/Capstone-AI-Research-Project/pts-agent-kyle)
 - **Platform:** [github.com/Capstone-AI-Research-Project/Project-Twilight-Synapse](https://github.com/Capstone-AI-Research-Project/Project-Twilight-Synapse)
 
-The senior capstone project for the **Arizona Cybersecurity Clinic Engineering Team** at the University of Arizona. CASA is built on **Project Twilight Synapse (PTS)**, a Docker-based multi-agent cybersecurity analysis platform that automates security log triage and produces analyst-friendly reports aligned to multiple frameworks (MITRE ATT&CK, CAR, NIST CSF, CIS Controls).
+The senior capstone project for the **Arizona Cybersecurity Clinic Engineering Team** at the University of Arizona. It is built on **Project Twilight Synapse (PTS)**, a Docker-based multi-agent cybersecurity analysis platform that automates security log triage and produces analyst-friendly reports aligned to multiple frameworks (MITRE ATT&CK, CAR, NIST CSF, CIS Controls).
 
 ## My contribution: Agent Kyle
 
