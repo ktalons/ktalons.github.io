@@ -39,10 +39,12 @@ content/
 │   ├── complyroll-a-rollup-is-not-a-report.md
 │   ├── still-searching-still-building.md
 │   ├── complyroll-sarif-joins-in.md
-│   └── bashedlogs-dont-trust-the-tag.md
+│   ├── bashedlogs-dont-trust-the-tag.md
+│   └── casa-v5-rebuilt-around-the-core.md
 ├── projects/                       # listed by `weight` (1 = first), one page (pagerSize 20)
 │   ├── _index.md
 │   ├── talonsoclab.md              # 1  Flagship: personal SOC built in public
+│   ├── casa.md                     # 2  CASA: the reasoning plane over TalonSocLab (ties with complyroll; newer date lists first)
 │   ├── complyroll.md               # 2  FedRAMP 20x vulnerability reports
 │   ├── iaessoc-elk-snapshot.md     # 3  OT SOC snapshot (U of A Facilities Management)
 │   ├── bashedlogs.md               # 4  Bash log triage CLI

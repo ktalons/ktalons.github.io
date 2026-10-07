@@ -16,7 +16,7 @@ A single coherent home SOC, built in four phases across a few machines on my hom
 
 ## Two planes
 
-TalonSocLab is the **data plane**: it collects, filters, and cites telemetry. It does not reason and it does not decide. [**CASA**](https://github.com/ktalons/casa-ai-agent), my separate agentic AI project, is the **reasoning plane** on top. The seam between them is a structured intake artifact on a fixed JSON contract. The producer for it is written but not deployed yet, so the two planes are not wired together today. Deterministic infrastructure sits below and agentic reasoning sits on top.
+TalonSocLab is the **data plane**: it collects, filters, and cites telemetry. It does not reason and it does not decide. [**CASA**](/projects/casa/), my separate agentic AI project, is the **reasoning plane** on top, rebuilt in October 2026 as a Claude Code plugin ([v5.0.1](https://github.com/ktalons/casa-ai-agent/releases/tag/v5.0.1)). The seam between them is a structured intake artifact on a fixed JSON contract, now at v2, so each alert carries the source address and account that make a chain across two hosts data instead of inference. The producer for it is written and tested against recorded alerts but not deployed yet, so the two planes are not wired together today. Deterministic infrastructure sits below and agentic reasoning sits on top.
 
 ## Milestones
 
@@ -33,5 +33,5 @@ This is my first home lab. I learn by building the thing instead of reading abou
 ## Follow along
 
 - Blog posts here as each phase ships
-- GitHub: [talonsoclab](https://github.com/ktalons/talonsoclab) (the SOC) and [casa-ai-agent](https://github.com/ktalons/casa-ai-agent) (the reasoning layer)
+- GitHub: [talonsoclab](https://github.com/ktalons/talonsoclab) (the SOC) and [casa-ai-agent](https://github.com/ktalons/casa-ai-agent) (the reasoning layer, [project page](/projects/casa/))
 - LinkedIn: [www.linkedin.com/in/ta1ons](https://www.linkedin.com/in/ta1ons/)
