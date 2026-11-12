@@ -11,7 +11,7 @@
   var path = window.location.pathname;
   if (path !== '/' && path !== '/index.html') return;
 
-  var LINK_TEXT = '🦉';
+  var LINK_ICON = '/images/talon-glyph-128.png';
   var LINK_HREF = '/h4ck-m3/';
   // Faster cycle: ~2.4s total (was ~5.2s)
   var FADE_MS = 300;
@@ -28,10 +28,15 @@
     var a = document.createElement('a');
     a.className = 'hackme-popup';
     a.href = LINK_HREF;
-    a.textContent = LINK_TEXT;
     a.setAttribute('aria-label', 'E@st3r Egg Cyb3r Ski11 G@m3 — hidden cybersec challenges');
     a.setAttribute('role', 'button');
     a.setAttribute('title', 'E@st3r Egg Cyb3r Ski11 G@m3');
+    var icon = document.createElement('img');
+    icon.src = LINK_ICON;
+    icon.alt = '';
+    icon.width = 128;
+    icon.height = 128;
+    a.appendChild(icon);
     return a;
   }
 
@@ -87,7 +92,7 @@
       window.matchMedia &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) {
-      // Respect motion preference: pin a static link in the bottom-right corner.
+      // Respect motion preference: pin a static link above the theme switch.
       // CSS handles the positioning override via the media query.
       insertStaticLink();
       return;

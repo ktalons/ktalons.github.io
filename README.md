@@ -59,7 +59,7 @@ content/
     └── _index.md                   # Easter-egg mini-game menu (hidden from nav)
 ```
 
-Top nav (set in `hugo.toml`): **About · Projects · Blog · Contact**. The E@st3r Egg Cyb3r Ski11 G@m3 page is intentionally hidden (`build.list = never`) and reachable at `/h4ck-m3/` via the roaming owl popup on the homepage (or by typing the URL).
+Top nav (set in `hugo.toml`): **About · Projects · Blog · Contact**. The E@st3r Egg Cyb3r Ski11 G@m3 page is intentionally hidden (`build.list = never`) and reachable at `/h4ck-m3/` via the roaming Talons icon on the homepage (or by typing the URL).
 
 ## Site features
 

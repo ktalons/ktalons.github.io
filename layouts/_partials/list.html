@@ -1,4 +1,5 @@
-<section class="container list">
+{{ $entryCards := and .IsSection (in (slice "blog" "projects") .Section) }}
+<section class="container list{{ if $entryCards }} entry-index{{ end }}">
   <header>
     <h1 class="title">
       <a class="title-link" href="{{ .Permalink | safeURL }}">
@@ -10,8 +11,14 @@
       </a>
     </h1>
   </header>
-  {{ .Content }}
-  <ul>
+  {{ with .Content }}
+    {{ if $entryCards }}
+      <div class="listing-intro">{{ . }}</div>
+    {{ else }}
+      {{ . }}
+    {{ end }}
+  {{ end }}
+  <ul{{ if $entryCards }} class="entry-list"{{ end }}>
     {{ range .Paginator.Pages }}
     <li>
       <span class="date">

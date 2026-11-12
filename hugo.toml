@@ -34,7 +34,7 @@ projects = "/projects/:slug/"
     "Tucson, Arizona",
     "Security Operations · IT Risk · OT/ICS"
   ]
-  avatarURL = "images/avatar.gif"
+  avatarURL = "images/darkowl-logo.png"
 
   # Site icons — all generated from Documents/talonsoclab_art/talon-glyph.svg.
   # The theme's head partial already referenced these paths; the files did not
