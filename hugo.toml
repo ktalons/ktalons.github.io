@@ -27,12 +27,12 @@ projects = "/projects/:slug/"
 
 [params]
   author = "Kyle Versluis"
-  description = "Kyle Versluis is a cybersecurity analyst and engineer in Tucson, AZ, defending critical infrastructure and building TalonSocLab, a personal SOC, in public."
+  description = "Kyle Versluis is joining Hughes Federal Credit Union as a Cyber Security Analyst I. His portfolio covers security operations, OT/ICS, and security automation."
   keywords = "cybersecurity analyst, security engineer, SOC, detection engineering, threat hunting, OT security, ICS, critical infrastructure, MITRE ATT&CK, STIG, Tucson, Kyle Versluis"
   info = [
-    "Cybersecurity Analyst and Engineer",
-    "Critical Infrastructure & OT Defense",
-    "Open to SOC & Security Engineering Roles"
+    "Incoming Cyber Security Analyst I at Hughes Federal Credit Union",
+    "Tucson, Arizona",
+    "Security Operations · IT Risk · OT/ICS"
   ]
   avatarURL = "images/avatar.gif"
 

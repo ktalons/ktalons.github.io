@@ -1,10 +1,10 @@
 ---
 title: "About"
 url: "/about/"
-summary: "Kyle Versluis, a cybersecurity analyst and engineer in Tucson building a personal SOC in public."
+summary: "Kyle Versluis is joining Hughes Federal Credit Union as a Cyber Security Analyst I. His portfolio covers security operations, OT/ICS, and security automation."
 ---
 
-I'm Kyle, a cybersecurity analyst and engineer based in Tucson, Arizona. My real world experience so far is defensive security operations, with a particular interest in the places where IT security meets industrial and building systems.
+I'm Kyle, a cybersecurity analyst and engineer based in Tucson, Arizona. I'll join Hughes Federal Credit Union as a Cyber Security Analyst I, supporting security monitoring, incident response, IT governance and risk, and operational resilience. My background is in defensive security operations, especially where IT security meets industrial and building systems.
 
 For over a year I worked as a Student OT SOC Analyst and Cyber Engineer for the University of Arizona's Facilities Management department. Working with a student engineering group, I co-designed, built, and operated an ELK-based SIEM across three operational sites. I captained [the Cyber Saguaros](https://cybersaguaros.com/) CTF team through national competitions and now hang out as an alum in the club's discord. Before security I spent sixteen years in claims and operations roles, learning how organizations actually run and how to talk to everyone from field techs to executives. It also taught me how businesses actually work and how to frame security problems in business terms fairly easily.
 

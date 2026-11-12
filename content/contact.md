@@ -6,7 +6,7 @@ ShowReadingTime: false
 hidemeta: true
 ---
 
-I'm looking for a full-time role in SOC analysis, detection engineering, security engineering, or FedRAMP compliance engineering, in Tucson or remote. I'm a U.S. citizen and clearance-eligible.
+I'm based in Tucson, Arizona. Reach out to talk about security operations, critical infrastructure, compliance automation, or my personal projects.
 
 Best ways to reach me:
 

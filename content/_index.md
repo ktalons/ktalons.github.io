@@ -1,4 +1,4 @@
 ---
 title: "Kyle Versluis"
-description: "Kyle Versluis is a cybersecurity analyst and engineer in Tucson, AZ, defending critical infrastructure and building TalonSocLab, a personal SOC, in public."
+description: "Kyle Versluis is joining Hughes Federal Credit Union as a Cyber Security Analyst I. His portfolio covers security operations, OT/ICS, and security automation."
 ---
