@@ -2,36 +2,20 @@
 title: "TalonSocLab"
 date: 2026-05-20
 weight: 1
-summary: "My first home lab: a self-hosted SOC built and documented publicly across four phases. The deterministic data plane built to feed CASA, my agentic reasoning layer."
+summary: "My home SOC, built in public with Wazuh, Sysmon, and Suricata. The foundation and hardening are complete, with detection engineering underway."
 tags: ["SIEM", "Wazuh", "Detection Engineering", "MITRE ATT&CK", "Active Directory", "Honeynet", "OpenCTI", "Sigma", "Docker", "CASA"]
 ---
 
 {{< pill "indev" >}}In Dev · Phase B{{< /pill >}}
 
-Latest: [Phase A complete, detection engineering next](/blog/phase-a-active-is-not-proof/).
-
 **Repo:** [github.com/ktalons/talonsoclab](https://github.com/ktalons/talonsoclab)
 
-A single coherent home SOC, built in four phases across a few machines on my home network. Each phase ships independently with its own folder, README, architecture diagram, and lessons-learned write-up. By the end it runs a small SOC end to end, from log ingest through detection engineering to threat intel.
+TalonSocLab is my home SOC, built in public so I can work through what it takes to operate one end to end. I brought together Wazuh, Sysmon, and Suricata to collect endpoint and network telemetry and built dashboards to make it easier to investigate. With the foundation hardened, I’m moving into detection engineering, starting with a noise baseline before testing new rules.
 
-## Two planes
+## What's in the repo
 
-TalonSocLab is the **data plane**: it collects, filters, and cites telemetry. It does not reason and it does not decide. [**CASA**](/projects/casa/), my separate agentic AI project, is the **reasoning plane** on top, rebuilt in October 2026 as a Claude Code plugin ([v5.0.1](https://github.com/ktalons/casa-ai-agent/releases/tag/v5.0.1)). The seam between them is a structured intake artifact on a fixed JSON contract, now at v2, so each alert carries the source address and account that make a chain across two hosts data instead of inference. The producer for it is written and tested against recorded alerts but not deployed yet, so the two planes are not wired together today. Deterministic infrastructure sits below and agentic reasoning sits on top.
+- **SOC foundation:** Sensor and agent setup, Docker configuration, and dashboards for the lab.
+- **Hardening runbooks:** Log retention, failure alerts, credential rotation, and encrypted backups.
+- **Detection engineering:** Phase B notes for testing Sigma rules in Wazuh and mapping them to MITRE ATT&CK.
 
-## Milestones
-
-- **Phase 0: Hardware and network** {{< pill "live" >}}Complete{{< /pill >}} SOC host on Ubuntu and Docker, wired through the managed switch with a reserved address, Wazuh stack green.
-- **Phase A: Foundation SOC stack** {{< pill "live" >}}Complete{{< /pill >}} Wazuh in containers with agents enrolled and verified on three real endpoints: Windows with Sysmon, macOS, and the Ubuntu host. Suricata on the host NIC and a SOC Overview dashboard in git.
-- **Phase B: Detection engineering** {{< pill "indev" >}}In Dev{{< /pill >}} Atomic Red Team tests, a Sigma rule pack, and a MITRE ATT&CK coverage map.
-- **Phase C: AD attack and defense** {{< pill "coming" >}}Planned{{< /pill >}} A mini Active Directory lab, the top five attack chain, and a purple-team report.
-- **Phase D: Honeynet and threat intel** {{< pill "coming" >}}Planned{{< /pill >}} T-Pot feeding OpenCTI, enriched through the AbuseIPDB and VirusTotal APIs.
-
-## Why
-
-This is my first home lab. I learn by building the thing instead of reading about it, so I'm standing up a small SOC end to end and keeping it public for anyone coming up behind me.
-
-## Follow along
-
-- Blog posts here as each phase ships
-- GitHub: [talonsoclab](https://github.com/ktalons/talonsoclab) (the SOC) and [casa-ai-agent](https://github.com/ktalons/casa-ai-agent) (the reasoning layer, [project page](/projects/casa/))
-- LinkedIn: [www.linkedin.com/in/ta1ons](https://www.linkedin.com/in/ta1ons/)
+The lab is the telemetry side of [CASA](/projects/casa/). Their shared intake format is in place, with the live feed still pending.

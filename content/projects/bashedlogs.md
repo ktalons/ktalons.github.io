@@ -1,43 +1,21 @@
 ---
 title: "bashedlogs"
 date: 2025-10-21
-weight: 4
-summary: "Zero-dependency Bash CLI for SOC log triage with automatic format detection."
+weight: 5
+summary: "A single-file Bash tool that detects log formats and surfaces findings for security triage."
 tags: ["Bash", "Log Analysis", "SOC Tooling"]
 ---
 
 {{< pill "live" >}}v2 shipped{{< /pill >}}
 
-**Repo:** [github.com/ktalons/bashedlogs](https://github.com/ktalons/bashedlogs) · **Release:** [v2.0.1](https://github.com/ktalons/bashedlogs/releases/tag/v2.0.1)
+**Repo:** [github.com/ktalons/bashedlogs](https://github.com/ktalons/bashedlogs)
 
-Latest: [bashedlogs: Don't Trust the Tag](/blog/bashedlogs-dont-trust-the-tag/)
+I built bashedlogs from the log analysis patterns I kept running into in SOC work and CTFs. Give it a log file and it identifies the format, looks for patterns such as bursts of failed logins, and summarizes what’s worth a closer look. It runs as one Bash file and can produce JSON for use in other tools.
 
-Security log triage in one Bash file. Point it at a log, it works out the format, and it tells you what is worth looking at. Built from the log analysis patterns I kept hitting in CTF competitions and SOC work.
+## What's in the repo
 
-Install is one file with nothing to build:
+- **Format analyzers:** SSH and authentication, system logs, web access, Wazuh, DNS, firewall logs, and a generic fallback.
+- **Investigation helpers:** Time-windowed brute-force detection, indicator extraction, and optional IP enrichment.
+- **Tests and examples:** Fixtures for Linux and macOS, including cases where crafted log text could mislead an analyst.
 
-```bash
-curl -LO https://github.com/ktalons/bashedlogs/releases/latest/download/bashedlogs && chmod +x bashedlogs
-```
-
-## What it does
-
-- Eight analyzers: SSH/auth, journald, syslog, web access (Apache and NGINX), Wazuh alerts, DNS, firewall (iptables and pfSense), plus a generic fallback that says so.
-- Time-windowed brute-force detection, so ten failures in a second and ten spread over a day are not treated the same.
-- JSON and NDJSON output with a real exit-code contract, which makes it usable in cron and pipelines instead of just readable in a terminal.
-- IOC extraction with defang, and optional GeoIP/ASN enrichment. It makes no network call unless you explicitly ask for one.
-- Handles IPv4 and IPv6, and treats log content as untrusted input.
-
-## v1 to v2
-
-v1 was one 3,682-line script with 572 shellcheck findings and no tests. v2 is a rewrite: real detections instead of keyword counts, structured output, and 106 tests running in CI on Linux and macOS against both the source tree and the built single-file artifact.
-
-A cross-vendor audit before tagging found five real defects that the tests had missed. Two were worth the whole exercise. On Debian and Ubuntu, sshd writes two lines for one failed login, and counting both doubled every number and halved the effective brute-force threshold. And IPv6 sources were invisible to every per-source detector, so an IPv6 attack got counted in the totals but produced no finding at all, which reads to an analyst as nothing happening. Both are fixed with regression tests that record what the tool used to report.
-
-The lesson I kept: two of those bugs were hidden because my test fixtures were unrealistically clean. Real Wazuh alerts carry three different `name` fields, and mine only had one, so nothing exercised the code path that was picking the wrong one.
-
-v2.0.1 is a security release. A Claude Code security review found five ways a crafted log could mislead the analyst reading the report. All five are fixed. Chasing them turned up six more bugs, most of them cases where the tool found nothing and looked like it was working. Escape sequences in log text now print as visible escapes, and a source address is read by position in sshd's own message rather than by trusting the program tag. The tests went from 106 to 150. What a log can and cannot prove about attribution is listed in the [changelog](https://github.com/ktalons/bashedlogs/blob/master/CHANGELOG.md) under Known issues.
-
-The CTF-oriented v1 analyzers (payments, IoT telemetry, Android logcat, SQLite, Squid, VSFTPD) were dropped to keep this focused on SOC triage. They are still available at tag v1.0.0.
-
-Built in shell so it deploys anywhere with no install footprint.
+The tool treats logs as untrusted input. The findings are a starting point for checking the evidence yourself.

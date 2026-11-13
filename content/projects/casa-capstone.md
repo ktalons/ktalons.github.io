@@ -8,6 +8,8 @@ weight: 10
 dateLabel: "January – May 2026"
 summary: "My senior capstone work on Project Twilight Synapse: a Docker-based multi-agent cybersecurity analysis platform built with the Arizona Cybersecurity Clinic."
 tags: ["Capstone", "Docker", "AI", "Security Analysis", "PTS", "Agent Kyle", "MITRE ATT&CK"]
+build:
+  list: never
 ---
 
 {{< pill "archived" >}}Archived{{< /pill >}}

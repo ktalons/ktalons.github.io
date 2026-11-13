@@ -27,12 +27,11 @@ projects = "/projects/:slug/"
 
 [params]
   author = "Kyle Versluis"
-  description = "Kyle Versluis is joining Hughes Federal Credit Union as a Cyber Security Analyst I. His portfolio covers security operations, OT/ICS, and security automation."
+  description = "Kyle Versluis is a cybersecurity analyst and University of Arizona graduate in Tucson, AZ. His portfolio covers security operations and risk, OT/ICS, and AI security."
   keywords = "cybersecurity analyst, security engineer, SOC, detection engineering, threat hunting, OT security, ICS, critical infrastructure, MITRE ATT&CK, STIG, Tucson, Kyle Versluis"
   info = [
-    "Incoming Cyber Security Analyst I at Hughes Federal Credit Union",
-    "Tucson, Arizona",
-    "Security Operations · IT Risk · OT/ICS"
+    "Cybersecurity Analyst · University of Arizona ’26 · Tucson, AZ",
+    "Security Operations and Risk · OT/ICS · AI Security"
   ]
   avatarURL = "images/darkowl-logo.png"
 

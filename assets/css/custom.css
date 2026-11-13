@@ -482,13 +482,18 @@ body.colorscheme-light .content {
   backdrop-filter: blur(4px);
 }
 
-.content > :is(.page, .post) > article {
+.content > :is(.page, .post) > article,
+.projects-intro {
   margin-top: clamp(1.4rem, 4vw, 3.6rem);
+}
+
+.content > :is(.page, .post) > article {
   overflow-wrap: break-word;
 }
 
 .content > :is(.page, .post) > article > header,
-.entry-index > header {
+.entry-index > header,
+.projects-intro > header {
   margin: 0 0 1.8rem;
 }
 

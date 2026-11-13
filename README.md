@@ -40,26 +40,24 @@ content/
 │   ├── still-searching-still-building.md
 │   ├── complyroll-sarif-joins-in.md
 │   ├── bashedlogs-dont-trust-the-tag.md
-│   └── casa-v5-rebuilt-around-the-core.md
+│   ├── casa-v5-rebuilt-around-the-core.md
+│   └── portfolio-refresh.md        # "What's brewing? A portfolio refresh"
 ├── projects/                       # listed by `weight` (1 = first), one page (pagerSize 20)
 │   ├── _index.md
-│   ├── talonsoclab.md              # 1  Flagship: personal SOC built in public
-│   ├── casa.md                     # 2  CASA: the reasoning plane over TalonSocLab (ties with complyroll; newer date lists first)
-│   ├── complyroll.md               # 2  FedRAMP 20x vulnerability reports
-│   ├── iaessoc-elk-snapshot.md     # 3  OT SOC snapshot (U of A Facilities Management)
-│   ├── bashedlogs.md               # 4  Bash log triage CLI
-│   ├── stigroll.md                 # 5  STIG/SCAP to NIST 800-53 rollup tool
-│   ├── pcappuller.md               # 6  PCAP retrieval tool
-│   ├── home-vpn-lab.md             # 7  Sanitized WireGuard reference build
-│   ├── violent-python.md           # 8  Python offensive-security work
-│   ├── osticket-soc.md             # 9  osTicket-based SOC ticketing
-│   ├── casa-capstone.md            # 10 CASA / Project Twilight Synapse capstone
-│   └── cybersec-discord-bot.md     # 11 Discord bot for cyber comms
+│   ├── talonsoclab.md              # 1  Personal SOC built in public
+│   ├── casa.md                     # 2  AI-assisted security triage
+│   ├── complyroll.md               # 3  FedRAMP 20x vulnerability reports
+│   ├── financial-security-incident-lab.md  # 4  Synthetic incident investigation
+│   ├── bashedlogs.md               # 5  Bash log triage CLI
+│   ├── home-vpn-lab.md             # 6  Sanitized WireGuard reference build
+│   └── cybersec-discord-bot.md     # 7  Discord bot for Cyber Saguaros
 └── h4ck-m3/
     └── _index.md                   # Easter-egg mini-game menu (hidden from nav)
 ```
 
 Top nav (set in `hugo.toml`): **About · Projects · Blog · Contact**. The E@st3r Egg Cyb3r Ski11 G@m3 page is intentionally hidden (`build.list = never`) and reachable at `/h4ck-m3/` via the roaming Talons icon on the homepage (or by typing the URL).
+
+Older project pages with `build.list = never` remain available at their direct URLs.
 
 ## Site features
 

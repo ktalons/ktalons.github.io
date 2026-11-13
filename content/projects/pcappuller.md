@@ -7,6 +7,8 @@ date: 2025-07-01
 weight: 6
 summary: "Python utility for high-volume packet collections: exact time windows, batch merges, resumable three-step workflow."
 tags: ["Python", "PCAP", "Network Forensics", "tshark"]
+build:
+  list: never
 ---
 
 {{< pill "indev" >}}In Dev · v0.4.0{{< /pill >}}

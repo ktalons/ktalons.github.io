@@ -1,5 +1,7 @@
 {{ $entryCards := and .IsSection (in (slice "blog" "projects") .Section) }}
+{{ $projectsIndex := and .IsSection (eq .Section "projects") }}
 <section class="container list{{ if $entryCards }} entry-index{{ end }}">
+  {{ if $projectsIndex }}<div class="listing-intro projects-intro">{{ end }}
   <header>
     <h1 class="title">
       <a class="title-link" href="{{ .Permalink | safeURL }}">
@@ -12,12 +14,13 @@
     </h1>
   </header>
   {{ with .Content }}
-    {{ if $entryCards }}
+    {{ if and $entryCards (not $projectsIndex) }}
       <div class="listing-intro">{{ . }}</div>
     {{ else }}
       {{ . }}
     {{ end }}
   {{ end }}
+  {{ if $projectsIndex }}</div>{{ end }}
   <ul{{ if $entryCards }} class="entry-list"{{ end }}>
     {{ range .Paginator.Pages }}
     <li>

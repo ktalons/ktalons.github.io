@@ -1,4 +1,4 @@
 ---
 title: "Kyle Versluis"
-description: "Kyle Versluis is joining Hughes Federal Credit Union as a Cyber Security Analyst I. His portfolio covers security operations, OT/ICS, and security automation."
+description: "Kyle Versluis is a cybersecurity analyst and University of Arizona graduate in Tucson, AZ. His portfolio covers security operations and risk, OT/ICS, and AI security."
 ---
