@@ -5,6 +5,8 @@ summary: "Two first-round interviews, two rejections, and full-time driving to c
 tags: ["Job Search", "ComplyRoll", "bashedlogs", "TalonSocLab"]
 ---
 
+> **Update, November 2026:** I accepted a Cyber Security Analyst I role at Hughes Federal Credit Union in Tucson. I start on December 7. The post below is what I wrote while I was still searching.
+
 I got two first-round interviews out of this job search. One was for a junior FedRAMP cybersecurity analyst role and the other was for an IT specialist role. Both ended in a no.
 
 Since late May I have sent more than 100 applications to over 80 employers. Most of them get no response at all. The rest come back as rejections. Most postings ask for an active security clearance, two or more years of professional experience, or both. I have a little over a year of paid SOC work. I'm a U.S. citizen and eligible for a clearance. Getting one takes an employer willing to sponsor it. Most postings want it finished before day one.

@@ -1,6 +1,6 @@
 # ktalons.github.io
 
-Personal portfolio site for **Kyle Versluis** — Cybersecurity Engineer.
+Personal portfolio site for **Kyle Versluis**, Cyber Security Analyst.
 
 Live at: [https://ktalons.github.io](https://ktalons.github.io)
 
