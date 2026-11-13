@@ -451,9 +451,9 @@ body.colorscheme-light .centered .avatar img {
   margin: 0.2em 0;
 }
 
-/* Translucent mauve panels for articles and the Blog and Projects indexes. */
+/* Translucent panels for articles and the Blog and Projects indexes. */
 .content {
-  --panel-fill: rgb(44 35 60 / 79%);
+  --panel-fill: color-mix(in srgb, var(--ctp-mantle) 60%, transparent);
   --panel-border: rgb(203 166 247 / 32%);
   --panel-border-hover: rgb(203 166 247 / 68%);
   --panel-muted: var(--ctp-subtext1);
