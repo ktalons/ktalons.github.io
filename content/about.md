@@ -8,4 +8,6 @@ I'm Kyle, a **Cyber Security Analyst I** at **Hughes Federal Credit Union** in T
 
 I am passionate about securing operational technology environments and enabling the resilience of critical infrastructure. My hands-on experience includes hardening OT protocols, performing vulnerability assessments, and authoring automation scripts.
 
-I learn by building and breaking things. I write up what I try in [TalonSocLab](/projects/talonsoclab/), my home SOC, and build tools like [CASA](/projects/casa/) for AI-assisted triage and [ComplyRoll](/projects/complyroll/) for vulnerability reporting. I have an ICS workflow pipeline project coming soon as well. If you are reading this, don't be a stranger, [let's talk](/contact/).
+I learn by building and breaking things. I write up what I try in [TalonSocLab](/projects/talonsoclab/), my home SOC, and build tools like [CASA](/projects/casa/) for AI-assisted triage and [ComplyRoll](/projects/complyroll/) for vulnerability reporting. I have an ICS workflow pipeline project coming soon as well. 
+
+If you are reading this, don't be a stranger, [let's talk](/contact/). 🦉
