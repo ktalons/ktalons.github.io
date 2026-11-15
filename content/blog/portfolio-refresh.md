@@ -1,5 +1,5 @@
 ---
-title: "What's brewing? A portfolio refresh"
+title: "New milestone, new look."
 date: 2026-11-12T18:00:00-07:00
 summary: "A refreshed site, a shorter project list, and a new incident investigation lab."
 tags: ["meta", "TalonSocLab", "Incident Response"]
