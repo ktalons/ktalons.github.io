@@ -6,7 +6,7 @@ summary: "A single-file Bash tool that detects log formats and surfaces findings
 tags: ["Bash", "Log Analysis", "SOC Tooling"]
 ---
 
-{{< pill "live" >}}v2 shipped{{< /pill >}}
+{{< pill "live" >}}v2.1.0 shipped{{< /pill >}}
 
 **Repo:** [github.com/ktalons/bashedlogs](https://github.com/ktalons/bashedlogs)
 
@@ -14,8 +14,8 @@ I built bashedlogs from the log analysis patterns I kept running into in SOC wor
 
 ## What's in the repo
 
-- **Format analyzers:** SSH and authentication, system logs, web access, Wazuh, DNS, firewall logs, and a generic fallback.
-- **Investigation helpers:** Time-windowed brute-force detection, indicator extraction, and optional IP enrichment.
-- **Tests and examples:** Fixtures for Linux and macOS, including cases where crafted log text could mislead an analyst.
+- **Format analyzers:** SSH and authentication, system logs, web access, Wazuh, DNS, firewall logs, and a generic fallback. Wazuh and journald are read by their JSON fields.
+- **Investigation helpers:** Time-windowed brute-force detection by source and destination host, indicator extraction for IPv4 and IPv6, and optional IP enrichment.
+- **Tests and examples:** Fixtures that run on Linux, macOS, and a minimal BusyBox setup, including cases where crafted log text could mislead an analyst.
 
-The tool treats logs as untrusted input. The findings are a starting point for checking the evidence yourself.
+The tool treats logs as untrusted input. Version 2.1 shows how each SSH event was attributed, and a forged login line from another program can no longer complete a compromise finding.
