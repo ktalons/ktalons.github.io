@@ -6,7 +6,7 @@ summary: "A Python Discord bot built for Cyber Saguaros to automate membership, 
 tags: ["Python", "Discord", "CTF", "Automation"]
 ---
 
-{{< pill "archived" >}}Archived{{< /pill >}}
+{{< pill "live" >}}Complete{{< /pill >}}
 
 **Repo:** [github.com/ktalons/cybersec-discord-bot](https://github.com/ktalons/cybersec-discord-bot)
 

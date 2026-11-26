@@ -6,7 +6,7 @@ summary: "A synthetic account takeover and business email compromise investigati
 tags: ["Detection Engineering", "Incident Response", "Sigma", "MITRE ATT&CK", "Python"]
 ---
 
-{{< pill "live" >}}Complete · v1.0.0{{< /pill >}}
+{{< pill "archived" >}}Archived{{< /pill >}}
 
 **Repo:** [github.com/ktalons/financial-security-incident-lab](https://github.com/ktalons/financial-security-incident-lab)
 

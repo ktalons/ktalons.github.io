@@ -1,10 +1,10 @@
 ---
 title: "About"
 url: "/about/"
-summary: "Kyle Versluis is joining Hughes Federal Credit Union as a Cyber Security Analyst I. His portfolio covers security operations, OT/ICS, and security automation."
+summary: "Kyle Versluis is a Cyber Security Analyst I. His portfolio covers security operations, OT/ICS, and security automation."
 ---
 
-I'm Kyle, a **Cyber Security Analyst I** at **Hughes Federal Credit Union** in Tucson. My role includes security monitoring, incident response, and IT risk. I got my start in cybersecurity at the University of Arizona, where I helped build and run a security monitoring platform for building systems across three campus sites. 
+I'm Kyle, a **Cyber Security Analyst I**. My role includes security monitoring, incident response, and IT risk. I got my start in cybersecurity at the University of Arizona, where I helped build and run a security monitoring platform for building systems across three campus sites. 
 
 I am passionate about securing operational technology environments and enabling the resilience of critical infrastructure. My hands-on experience includes hardening OT protocols, performing vulnerability assessments, and authoring automation scripts.
 

@@ -6,7 +6,7 @@ summary: "A WireGuard server on consumer router hardware, documented as a saniti
 tags: ["WireGuard", "VPN", "Networking", "Homelab"]
 ---
 
-{{< pill "live" >}}Complete{{< /pill >}}
+{{< pill "archived" >}}Archived{{< /pill >}}
 
 **Repo:** [github.com/ktalons/home-vpn-lab](https://github.com/ktalons/home-vpn-lab)
 
