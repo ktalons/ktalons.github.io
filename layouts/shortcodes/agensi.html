@@ -2,7 +2,7 @@
   *****************************************************************************
   *Title: Agensi Skills Card*
   *Author: Kyle Versluis*
-  *Description: Affiliate line plus a card that holds Agensi skill badges.*
+  *Description: A card of Agensi skill badges with the affiliate line under it.*
   *****************************************************************************
 
   Usage:
@@ -24,7 +24,6 @@
 {{- $ref := .Get "ref" -}}
 {{- $label := .Get "label" | default $ref -}}
 <div class="agensi">
-  <p class="agensi-ref">Affiliate Link: <a href="{{ $ref }}" target="_blank" rel="noopener sponsored">{{ $label }}</a></p>
   <div class="agensi-card">
     <a class="agensi-logo no-underline" href="{{ $ref }}" target="_blank" rel="noopener sponsored" aria-label="Agensi">
       <svg class="agensi-mark" viewBox="-3 -1 134 59.6" aria-hidden="true" focusable="false">
@@ -41,4 +40,5 @@
       {{- .Inner | safeHTML }}
     </ul>
   </div>
+  <p class="agensi-ref">Affiliate Link: <a href="{{ $ref }}" target="_blank" rel="noopener sponsored">{{ $label }}</a></p>
 </div>

@@ -12,8 +12,6 @@ I learn by building and breaking things. I write up what I try in [TalonSocLab](
 
 If you are reading this, don't be a stranger, [let's talk](/contact/). 🦉
 
-## My Agensi.io skills
-
 {{< agensi ref="https://www.agensi.io/r/TALONS?utm_source=portfolio" label="agensi.io/r/TALONS" note="Skill packs I built for SOC work and agentic coding." >}}
 {{< agensi-badge href="https://www.agensi.io/skills/casa-free-soc-triage-pack" >}}CASA Free: SOC Triage Pack{{< /agensi-badge >}}
 {{< agensi-badge href="https://www.agensi.io/skills/casa-pro-wazuh-pack" >}}CASA Pro: Wazuh Pack{{< /agensi-badge >}}

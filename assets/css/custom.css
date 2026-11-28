@@ -3101,6 +3101,7 @@ body.colorscheme-light .home-latest { color: var(--ctp-l-subtext1); }
   --agensi-card: color-mix(in srgb, var(--ctp-crust) 55%, transparent);
   --agensi-card-line: var(--ctp-surface0);
   --agensi-name: var(--ctp-text);
+  margin-top: 3rem;
 }
 
 body.colorscheme-light .agensi {
@@ -3113,9 +3114,11 @@ body.colorscheme-light .agensi {
   --agensi-name: var(--ctp-l-text);
 }
 
-/* Affiliate line: mono and muted, the same voice as the home "Latest:" line. */
+/* Affiliate line: a centered caption under the card, mono and muted, the same
+   voice as the home "Latest:" line. */
 .content > .page > article .agensi-ref {
-  margin: -0.6rem 0 1.8rem;
+  margin: 1.4rem 0 0;
+  text-align: center;
   font-family: "D2 Coding", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 1.5rem;
   color: var(--panel-muted);
