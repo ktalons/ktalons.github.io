@@ -1,0 +1,44 @@
+{{- /*
+  *****************************************************************************
+  *Title: Agensi Skills Card*
+  *Author: Kyle Versluis*
+  *Description: Affiliate line plus a card that holds Agensi skill badges.*
+  *****************************************************************************
+
+  Usage:
+    {{< agensi ref="https://www.agensi.io/r/CODE" label="agensi.io/r/CODE" note="Optional lead line." >}}
+    {{< agensi-badge href="https://www.agensi.io/skills/slug" >}}Skill name{{< /agensi-badge >}}
+    {{< /agensi >}}
+
+  ref:   the affiliate URL (required).
+  label: the link text shown for it. Defaults to the URL.
+  note:  one line of text at the top of the card. Left out when empty.
+
+  The card opens with the Agensi mark and name, linked to ref. The mark is
+  Agensi's own (their favicon paths), drawn inline so it stays inside the
+  img-src 'self' CSP and takes its color from CSS.
+
+  The affiliate link carries rel="sponsored", the value search engines expect
+  on a paid or referral link. Styles: "Agensi Skills Card" in custom.css.
+*/ -}}
+{{- $ref := .Get "ref" -}}
+{{- $label := .Get "label" | default $ref -}}
+<div class="agensi">
+  <p class="agensi-ref">Affiliate Link: <a href="{{ $ref }}" target="_blank" rel="noopener sponsored">{{ $label }}</a></p>
+  <div class="agensi-card">
+    <a class="agensi-logo no-underline" href="{{ $ref }}" target="_blank" rel="noopener sponsored" aria-label="Agensi">
+      <svg class="agensi-mark" viewBox="-3 -1 134 59.6" aria-hidden="true" focusable="false">
+        <path d="M25 3 H51 M24 54 H51 M25 3 L13.5 24 M14 36 L24 54 M50 3 L61 24 M60 36 L51 54"/>
+        <path d="M78 3 H104 M78 54 H104 M78 3 L68 24 M68 36 L78 54 M104 3 L115 24 M114 36 L105 54"/>
+        <path d="M1 29.8 H25 M50 29.8 H75 M103 29.8 H127"/>
+      </svg>
+      <span class="agensi-wordmark">Agensi</span>
+    </a>
+    {{- with .Get "note" }}
+    <p class="agensi-note">{{ . }}</p>
+    {{- end }}
+    <ul class="agensi-badges">
+      {{- .Inner | safeHTML }}
+    </ul>
+  </div>
+</div>

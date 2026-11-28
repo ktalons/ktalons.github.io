@@ -1,0 +1,13 @@
+{{- /*
+  *****************************************************************************
+  *Title: Agensi Skill Badge*
+  *Author: Kyle Versluis*
+  *Description: One skill badge inside the agensi shortcode's card.*
+  *****************************************************************************
+
+  Usage (inside agensi):
+    {{< agensi-badge href="https://www.agensi.io/skills/slug" >}}Skill name{{< /agensi-badge >}}
+
+  The no-underline class keeps the site's animated link underline off the pill.
+*/ -}}
+<li><a class="agensi-badge no-underline" href="{{ .Get "href" }}" target="_blank" rel="noopener"><span class="agensi-badge-name">{{ trim .Inner " \n" }}</span><span class="agensi-badge-host">on Agensi</span></a></li>

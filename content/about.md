@@ -11,3 +11,11 @@ I am passionate about securing operational technology environments and enabling 
 I learn by building and breaking things. I write up what I try in [TalonSocLab](/projects/talonsoclab/), my home SOC, and build tools like [CASA](/projects/casa/) for AI-assisted triage and [ComplyRoll](/projects/complyroll/) for vulnerability reporting. I have an ICS workflow pipeline project coming soon as well. 
 
 If you are reading this, don't be a stranger, [let's talk](/contact/). 🦉
+
+## My Agensi.io skills
+
+{{< agensi ref="https://www.agensi.io/r/TALONS?utm_source=portfolio" label="agensi.io/r/TALONS" note="Skill packs I built for SOC work and agentic coding." >}}
+{{< agensi-badge href="https://www.agensi.io/skills/casa-free-soc-triage-pack" >}}CASA Free: SOC Triage Pack{{< /agensi-badge >}}
+{{< agensi-badge href="https://www.agensi.io/skills/casa-pro-wazuh-pack" >}}CASA Pro: Wazuh Pack{{< /agensi-badge >}}
+{{< agensi-badge href="https://www.agensi.io/skills/agentic-coder-smart-changes" >}}Agentic Coder: Smart Changes{{< /agensi-badge >}}
+{{< /agensi >}}
